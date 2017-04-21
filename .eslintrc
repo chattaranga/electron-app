@@ -30,6 +30,27 @@
     "spaced-comment": 1,
     "semi": 1,
     "quotes": ["error", "single"],
-    "no-multiple-empty-lines": 1
+    "no-multiple-empty-lines": 1,
+    // "indent": ["error", 2, { "SwitchCase": "warn" }],
+    "comma-spacing": ["warn", { "before": false, "after": true }],
+    "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+    // "keyword-spacing": ["error", { "before": true, "after": true }],
+    "no-irregular-whitespace": "error",
+    "object-curly-spacing": "error",
+    "no-unreachable": "error",
+    "no-unused-vars": "error",
+    "no-debugger": "error",
+    "eqeqeq": "error",
+    "react/display-name": "error",
+    "react/jsx-boolean-value": "error",
+    "react/jsx-curly-spacing": "error",
+    "react/jsx-max-props-per-line": ["error", { "maximum": 2, "when": "always" }],
+    "react/jsx-indent-props": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/no-unknown-property": "error",
+    "react/react-in-jsx-scope": "error"
   }
 }
