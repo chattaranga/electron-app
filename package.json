@@ -32,7 +32,9 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "prop-types": "^15.5.8",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-router": "^3.0.5"
   }
 }
