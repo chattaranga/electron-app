@@ -1,10 +1,9 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
-const Main = (props) => {
+const Main = props => {
   return (
     <div>
-      <p>Main</p>
       {props.children}
     </div>
   );

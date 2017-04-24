@@ -1,0 +1,42 @@
+body {
+  background-color: #fa9128;
+  margin: 0;
+  border: 0;
+  padding: 0; }
+
+.LoginPage {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .LoginPage form {
+    margin-top: 1em;
+    margin-bottom: 1em; }
+    .LoginPage form input {
+      padding: 1.3em;
+      border: 0; }
+    .LoginPage form .textbox {
+      width: 30em;
+      border-top-left-radius: 1em;
+      border-bottom-left-radius: 1em; }
+    .LoginPage form .submit {
+      color: #ff8002;
+      border-top-right-radius: 1em;
+      border-bottom-right-radius: 1em;
+      background-color: #ffd8b2;
+      border-left: 0.3em solid #fa9128; }
+  .LoginPage .buttons {
+    display: flex;
+    margin-top: 5.9em;
+    justify-content: space-between;
+    align-items: center; }
+    .LoginPage .buttons a {
+      margin: 0 .75em 0 0.75em; }
+      .LoginPage .buttons a img {
+        border-radius: 100%;
+        height: 8em;
+        width: 8em;
+        border: 0.2em solid #ffd8b2; }
+
+/*# sourceMappingURL=styles.css.map */

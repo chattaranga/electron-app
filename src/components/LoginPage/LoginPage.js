@@ -4,8 +4,8 @@ const LanguageButtons = require('./LanguageButtons');
 
 const LoginPage = () => {
   return (
-    <div>
-      <p>LoginPage</p>
+    <div className='LoginPage'>
+      <img src='img/logo-main.png'/>
       <LoginForm/>
       <LanguageButtons/>
     </div>

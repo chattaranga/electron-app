@@ -3,7 +3,16 @@ const React = require('react');
 const LoginForm = () => {
   return (
     <div>
-      <p>LoginForm</p>
+      <form>
+        <input 
+            className='textbox' 
+            placeholder='Username' 
+            type='text'/>
+        <input 
+            className='submit' 
+            type='submit' 
+            value='Login'/>
+      </form>
     </div>
   );
 };
