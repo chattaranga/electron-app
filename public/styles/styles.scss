@@ -1,0 +1,13 @@
+@import 'modules/_colours';
+@import 'modules/_fonts';
+
+@import 'partials/_LoginPage.scss';
+@import 'partials/_ChatPage.scss';
+@import 'partials/_AchievementsPage.scss';
+
+body {
+  background-color: $primary;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
