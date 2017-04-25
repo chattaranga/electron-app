@@ -1,4 +1,5 @@
 const React = require('react');
+const {Link} = require('react-router');
 
 const LoginForm = () => {
   return (
@@ -13,6 +14,9 @@ const LoginForm = () => {
             type='submit' 
             value='Login'/>
       </form>
+      <Link to='/signup'>Sign Up</Link>
+      <Link to='/hub'>Go to Hub</Link>
+      <Link to='/achievements'>Go to Achievements</Link>
     </div>
   );
 };

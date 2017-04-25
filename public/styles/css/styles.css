@@ -32,18 +32,19 @@
       border-bottom-right-radius: 1em;
       background-color: #ffd8b2;
       border-left: 0.3em solid #fa9128; }
-  .LoginPage .buttons {
-    display: flex;
-    margin-top: 5em;
-    justify-content: space-between;
-    align-items: center; }
-    .LoginPage .buttons a {
-      margin: 0 1em 0 1em; }
-      .LoginPage .buttons a img {
-        border-radius: 100%;
-        max-height: 7em;
-        max-width: 7em;
-        border: 0.2em solid #ffd8b2; }
+
+.buttons {
+  display: flex;
+  margin-top: 5em;
+  justify-content: space-between;
+  align-items: center; }
+  .buttons a {
+    margin: 0 1em 0 1em; }
+    .buttons a img {
+      border-radius: 100%;
+      max-height: 7em;
+      max-width: 7em;
+      border: 0.2em solid #ffd8b2; }
 
 body {
   background-color: #fa9128;
