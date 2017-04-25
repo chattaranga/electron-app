@@ -1,51 +1,13 @@
 @import 'modules/_colours';
+@import 'modules/_fonts';
+
+@import 'partials/_LoginPage.scss';
+@import 'partials/_ChatPage.scss';
+@import 'partials/_AchievementsPage.scss';
 
 body {
   background-color: $primary;
   margin: 0;
   border: 0;
   padding: 0;
-}
-
-.LoginPage {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  form {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    input {
-      padding: 1.3em;
-      border: 0;
-    }
-    .textbox {
-      width: 30em;
-      border-top-left-radius: 1em;
-      border-bottom-left-radius: 1em;
-    }
-    .submit {
-      color: $primary-dark;
-      border-top-right-radius: 1em;
-      border-bottom-right-radius: 1em;
-      background-color: $primary-light;
-      border-left: 0.3em solid $primary;
-    }
-  }
-  .buttons {
-    display: flex;
-    margin-top: 5.9em;
-    justify-content: space-between;
-    align-items: center;
-    a { 
-      margin: 0 .75em 0 0.75em;
-      img {
-        border-radius: 100%;
-        height: 8em;
-        width: 8em;
-        border: 0.2em solid $primary-light;
-      }
-    }
-  }
 }

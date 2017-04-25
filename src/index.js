@@ -3,6 +3,7 @@ const ReactDOM = require('react-dom');
 const {Router, Route, IndexRoute, hashHistory} = require('react-router');
 
 const Main = require('./components/Main');
+const Achievements = require('./components/AchievementsPage/AchievementsPage');
 const LoginPage = require('./components/LoginPage/LoginPage');
 const ChatPage = require('./components/ChatPage/ChatPage');
 
@@ -13,6 +14,7 @@ ReactDOM.render((
     <Route path='/' component={Main}>
       <IndexRoute component={LoginPage}/>
       <Route path='/login' component={LoginPage}/>
+      <Route path='/achievements' component={Achievements}/>
       <Route path='/chat' component={ChatPage}/>
     </Route>
   </Router>
