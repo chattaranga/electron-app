@@ -6,13 +6,13 @@ const LoginForm = () => {
     <div>
       <form>
         <input 
-            className='textbox' 
+            className='text-box' 
             placeholder='Username' 
             type='text'/>
         <input 
-            className='submit' 
+            className='submit button-primary' 
             type='submit' 
-            value='Login'/>
+            value='Log in'/>
       </form>
       <Link to='/signup'>Sign Up</Link>
       <Link to='/hub'>Go to Hub</Link>
