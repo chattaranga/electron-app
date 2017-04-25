@@ -39,7 +39,7 @@
   flex-direction: column;
   color: #fff;
   font-family: "Muli";
-  padding: 3vh; }
+  padding: 3vh, 6vh 3vh 6vh; }
   .HubPage h2 {
     align-self: center;
     margin: 0 0 10vh 0;
@@ -53,7 +53,7 @@
   .HubPage .inline {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%; }
     .HubPage .inline h1 {
       margin: 0 5% 0 0;
@@ -106,29 +106,99 @@
   .Icons .achievements {
     padding-top: 1em; }
 
-.buttons {
+.hub-page-buttons {
   display: flex;
   margin-top: 10vh;
   justify-content: center;
   align-items: center; }
-  .buttons a {
+  .hub-page-buttons a {
     display: flex;
     flex-direction: column;
     margin: 0 1vw 0 1vw; }
-    .buttons a img {
+    .hub-page-buttons a img {
       border-radius: 100%;
       max-height: 7em;
       max-width: 7em;
       border: 0.2em solid #ffd8b2; }
-      .buttons a img:hover {
+      .hub-page-buttons a img:hover {
         cursor: pointer;
         -moz-box-shadow: 0 0 30px 5px white;
         -webkit-box-shadow: 0 0 30px 5px white;
         box-shadow: 0 0 30px 5px white; }
-    .buttons a p {
+    .hub-page-buttons a p {
       align-self: center;
       font-weight: bolder;
       font-size: 1em; }
+
+.achievements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: space-around;
+  flex-direction: column;
+  color: #fff;
+  font-family: "Muli";
+  padding: 3vh, 6vh 3vh 6vh; }
+  .achievements h1 {
+    font-size: 3vw;
+    font-weight: bold; }
+
+.Statistics {
+  width: 50%;
+  display: flex;
+  justify-content: space-around; }
+  .Statistics .icondata {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .Statistics .icondata .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 0.2em solid #ffd8b2;
+      background-color: #a7a7a7;
+      border-radius: 100%;
+      margin: 0 1.5em 0 1.5em;
+      width: 8em;
+      height: 8em; }
+      .Statistics .icondata .icon:hover {
+        cursor: pointer;
+        -moz-box-shadow: 0 0 30px 5px white;
+        -webkit-box-shadow: 0 0 30px 5px white;
+        box-shadow: 0 0 30px 5px white; }
+    .Statistics .icondata p {
+      font-size: 1.2em;
+      font-weight: bold; }
+
+.Badges {
+  width: 90%;
+  max-width: 70em;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+  .Badges div {
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+    .Badges div .badge {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 0.2em solid #ffd8b2;
+      background-color: #a7a7a7;
+      border-radius: 100%;
+      margin: 0 1.5em 0 1.5em;
+      width: 6em;
+      height: 6em; }
+      .Badges div .badge:hover {
+        cursor: pointer;
+        -moz-box-shadow: 0 0 30px 5px white;
+        -webkit-box-shadow: 0 0 30px 5px white;
+        box-shadow: 0 0 30px 5px white; }
+    .Badges div p {
+      font-size: 1em;
+      font-weight: bold; }
 
 body {
   background-color: #fa9128;

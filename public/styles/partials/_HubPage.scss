@@ -3,7 +3,7 @@
     flex-direction: column;
     color: $white;
     font-family: $main;
-    padding: 3vh;
+    padding: 3vh, 6vh 3vh 6vh;
     h2 {
         align-self: center;
         margin: 0 0 10vh 0;
@@ -19,7 +19,7 @@
     .inline {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         width: 100%;
         h1 {
             margin: 0 5% 0 0;
@@ -83,7 +83,9 @@
     }
 }
 
-.buttons {
+
+
+.hub-page-buttons {
     display: flex;
     margin-top: 10vh;
     justify-content: center;

@@ -1,9 +1,15 @@
 const React = require('react');
+const Statistics = require('./Statistics');
+const Badges = require('./Badges');
+
 
 const AchievementsPage = () => {
   return (
-    <div>
-      <p>AchievementsPage</p>
+    <div className='achievements'>
+        <h1>Statistics</h1>
+        <Statistics/>
+        <h1>Badges</h1>
+        <Badges/>
     </div>
   );
 };

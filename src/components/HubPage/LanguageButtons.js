@@ -2,7 +2,7 @@ const React = require('react');
 
 const LanguageButtons = () => {
   return (
-    <div className='buttons'>
+    <div className='hub-page-buttons'>
       <div>
         <a><img src={'img/uk.png'}/>
           <p>English</p>
