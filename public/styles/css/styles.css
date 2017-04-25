@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Muli");
 .LoginPage {
   display: flex;
   height: 100vh;
@@ -33,18 +34,101 @@
       background-color: #ffd8b2;
       border-left: 0.3em solid #fa9128; }
 
+.HubPage {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-family: "Muli";
+  padding: 3vh; }
+  .HubPage h2 {
+    align-self: center;
+    margin: 0 0 10vh 0;
+    font-size: 4em;
+    min-width: 300px; }
+  .HubPage h5 {
+    align-self: center;
+    color: #fddebe;
+    font-size: 2em;
+    margin: 0; }
+  .HubPage .inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; }
+    .HubPage .inline h1 {
+      margin: 0 5% 0 0;
+      width: 170px;
+      font-size: 200px; }
+
+.Icons {
+  display: flex;
+  justify-content: space-between;
+  align-content: center; }
+  .Icons .icondata {
+    display: flex;
+    justify-content: center; }
+    .Icons .icondata .icon {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      border: 0.2em solid #ffd8b2;
+      background-color: #a7a7a7;
+      border-radius: 100%;
+      margin: 0 0.8em 0 0.8em;
+      width: 5em;
+      height: 5em; }
+      .Icons .icondata .icon:hover {
+        cursor: pointer;
+        -moz-box-shadow: 0 0 30px 5px white;
+        -webkit-box-shadow: 0 0 30px 5px white;
+        box-shadow: 0 0 30px 5px white; }
+    .Icons .icondata .view-achievements {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      border: 0.2em solid #ffd8b2;
+      background-color: #fcc48c;
+      border-radius: 1em;
+      margin: 0 0.8em 0 0.8em;
+      width: 8em;
+      height: 3em; }
+      .Icons .icondata .view-achievements p {
+        align-self: center;
+        text-align: center;
+        font-weight: bolder; }
+      .Icons .icondata .view-achievements:hover {
+        cursor: pointer;
+        -moz-box-shadow: 0 0 30px 5px white;
+        -webkit-box-shadow: 0 0 30px 5px white;
+        box-shadow: 0 0 30px 5px white; }
+  .Icons .achievements {
+    padding-top: 1em; }
+
 .buttons {
   display: flex;
-  margin-top: 5em;
-  justify-content: space-between;
+  margin-top: 10vh;
+  justify-content: center;
   align-items: center; }
   .buttons a {
-    margin: 0 1em 0 1em; }
+    display: flex;
+    flex-direction: column;
+    margin: 0 1vw 0 1vw; }
     .buttons a img {
       border-radius: 100%;
       max-height: 7em;
       max-width: 7em;
       border: 0.2em solid #ffd8b2; }
+      .buttons a img:hover {
+        cursor: pointer;
+        -moz-box-shadow: 0 0 30px 5px white;
+        -webkit-box-shadow: 0 0 30px 5px white;
+        box-shadow: 0 0 30px 5px white; }
+    .buttons a p {
+      align-self: center;
+      font-weight: bolder;
+      font-size: 1em; }
 
 body {
   background-color: #fa9128;

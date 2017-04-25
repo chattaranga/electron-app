@@ -3,10 +3,26 @@ const React = require('react');
 const LanguageButtons = () => {
   return (
     <div className='buttons'>
-      <a><img src={'img/uk.png'}/></a>
-      <a><img src={'img/spain.png'}/></a>
-      <a><img src={'img/italy.png'}/></a>
-      <a><img src={'img/france.png'}/></a>
+      <div>
+        <a><img src={'img/uk.png'}/>
+          <p>English</p>
+        </a>
+      </div>
+      <div>
+        <a><img src={'img/spain.png'}/>
+          <p>Spanish</p>
+        </a>
+      </div>
+      <div>
+        <a><img src={'img/italy.png'}/>
+          <p>Italian</p>
+        </a>
+      </div>
+      <div>
+        <a><img src={'img/france.png'}/>
+          <p>French</p>
+        </a>
+      </div>
     </div>
   );
 };
