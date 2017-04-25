@@ -1,0 +1,81 @@
+.achievements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+    flex-direction: column;
+    color: $white;
+    font-family: $main;
+    padding: 3vh, 6vh 3vh 6vh;
+    h1 {
+        font-size: 3vw;
+        font-weight: bold;
+    }
+}
+
+.Statistics {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    .icondata {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0.2em solid $primary-light;
+            background-color: #a7a7a7;
+            border-radius: 100%;
+            margin: 0 1.5em 0 1.5em;
+            width: 8em;
+            height: 8em;
+            &:hover {
+                cursor: pointer;
+                -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+                -webkit-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+                box-shadow: 0 0 30px 5px lighten($primary, 50%);
+            }
+        }
+        p {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    }
+}
+
+.Badges {
+    width: 90%;
+    max-width: 70em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .badge {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0.2em solid $primary-light;
+            background-color: #a7a7a7;
+            border-radius: 100%;
+            margin: 0 1.5em 0 1.5em;
+            width: 6em;
+            height: 6em;
+            &:hover {
+                cursor: pointer;
+                -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+                -webkit-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+                box-shadow: 0 0 30px 5px lighten($primary, 50%);
+            }
+        }
+        p {
+            font-size: 1em;
+            font-weight: bold;
+        }
+    }
+}
