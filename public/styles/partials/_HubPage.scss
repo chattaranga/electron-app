@@ -3,7 +3,7 @@
     flex-direction: column;
     color: $white;
     font-family: $main;
-    padding: 3vh, 6vh 3vh 6vh;
+    padding: 3vh 6vh 3vh 6vh;
     h2 {
         align-self: center;
         margin: 0 0 10vh 0;
@@ -20,7 +20,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
         h1 {
             margin: 0 5% 0 0;
             width: 170px;
@@ -31,59 +30,38 @@
 
 .Icons {
     display: flex;
-    justify-content: space-between;
-    align-content: center;
-    .icondata {
+    .icon {
+        margin: 0 0.8em 0 0.8em;
+        width: 5em;
+        height: 5em;
+    }
+    .view-achievements {
         display: flex;
         justify-content: center;
-        .icon {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            border: 0.2em solid $primary-light;
-            background-color: #a7a7a7;
-            border-radius: 100%;
-            margin: 0 0.8em 0 0.8em;
-            width: 5em;
-            height: 5em;
-            &:hover {
-                cursor: pointer;
-                -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
-                -webkit-box-shadow: 0 0 30px 5px lighten($primary, 50%);
-                box-shadow: 0 0 30px 5px lighten($primary, 50%);
-            }
+        flex-direction: column;
+        align-items: center;
+        border: 0.2em solid $primary-light;
+        background-color: lighten($primary, 20%);
+        border-radius: 1em;
+        margin: 0 0.8em 0 0.8em;
+        width: 8em;
+        height: 3em;
+        p {
+            align-self: center;
+            text-align: center;
+            font-weight: bolder;
         }
-        .view-achievements {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            border: 0.2em solid $primary-light;
-            background-color: lighten($primary, 20%);
-            border-radius: 1em;
-            margin: 0 0.8em 0 0.8em;
-            width: 8em;
-            height: 3em;
-            p {
-                align-self: center;
-                text-align: center;
-                font-weight: bolder;
-            }
-            &:hover {
-                cursor: pointer;
-                -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
-                -webkit-box-shadow: 0 0 30px 5px lighten($primary, 50%);
-                box-shadow: 0 0 30px 5px lighten($primary, 50%);
-            }
+        &:hover {
+            cursor: pointer;
+            -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+            -webkit-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+            box-shadow: 0 0 30px 5px lighten($primary, 50%);
         }
     }
     .achievements {
         padding-top: 1em;
     }
 }
-
-
 
 .hub-page-buttons {
     display: flex;
