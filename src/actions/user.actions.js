@@ -81,3 +81,38 @@ export function addUserError (err) {
         data: err
     };
 }
+
+export function handleEmailChange (e) {
+  return {
+    type: types.HANDLE_EMAIL_CHANGE,
+    data: e
+  };
+}
+
+export function handleNameChange (e) {
+  return {
+    type: types.HANDLE_NAME_CHANGE,
+    data: e
+  };
+}
+
+export function handleUsernameChange (e) {
+  return {
+    type: types.HANDLE_USERNAME_CHANGE,
+    data: e
+  };
+}
+
+export function handleLanguageChange (language) {
+  return {
+    type: types.HANDLE_LANGUAGE_CHANGE,
+    data: language
+  };
+}
+
+export function handleLevelChange (level) {
+  return {
+    type: types.HANDLE_LEVEL_CHANGE,
+    data: level
+  };
+}

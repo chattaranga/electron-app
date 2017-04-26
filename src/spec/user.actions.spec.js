@@ -1,7 +1,6 @@
 import {expect} from 'chai';
 import * as types from '../actions/types';
 import * as userActions from '../actions/user.actions.js';
-import * as levelsActions from '../actions/levels.actions.js';
 
 describe('User actions:', () => {
    describe('fetchUser()', () => {
@@ -95,46 +94,58 @@ describe('User actions:', () => {
            });
        });
    });
-});
-
-describe('Levels actions:', () => {
-   describe('fetchLevels()', () => {
+   describe('handleEmailChange()', () => {
        it('is a function', () => {
-           expect(levelsActions.fetchLevels).to.be.a('function');
-       });
-       it('returns a function', () => {
-           expect(levelsActions.fetchLevels()).to.be.a('function');
-       });
-   });
-   describe('fetchLevelsRequest()', () => {
-       it('is a function', () => {
-           expect(levelsActions.fetchLevelsRequest).to.be.a('function');
+           expect(userActions.handleEmailChange).to.be.a('function');
        });
        it('returns the expected action', () => {
-           expect(levelsActions.fetchLevelsRequest()).to.eql({
-               type: types.FETCH_LEVELS_REQUEST
+           expect(userActions.handleEmailChange('e')).to.eql({
+               type: types.HANDLE_EMAIL_CHANGE,
+               data: 'e'
            });
        });
    });
-   describe('fetchLevelsSuccess()', () => {
+   describe('handleNameChange()', () => {
        it('is a function', () => {
-           expect(levelsActions.fetchLevelsSuccess).to.be.a('function');
+           expect(userActions.handleNameChange).to.be.a('function');
        });
        it('returns the expected action', () => {
-           expect(levelsActions.fetchLevelsSuccess('levels')).to.eql({
-               type: types.FETCH_LEVELS_SUCCESS,
-               data: 'levels'
+           expect(userActions.handleNameChange('e')).to.eql({
+               type: types.HANDLE_NAME_CHANGE,
+               data: 'e'
            });
        });
    });
-   describe('fetchLevelsError()', () => {
+   describe('handleUsernameChange()', () => {
        it('is a function', () => {
-           expect(levelsActions.fetchLevelsError).to.be.a('function');
+           expect(userActions.handleUsernameChange).to.be.a('function');
        });
        it('returns the expected action', () => {
-           expect(levelsActions.fetchLevelsError('err')).to.eql({
-               type: types.FETCH_LEVELS_ERROR,
-               data: 'err'
+           expect(userActions.handleUsernameChange('e')).to.eql({
+               type: types.HANDLE_USERNAME_CHANGE,
+               data: 'e'
+           });
+       });
+   });
+   describe('handleLanguageChange()', () => {
+       it('is a function', () => {
+           expect(userActions.handleLanguageChange).to.be.a('function');
+       });
+       it('returns the expected action', () => {
+           expect(userActions.handleLanguageChange('language')).to.eql({
+               type: types.HANDLE_LANGUAGE_CHANGE,
+               data: 'language'
+           });
+       });
+   });
+   describe('handleLevelChange()', () => {
+       it('is a function', () => {
+           expect(userActions.handleLevelChange).to.be.a('function');
+       });
+       it('returns the expected action', () => {
+           expect(userActions.handleLevelChange('level')).to.eql({
+               type: types.HANDLE_LEVEL_CHANGE,
+               data: 'level'
            });
        });
    });
