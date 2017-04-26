@@ -8,11 +8,11 @@ const initialState = {
   error: null
 };
 
-describe('userReducer()', () => {
+describe('userReducer(): fetch user actions', () => {
   it('is a function', () => {
     expect(userReducer).to.be.a('function');
   });
-  describe('when type is FETCH_TOPIC_REQUEST', () => {
+  describe('when type is FETCH_USER_REQUEST', () => {
     it('does not mutate state', () => {
       const action = {
         type: types.FETCH_USER_REQUEST
@@ -66,7 +66,65 @@ describe('userReducer()', () => {
   });
 });
 
-describe('FORM_CHANGE', () => {
+describe('userReducer(): add user actions', () => {
+  it('is a function', () => {
+    expect(userReducer).to.be.a('function');
+  });
+  describe('when type is ADD_USER_REQUEST', () => {
+    it('does not mutate state', () => {
+      const action = {
+        type: types.ADD_USER_REQUEST
+      };
+      expect(userReducer(null, action)).to.not.equal(initialState);
+    });
+    it('replaces state accordingly', () => {
+      const exp = {
+        user: null,
+        loading: true,
+        error: null
+      };
+      const action = {
+        type: types.ADD_USER_REQUEST
+      };
+      expect(userReducer(initialState, action)).to.eql(exp);
+    });
+  });
+  describe('when type is ADD_USER_SUCCESS', () => {
+    it('does not mutate state', () => {
+      const data = {user: 'user'};
+      const action = {type: types.ADD_USER_SUCCESS, data: data};
+      expect(userReducer(null, action)).to.not.equal(initialState);
+    });
+    it('replaces state accordingly', () => {
+      const data = {user: 'user'};
+      const action = {type: types.ADD_USER_SUCCESS, data: data};
+      const exp = {
+        user: 'user',
+        loading: false,
+        error: null
+      };
+      expect(userReducer(initialState, action)).to.eql(exp);
+
+    });
+  });
+  describe('when type is ADD_USER_ERROR', () => {
+    it('does not mutate state', () => {
+      const action = {type: types.ADD_USER_ERROR, data: 'error'};
+      expect(userReducer(null, action)).to.not.equal(initialState);
+    });
+    it('replaces state accordingly', () => {
+      const exp = {
+        user: null,
+        loading: false,
+        error: 'error'
+      };
+      const action = {type: types.ADD_USER_ERROR, data: 'error'};
+      expect(userReducer(initialState, action)).to.eql(exp);
+    });
+  });
+});
+
+describe('userReducer(): form changes', () => {
     const initialState = {
       formText: ''
     };

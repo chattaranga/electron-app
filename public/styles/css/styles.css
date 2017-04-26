@@ -100,6 +100,11 @@
       color: #b85e04;
       text-decoration: none; }
 
+.error-message {
+  color: red;
+  font-weight: bolder;
+  text-align: center; }
+
 .sign-up-page {
   width: 100vw;
   height: 100vh;
@@ -172,7 +177,7 @@
 
 .signup-flag-buttons {
   width: 100%;
-  margin-top: 3vh;
+  margin-top: 2vh;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -194,6 +199,15 @@
       align-self: center;
       font-weight: bolder;
       font-size: 1em; }
+
+.level-options {
+  display: flex;
+  width: 30%;
+  height: 2em;
+  margin-bottom: 2em;
+  justify-content: space-around; }
+  .level-options .button-primary {
+    margin: 0 1em 0 1em; }
 
 .HubPage {
   display: flex;
