@@ -43,4 +43,15 @@ describe('User actions:', () => {
            });
        });
    });
+   describe('formChange()', () => {
+       it('is a function', () => {
+           expect(userActions.formChange).to.be.a('function');
+       });
+       it('returns the expected action', () => {
+           expect(userActions.formChange('e')).to.eql({
+               type: types.FORM_CHANGE,
+               data: 'e'
+           });
+       });
+   });
 });

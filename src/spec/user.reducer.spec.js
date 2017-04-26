@@ -65,3 +65,28 @@ describe('userReducer()', () => {
     });
   });
 });
+
+describe('FORM_CHANGE', () => {
+    const initialState = {
+      formText: ''
+    };
+    describe('when type is FORM_CHANGE', () => {
+      it('does not mutate state', () => {
+        const action = {
+          type: types.FORM_CHANGE,
+          data: 'e'
+        };
+        expect(userReducer(null, action)).to.not.equal(initialState);
+      });
+      it('replaces state accordingly', () => {
+        const exp = {
+          formText: 'e'
+        };
+        const action = {
+          type: types.FORM_CHANGE,
+          data: 'e'
+        };
+        expect(userReducer(initialState, action)).to.eql(exp);
+      });
+    });
+  });

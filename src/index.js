@@ -7,7 +7,6 @@ import thunk from 'redux-thunk';
 import {createLogger} from 'redux-logger';
 
 import Main from './components/Main';
-console.log(Main);
 import Achievements from './components/AchievementsPage/AchievementsPage';
 import LoginPage from './components/LoginPage/LoginPage';
 import HubPage from './components/HubPage/HubPage';

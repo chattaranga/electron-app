@@ -35,3 +35,10 @@ export function fetchUserError (err) {
         data: err
     };
 }
+
+export function formChange (e) {
+  return {
+    type: types.FORM_CHANGE,
+    data: e
+  };
+}
