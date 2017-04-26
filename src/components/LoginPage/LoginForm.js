@@ -12,6 +12,7 @@ class LoginForm extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   render() {
+    const message = this.props.error ? (<p>Something went wrong!</p>) : (<p/>);
     return (
       <div>
         <form onSubmit={this.handleLogin.bind(null, this.props.formText)}>
@@ -26,6 +27,7 @@ class LoginForm extends Component {
               type='submit' 
               value='Log in'
               />
+            {message}
         </form>
         <Link to='/signup'>Sign Up</Link>
         <Link to='/hub'>Go to Hub</Link>
@@ -68,7 +70,8 @@ LoginForm.PropTypes = {
   getUser: PropTypes.func,
   formChange: PropTypes.func,
   handleLogin: PropTypes.func,
-  formText: PropTypes.string
+  formText: PropTypes.string,
+  error: PropTypes.error
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

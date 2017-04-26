@@ -8,9 +8,9 @@
     "posttest": "npm run lint",
     "lint": "eslint ./",
     "precommit": "npm test",
-    "build-scss": "node-sass public/styles/ --source-map true -o public/styles/css",
-    "start": "npm run build-scss && npm run bundle && ./node_modules/.bin/electron .",
-    "bundle": "webpack"
+    "build-scss": "node-sass src/styles/ --source-map true -o public/styles/css",
+    "start": "./node_modules/.bin/electron .",
+    "bundle": "webpack --progress --colors --watch"
   },
   "author": "",
   "license": "ISC",
