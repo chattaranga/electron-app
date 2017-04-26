@@ -12,7 +12,6 @@ class LoginForm extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   render() {
-    console.log(this.props);
     return (
       <div>
         <form onSubmit={this.handleLogin.bind(null, this.props.formText)}>
@@ -40,7 +39,7 @@ class LoginForm extends Component {
   }
   handleLogin (username, e) {
     e.preventDefault();
-    this.props.getUser(this.props.formtext);
+    this.props.getUser(username);
     this.props.formChange('');
   }
 }
