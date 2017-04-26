@@ -32,3 +32,16 @@
         box-shadow: 0 0 30px 5px lighten($primary, 50%);
     }
 }
+
+.orange-msg-box {
+    padding: 1em;
+    border: 0;
+    background-color: $primary-light;
+    border-radius: 1.5em;
+    margin: 0.5em 0 0.5em 0;
+    p {
+        margin: 0;
+        font-size: 1em;
+        color: $primary;
+    }
+}
