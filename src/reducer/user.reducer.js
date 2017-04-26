@@ -35,6 +35,16 @@ function userReducer (prevState = initialState, action) {
         newState.error = action.data;
         newState.loading = false;
         break;
+      case types.HANDLE_EMAIL_CHANGE:
+        newState.emailText = action.data; break;
+      case types.HANDLE_NAME_CHANGE:
+        newState.nameText = action.data; break;
+      case types.HANDLE_USERNAME_CHANGE:
+        newState.userNameText = action.data; break;
+      case types.HANDLE_LANGUAGE_CHANGE:
+        newState.selectedLanguage = action.data; break;
+      case types.HANDLE_LEVEL_CHANGE:
+        newState.selectedLevel = action.data; break;
       default: break;
   }
   return newState;

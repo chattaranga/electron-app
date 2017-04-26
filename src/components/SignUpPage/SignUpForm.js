@@ -7,11 +7,17 @@ import {addUser, handleEmailChange, handleNameChange, handleUsernameChange, hand
 class SignUpForm extends Component {
   constructor(props) {
     super(props);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleUsernameChange = this.handleUsernameChange.bind(this);
+    this.handleLanguageChange = this.handleLanguageChange.bind(this);
+    this.handleLevelChange = this.handleLevelChange.bind(this);
+    this.addUser = this.addUser.bind(this);
   }
   render() {
     return (
       <div className='signup-form'>
-        <form>
+        <form onSubmit={this.addUser}>
           <div className='forms'>
             <input 
                 className='text-box long ' 
@@ -39,28 +45,28 @@ class SignUpForm extends Component {
           <div className='signup-flag-buttons'>
             <div>
               <a><img 
-                  onClick={this.handleLanguageChange.bind(null, this.props.selectedLanguage)}
+                  onClick={this.handleLanguageChange.bind(null, 'English')}
                   src={'img/uk.png'}/>
                 <p>English</p>
               </a>
             </div>
             <div>
               <a><img 
-                  onClick={this.handleLanguageChange.bind(null, this.props.selectedLanguage)}
+                  onClick={this.handleLanguageChange.bind(null, 'Spanish')}
                   src={'img/spain.png'}/>
                 <p>Spanish</p>
               </a>
             </div>
             <div>
               <a><img 
-                  onClick={this.handleLanguageChange.bind(null, this.props.selectedLanguage)}
+                  onClick={this.handleLanguageChange.bind(null, 'Italian')}
                   src={'img/italy.png'}/>
                 <p>Italian</p>
               </a>
             </div>
             <div>
               <a><img 
-                  onClick={this.handleLanguageChange.bind(null, this.props.selectedLanguage)}
+                  onClick={this.handleLanguageChange.bind(null, 'French')}
                   src={'img/france.png'}/>
                 <p>French</p>
               </a>
@@ -68,17 +74,17 @@ class SignUpForm extends Component {
           </div>
           <div className='level-options'>
             <div
-                onClick={this.handleLevelChange.bind(null, this.props.selectedLevel)} 
+                onClick={this.handleLevelChange.bind(null, 'Beginner')} 
                 className='button-primary'>
               <p>Beginner</p>
             </div>
             <div
-                onClick={this.handleLevelChange.bind(null, this.props.selectedLevel)} 
+                onClick={this.handleLevelChange.bind(null, 'Intermediate')} 
                 className='button-primary'>
               <p>Intermediate</p>
             </div>
             <div
-                onClick={this.handleLevelChange.bind(null, this.props.selectedLevel)} 
+                onClick={this.handleLevelChange.bind(null, 'Advanced')} 
                 className='button-primary'>
               <p>Advanced</p>
             </div>
@@ -91,6 +97,10 @@ class SignUpForm extends Component {
       </div>
     );
   }
+  addUser (e) {
+    e.preventDefault();
+    this.props.addUser(this.props.userNameText, this.props.selectedLanguage, this.props.selectedLevel, this.props.nameText, this.props.emailText);
+  }
   handleEmailChange (e) {
     this.props.handleEmailChange(e.target.value);
   }
@@ -100,11 +110,11 @@ class SignUpForm extends Component {
   handleUsernameChange (e) {
     this.props.handleUsernameChange(e.target.value);
   }
-  handleLanguageChange (language, e) {
-    this.props.handleLanguageChange(language, e.target.value);
+  handleLanguageChange (language) {
+    this.props.handleLanguageChange(language);
   }
-  handleLevelChange (level, e) {
-    this.props.handleLevelChange(level, e.target.value);
+  handleLevelChange (level) {
+    this.props.handleLevelChange(level);
   }
 }
 

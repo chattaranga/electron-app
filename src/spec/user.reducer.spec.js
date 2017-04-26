@@ -2,13 +2,13 @@ import {expect} from 'chai';
 import userReducer from '../reducer/user.reducer.js';
 import * as types from '../actions/types';
 
-const initialState = {
-  user: null,
-  loading: false,
-  error: null
-};
 
 describe('userReducer(): fetch user actions', () => {
+  const initialState = {
+    user: null,
+    loading: false,
+    error: null
+  };
   it('is a function', () => {
     expect(userReducer).to.be.a('function');
   });
@@ -67,6 +67,11 @@ describe('userReducer(): fetch user actions', () => {
 });
 
 describe('userReducer(): add user actions', () => {
+  const initialState = {
+    user: null,
+    loading: false,
+    error: null
+  };
   it('is a function', () => {
     expect(userReducer).to.be.a('function');
   });
@@ -125,26 +130,156 @@ describe('userReducer(): add user actions', () => {
 });
 
 describe('userReducer(): form changes', () => {
-    const initialState = {
-      formText: ''
-    };
-    describe('when type is FORM_CHANGE', () => {
-      it('does not mutate state', () => {
-        const action = {
-          type: types.FORM_CHANGE,
-          data: 'e'
-        };
-        expect(userReducer(null, action)).to.not.equal(initialState);
-      });
-      it('replaces state accordingly', () => {
-        const exp = {
-          formText: 'e'
-        };
-        const action = {
-          type: types.FORM_CHANGE,
-          data: 'e'
-        };
-        expect(userReducer(initialState, action)).to.eql(exp);
-      });
+  const initialState = {
+    formText: '',
+    emailText: '',
+    nameText: '',
+    userNameText: '',
+    selectedLanguage: null,
+    selectedLevel: null
+  };
+  describe('when type is FORM_CHANGE', () => {
+    it('does not mutate state', () => {
+      const action = {
+        type: types.FORM_CHANGE,
+        data: 'e'
+      };
+      expect(userReducer(null, action)).to.not.equal(initialState);
+    });
+    it('replaces state accordingly', () => {
+      const exp = {
+        formText: 'e',
+        emailText: '',
+        nameText: '',
+        userNameText: '',
+        selectedLanguage: null,
+        selectedLevel: null
+      };
+      const action = {
+        type: types.FORM_CHANGE,
+        data: 'e'
+      };
+      expect(userReducer(initialState, action)).to.eql(exp);
     });
   });
+  describe('when type is HANDLE_EMAIL_CHANGE', () => {
+    it('does not mutate state', () => {
+      const action = {
+        type: types.HANDLE_EMAIL_CHANGE,
+        data: 'e'
+      };
+      expect(userReducer(null, action)).to.not.equal(initialState);
+    });
+    it('replaces state accordingly', () => {
+      const exp = {
+        formText: '',
+        emailText: 'e',
+        nameText: '',
+        userNameText: '',
+        selectedLanguage: null,
+        selectedLevel: null
+      };
+      const action = {
+        type: types.HANDLE_EMAIL_CHANGE,
+        data: 'e'
+      };
+      expect(userReducer(initialState, action)).to.eql(exp);
+    });
+  });
+  describe('when type is HANDLE_NAME_CHANGE', () => {
+    it('does not mutate state', () => {
+      const action = {
+        type: types.HANDLE_NAME_CHANGE,
+        data: 'e'
+      };
+      expect(userReducer(null, action)).to.not.equal(initialState);
+    });
+    it('replaces state accordingly', () => {
+      const exp = {
+        formText: '',
+        emailText: '',
+        nameText: 'e',
+        userNameText: '',
+        selectedLanguage: null,
+        selectedLevel: null
+      };
+      const action = {
+        type: types.HANDLE_NAME_CHANGE,
+        data: 'e'
+      };
+      expect(userReducer(initialState, action)).to.eql(exp);
+    });
+  });
+  describe('when type is HANDLE_USERNAME_CHANGE', () => {
+    it('does not mutate state', () => {
+      const action = {
+        type: types.HANDLE_USERNAME_CHANGE,
+        data: 'e'
+      };
+      expect(userReducer(null, action)).to.not.equal(initialState);
+    });
+    it('replaces state accordingly', () => {
+      const exp = {
+        formText: '',
+        emailText: '',
+        nameText: '',
+        userNameText: 'e',
+        selectedLanguage: null,
+        selectedLevel: null
+      };
+      const action = {
+        type: types.HANDLE_USERNAME_CHANGE,
+        data: 'e'
+      };
+      expect(userReducer(initialState, action)).to.eql(exp);
+    });
+  });
+  describe('when type is HANDLE_LANGUAGE_CHANGE', () => {
+    it('does not mutate state', () => {
+      const action = {
+        type: types.HANDLE_LANGUAGE_CHANGE,
+        data: 'e'
+      };
+      expect(userReducer(null, action)).to.not.equal(initialState);
+    });
+    it('replaces state accordingly', () => {
+      const exp = {
+        formText: '',
+        emailText: '',
+        nameText: '',
+        userNameText: '',
+        selectedLanguage: 'English',
+        selectedLevel: null
+      };
+      const action = {
+        type: types.HANDLE_LANGUAGE_CHANGE,
+        data: 'English'
+      };
+      expect(userReducer(initialState, action)).to.eql(exp);
+    });
+  });
+  describe('when type is HANDLE_LEVEL_CHANGE', () => {
+    it('does not mutate state', () => {
+      const action = {
+        type: types.HANDLE_LEVEL_CHANGE,
+        data: 'e'
+      };
+      expect(userReducer(null, action)).to.not.equal(initialState);
+    });
+    it('replaces state accordingly', () => {
+      const exp = {
+        formText: '',
+        emailText: '',
+        nameText: '',
+        userNameText: '',
+        selectedLanguage: null,
+        selectedLevel: 3
+      };
+      const action = {
+        type: types.HANDLE_LEVEL_CHANGE,
+        data: 3
+      };
+      expect(userReducer(initialState, action)).to.eql(exp);
+    });
+  });
+});
