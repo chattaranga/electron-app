@@ -55,6 +55,46 @@ describe('User actions:', () => {
            });
        });
    });
+   describe('addUser()', () => {
+       it('is a function', () => {
+           expect(userActions.addUser).to.be.a('function');
+       });
+       it('returns a function', () => {
+           expect(userActions.addUser()).to.be.a('function');
+       });
+   });
+   describe('addUserRequest()', () => {
+       it('is a function', () => {
+           expect(userActions.addUserRequest).to.be.a('function');
+       });
+       it('returns the expected action', () => {
+           expect(userActions.addUserRequest()).to.eql({
+               type: types.ADD_USER_REQUEST
+           });
+       });
+   });
+   describe('addUserSuccess()', () => {
+       it('is a function', () => {
+           expect(userActions.addUserSuccess).to.be.a('function');
+       });
+       it('returns the expected action', () => {
+           expect(userActions.addUserSuccess('user1')).to.eql({
+               type: types.ADD_USER_SUCCESS,
+               data: 'user1'
+           });
+       });
+   });
+   describe('addUserError()', () => {
+       it('is a function', () => {
+           expect(userActions.addUserError).to.be.a('function');
+       });
+       it('returns the expected action', () => {
+           expect(userActions.addUserError('err')).to.eql({
+               type: types.ADD_USER_ERROR,
+               data: 'err'
+           });
+       });
+   });
 });
 
 describe('Levels actions:', () => {
