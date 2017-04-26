@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const RemoteVideo = () => {
   return (
@@ -18,4 +18,4 @@ const RemoteVideo = () => {
   );
 };
 
-module.exports = RemoteVideo;
+export default RemoteVideo;

@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const TranslationBoxes = () => {
   return (
@@ -15,4 +15,4 @@ const TranslationBoxes = () => {
   );
 };
 
-module.exports = TranslationBoxes;
+export default TranslationBoxes;

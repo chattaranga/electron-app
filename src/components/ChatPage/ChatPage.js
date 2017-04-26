@@ -1,7 +1,7 @@
 import React from 'react';
 
-const RemoteVideo = require('./RemoteVideo');
-const SideBar = require('./SideBar');
+import RemoteVideo from './RemoteVideo';
+import SideBar from './SideBar';
 
 const ChatPage = () => {
   return (

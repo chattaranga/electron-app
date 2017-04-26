@@ -1,7 +1,7 @@
-const React = require('react');
+import React from 'react';
 
-const PromptList = require('./PromptsList');
-const TranslationBoxes = require('./TranslationBoxes');
+import PromptList from './PromptsList';
+import TranslationBoxes from './TranslationBoxes';
 
 const SideBar = () => {
   return (
@@ -12,4 +12,4 @@ const SideBar = () => {
   );
 };
 
-module.exports = SideBar;
+export default SideBar;

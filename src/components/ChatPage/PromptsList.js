@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const PromptsList = () => {
   return (
@@ -22,4 +22,4 @@ const PromptsList = () => {
   );
 };
 
-module.exports = PromptsList;
+export default PromptsList;
