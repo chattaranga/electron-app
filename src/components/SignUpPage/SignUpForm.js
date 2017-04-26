@@ -38,7 +38,17 @@ const SignUpForm = () => {
             </a>
           </div>
         </div>
-        
+        <div className='level-options'>
+          <div className='button-primary'>
+            <p>Beginner</p>
+          </div>
+          <div className='button-primary'>
+            <p>Intermediate</p>
+          </div>
+          <div className='button-primary'>
+            <p>Advanced</p>
+          </div>
+        </div>
         <input 
             className='button-primary' 
             type='submit' value='Sign Up'/>
