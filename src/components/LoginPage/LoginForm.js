@@ -32,6 +32,7 @@ class LoginForm extends Component {
         <Link to='/signup'>Sign Up</Link>
         <Link to='/hub'>Go to Hub</Link>
         <Link to='/achievements'>Go to Achievements</Link>
+        <Link to='/chat'>GO TO CHAT</Link>
       </div>
     );
   }
