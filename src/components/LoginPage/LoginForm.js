@@ -36,7 +36,6 @@ class LoginForm extends Component {
     );
   }
   handleChange (e) {
-    console.log(e);
     this.props.formChange(e.target.value);
   }
   handleLogin (username, e) {

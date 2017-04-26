@@ -42,3 +42,42 @@ export function formChange (e) {
     data: e
   };
 }
+
+export function addUser (username, language, level, name, email) {
+    return function (dispatch) {
+        dispatch(addUserRequest());
+        axios
+            .post(`${ROOT}/user`, {
+                username: username,
+                name: name,
+                email: email,
+                userLanguages: [{language: level}]
+            })
+            .then(res => {
+                dispatch(addUserSuccess(res.data));
+            })
+            .catch(err => {
+                dispatch(addUserError(err));
+            });
+    };
+}
+
+export function addUserRequest () {
+    return {
+        type: types.ADD_USER_REQUEST
+    };
+}
+
+export function addUserSuccess (user) {
+    return {
+        type: types.ADD_USER_SUCCESS,
+        data: user
+    };
+}
+
+export function addUserError (err) {
+    return {
+        type: types.ADD_USER_ERROR,
+        data: err
+    };
+}
