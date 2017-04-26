@@ -3,7 +3,7 @@ import {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
-import {fetchUser, formChange} from '../../actions/actions';
+import {fetchUser, formChange} from '../../actions/user.actions';
 
 class LoginForm extends Component {
   constructor(props) {
