@@ -1,9 +1,13 @@
 import React from 'react';
 
+import RemoteVideo from './RemoteVideo';
+import SideBar from './SideBar';
+
 const ChatPage = () => {
   return (
-    <div>
-      <p>ChatPage</p>
+    <div className='chat-page'>
+      <RemoteVideo />
+      <SideBar />
     </div>
   );
 };

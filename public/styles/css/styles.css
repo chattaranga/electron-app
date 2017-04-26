@@ -30,6 +30,17 @@
     -webkit-box-shadow: 0 0 30px 5px white;
     box-shadow: 0 0 30px 5px white; }
 
+.orange-msg-box {
+  padding: 1em;
+  border: 0;
+  background-color: #ffd8b2;
+  border-radius: 1.5em;
+  margin: 0.5em 0 0.5em 0; }
+  .orange-msg-box p {
+    margin: 0;
+    font-size: 1em;
+    color: #fa9128; }
+
 .LoginPage {
   display: flex;
   height: 100vh;
@@ -75,7 +86,7 @@
     .LoginPage form .submit {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      border-left: 0.3em solid #fa9128; }
+      margin-left: 0.3em; }
   .LoginPage a {
     text-align: center;
     color: #fff;
@@ -275,6 +286,54 @@
       align-self: center;
       font-weight: bolder;
       font-size: 1em; }
+
+.chat-page {
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  height: 100vh; }
+
+.remote-video-container {
+  background-color: #fff;
+  -webkit-flex: 2 0 0;
+  flex: 2 0 0;
+  margin: 0;
+  padding: 0; }
+
+.side-bar {
+  -webkit-flex: 1 0 0;
+  flex: 1 0 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; }
+
+.prompts-list {
+  -webkit-flex: 1 0 0;
+  flex: 1 0 0;
+  padding: 1em 1em 0.5em 1em; }
+
+.translation-boxes {
+  -webkit-flex: 1 0 0;
+  flex: 1 0 0;
+  padding: 0.5em 1em 1em 1em; }
+  .translation-boxes form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; }
+    .translation-boxes form textarea {
+      height: 50%;
+      border-radius: 1em;
+      border: 3px solid #fff; }
+      .translation-boxes form textarea:focus {
+        border: 3px solid #7de6e6; }
+
+.remote-video-container {
+  width: 100%;
+  height: 100%; }
 
 .achievements {
   display: flex;
