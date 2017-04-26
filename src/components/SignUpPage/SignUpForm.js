@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const SignUpForm = () => {
   return (
@@ -47,4 +47,4 @@ const SignUpForm = () => {
   );
 };
 
-module.exports = SignUpForm;
+export default SignUpForm;

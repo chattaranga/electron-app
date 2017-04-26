@@ -1,6 +1,6 @@
-const React = require('react');
-const Icons = require('./Icons');
-const LanguageButtons = require('./LanguageButtons');
+import React from 'react';
+import Icons from './Icons';
+import LanguageButtons from './LanguageButtons';
 
 const HubPage = () => {
   return (
@@ -16,4 +16,4 @@ const HubPage = () => {
   );
 };
 
-module.exports = HubPage;
+export default HubPage;

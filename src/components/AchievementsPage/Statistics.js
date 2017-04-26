@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const Statistics = () => {
   return (
@@ -31,4 +31,4 @@ const Statistics = () => {
   );
 };
 
-module.exports = Statistics;
+export default Statistics;

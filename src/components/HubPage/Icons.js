@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const Icons = () => {
   return (
@@ -32,4 +32,4 @@ const Icons = () => {
   );
 };
 
-module.exports = Icons;
+export default Icons;

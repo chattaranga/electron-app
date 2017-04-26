@@ -1,6 +1,5 @@
-const React = require('react');
-
-const SignUpForm = require('./SignUpForm');
+import React from 'react';
+import SignUpForm from './SignUpForm';
 
 const SignUpPage = () => {
   return (
@@ -13,4 +12,4 @@ const SignUpPage = () => {
   );
 };
 
-module.exports = SignUpPage;
+export default SignUpPage;
