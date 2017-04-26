@@ -1,5 +1,5 @@
-const React = require('react');
-const LoginForm = require('./LoginForm');
+import React from 'react';
+import LoginForm from './LoginForm';
 
 const LoginPage = () => {
   return (
@@ -10,4 +10,4 @@ const LoginPage = () => {
   );
 };
 
-module.exports = LoginPage;
+export default LoginPage;

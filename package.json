@@ -4,13 +4,13 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "mocha ./spec",
+    "test": "mocha ./src/spec --compilers js:babel-core/register",
     "posttest": "npm run lint",
     "lint": "eslint ./",
     "precommit": "npm test",
-    "build-scss": "node-sass public/styles/ --source-map true -o public/styles/css",
-    "start": "npm run build-scss && npm run bundle && ./node_modules/.bin/electron .",
-    "bundle": "webpack"
+    "build-scss": "node-sass src/styles/ --source-map true -o public/styles/css",
+    "start": "./node_modules/.bin/electron .",
+    "bundle": "webpack --progress --colors --watch"
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +31,8 @@
     "eslint-plugin-jsx": "0.0.2",
     "eslint-plugin-react": "^6.10.3",
     "node-sass": "^4.5.2",
+    "redux-logger": "^3.0.1",
+    "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.3",
     "spectron": "^3.6.2",
     "style-loader": "^0.16.1",
@@ -38,9 +40,12 @@
     "webpack": "^2.4.1"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router": "^3.0.5"
+    "react-redux": "^5.0.4",
+    "react-router": "^3.0.5",
+    "redux": "^3.6.0"
   }
 }

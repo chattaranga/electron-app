@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const ChatPage = () => {
   return (
@@ -8,4 +8,4 @@ const ChatPage = () => {
   );
 };
 
-module.exports = ChatPage;
+export default ChatPage;

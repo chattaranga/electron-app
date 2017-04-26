@@ -1,6 +1,6 @@
-const React = require('react');
-const Statistics = require('./Statistics');
-const Badges = require('./Badges');
+import React from 'react';
+import Statistics from './Statistics';
+import Badges from './Badges';
 
 
 const AchievementsPage = () => {
@@ -14,4 +14,4 @@ const AchievementsPage = () => {
   );
 };
 
-module.exports = AchievementsPage;
+export default AchievementsPage;

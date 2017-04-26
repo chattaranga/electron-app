@@ -1,5 +1,5 @@
-const React = require('react');
-const Main = require('./Main');
+import React from 'react';
+import Main from './Main';
 
 const App = () => {
   return (
@@ -10,4 +10,4 @@ const App = () => {
   );
 };
 
-module.exports = App;
+export default App;
