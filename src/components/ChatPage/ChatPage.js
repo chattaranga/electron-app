@@ -1,9 +1,13 @@
 const React = require('react');
 
+const RemoteVideo = require('./RemoteVideo');
+const SideBar = require('./SideBar');
+
 const ChatPage = () => {
   return (
-    <div>
-      <p>ChatPage</p>
+    <div className='chat-page'>
+      <RemoteVideo />
+      <SideBar />
     </div>
   );
 };

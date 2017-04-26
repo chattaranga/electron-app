@@ -17,6 +17,7 @@ const LoginForm = () => {
       <Link to='/signup'>Sign Up</Link>
       <Link to='/hub'>Go to Hub</Link>
       <Link to='/achievements'>Go to Achievements</Link>
+      <Link to='/chat'>Go to CHAT</Link>
     </div>
   );
 };
