@@ -26,6 +26,4 @@ function userReducer (prevState = initialState, action) {
   return newState;
 }
 
-
-
 export default userReducer;

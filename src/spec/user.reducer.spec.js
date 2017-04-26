@@ -12,7 +12,7 @@ describe('userReducer()', () => {
   it('is a function', () => {
     expect(userReducer).to.be.a('function');
   });
-  describe('when type is FETCH_TOPIC_REQUEST', () => {
+  describe('when type is FETCH_USER_REQUEST', () => {
     it('does not mutate state', () => {
       const action = {
         type: types.FETCH_USER_REQUEST
