@@ -1,17 +1,27 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const {Router, Route, IndexRoute, hashHistory} = require('react-router');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {createStore, applyMiddleware} from 'redux';
+import {Provider} from 'react-redux';
+import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import thunk from 'redux-thunk';
+import {createLogger} from 'redux-logger';
 
-const Main = require('./components/Main');
-const Achievements = require('./components/AchievementsPage/AchievementsPage');
-const LoginPage = require('./components/LoginPage/LoginPage');
-const HubPage = require('./components/HubPage/HubPage');
-const SignUpPage = require('./components/SignUpPage/SignUpPage');
-const ChatPage = require('./components/ChatPage/ChatPage');
+import Main from './components/Main';
+console.log(Main);
+import Achievements from './components/AchievementsPage/AchievementsPage';
+import LoginPage from './components/LoginPage/LoginPage';
+import HubPage from './components/HubPage/HubPage';
+import SignUpPage from './components/SignUpPage/SignUpPage';
+import ChatPage from './components/ChatPage/ChatPage';
 
-require('../public/styles/css/styles.css');
+import '../public/styles/css/styles.css';
+import reducer from './reducer/index.reducer';
+
+const logger = createLogger();
+const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render((
+  <Provider store={store}>
   <Router history={hashHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={LoginPage}/>
@@ -22,4 +32,5 @@ ReactDOM.render((
       <Route path='/chat' component={ChatPage}/>
     </Route>
   </Router>
+  </Provider>
 ), document.getElementById('root'));

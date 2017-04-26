@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const LanguageButtons = () => {
   return (
@@ -27,4 +27,4 @@ const LanguageButtons = () => {
   );
 };
 
-module.exports = LanguageButtons;
+export default LanguageButtons;

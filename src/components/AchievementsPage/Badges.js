@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const Badges = () => {
     return (
@@ -47,4 +47,4 @@ const Badges = () => {
     );
 };
 
-module.exports = Badges;
+export default Badges;
