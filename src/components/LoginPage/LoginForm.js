@@ -5,6 +5,7 @@ import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {fetchUser, formChange} from '../../actions/user.actions';
 import {fetchLevels} from '../../actions/levels.actions';
+import {fetchLanguages} from '../../actions/languages.actions';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class LoginForm extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   componentDidMount () {
-    // this.props.getLanguages();
+    this.props.fetchLanguages();
     this.props.fetchLevels();
   }
   render() {
@@ -67,9 +68,9 @@ function mapDispatchToProps (dispatch) {
     formChange: e => {
       dispatch(formChange(e));
     },
-    // getLanguages: e => {
-    //   dispatch(getLanguages(e));
-    // },
+    fetchLanguages: e => {
+      dispatch(fetchLanguages(e));
+    },
     fetchLevels: e => {
       dispatch(fetchLevels(e));
     }

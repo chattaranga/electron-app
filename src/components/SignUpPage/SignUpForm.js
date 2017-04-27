@@ -1,7 +1,7 @@
 import React from 'react';
 import {Component} from 'react';
 // import {PropTypes} from 'prop-types';
-import Link from 'react-router';
+import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {addUser, handleEmailChange, handleNameChange, handleUsernameChange, handleLanguageChange, handleLevelChange} from '../../actions/user.actions';
 
@@ -14,6 +14,8 @@ class SignUpForm extends Component {
     this.handleLanguageChange = this.handleLanguageChange.bind(this);
     this.handleLevelChange = this.handleLevelChange.bind(this);
     this.addUser = this.addUser.bind(this);
+    this.getLanguageButtons = this.getLanguageButtons.bind(this);
+    this.capitalise = this.capitalise.bind(this);
   }
   render() {
     if (this.props.user) {
@@ -23,88 +25,79 @@ class SignUpForm extends Component {
           <Link to='/hub'><h3 className='button-primary'>Enter</h3></Link>
         </div>
       );
-    } else
-    return (
-      <div className='signup-form'>
-        <form onSubmit={this.addUser}>
-          <div className='forms'>
+    }
+      const languageButtons = this.getLanguageButtons(this.props.languages);
+      const levelButtons = this.getLevelButtons(this.props.levels);
+      return (
+        <div className='signup-form'>
+          <form onSubmit={this.addUser}>
+            <div className='forms'>
+              <input 
+                  className='text-box long' 
+                  type='text' 
+                  placeholder='Email'
+                  value={this.props.emailText}
+                  onChange={this.handleEmailChange}/>
+              <div className='inline'>
+                <input 
+                    className='text-box left' 
+                    type='text' 
+                    placeholder='First Name'
+                    value={this.props.nameText}
+                    onChange={this.handleNameChange}/>
+                <input 
+                    className='text-box' 
+                    type='text' 
+                    placeholder='Username'
+                    value={this.props.userNameText}
+                    onChange={this.handleUsernameChange}/>
+              </div>
+            </div>
+            <h2>What do you want to learn?</h2>
+            <div className='signup-flag-buttons'>
+              {languageButtons}
+          
+            </div>
+            <div className='level-options'>
+              {levelButtons}
+            </div>
             <input 
-                className='text-box long' 
-                type='text' 
-                placeholder='Email'
-                value={this.props.emailText}
-                onChange={this.handleEmailChange}/>
-
-            <div className='inline'>
-              <input 
-                  className='text-box left' 
-                  type='text' 
-                  placeholder='First Name'
-                  value={this.props.nameText}
-                  onChange={this.handleNameChange}/>
-              <input 
-                  className='text-box' 
-                  type='text' 
-                  placeholder='Username'
-                  value={this.props.userNameText}
-                  onChange={this.handleUsernameChange}/>
-            </div>
-          </div>
-          <h2>What do you want to learn?</h2>
-          <div className='signup-flag-buttons'>
-            <div>
+                className='button-primary' 
+                type='submit' 
+                value='Sign Up'/>
+          </form>
+        </div>
+      );
+    
+  }
+  capitalise (s) {
+    s = s.split('');
+    s[0] = s[0].toUpperCase();
+    return s;
+  }
+  getLanguageButtons (languages) {
+     return languages.map(language => {
+      return (
+          <div>
               <a><img 
-                  onClick={this.handleLanguageChange.bind(null, 'English')}
-                  src={'img/uk.png'}/>
-                <p>English</p>
+                  onClick={this.handleLanguageChange.bind(null, String(language._id))}
+                  src={`img/${language.name}.png`}/>
+                <p>{this.capitalise(language.name)}</p>
               </a>
             </div>
-            <div>
-              <a><img 
-                  onClick={this.handleLanguageChange.bind(null, 'Spanish')}
-                  src={'img/spain.png'}/>
-                <p>Spanish</p>
-              </a>
-            </div>
-            <div>
-              <a><img 
-                  onClick={this.handleLanguageChange.bind(null, 'Italian')}
-                  src={'img/italy.png'}/>
-                <p>Italian</p>
-              </a>
-            </div>
-            <div>
-              <a><img 
-                  onClick={this.handleLanguageChange.bind(null, 'French')}
-                  src={'img/france.png'}/>
-                <p>French</p>
-              </a>
-            </div>
-          </div>
-          <div className='level-options'>
-            <div
-                onClick={this.handleLevelChange.bind(null, 'Beginner')} 
-                className='button-primary'>
-              <p>Beginner</p>
-            </div>
-            <div
-                onClick={this.handleLevelChange.bind(null, 'Intermediate')} 
-                className='button-primary'>
-              <p>Intermediate</p>
-            </div>
-            <div
-                onClick={this.handleLevelChange.bind(null, 'Advanced')} 
-                className='button-primary'>
-              <p>Advanced</p>
-            </div>
-          </div>
-          <input 
-              className='button-primary' 
-              type='submit' 
-              value='Sign Up'/>
-        </form>
-      </div>
-    );
+      );
+    });
+  }
+  getLevelButtons (levels) {
+    return levels.map(level => {
+      return (
+        <div
+            onClick={this.handleLevelChange.bind(null, String(level._id))} 
+            className='button-primary'>
+          <p>{this.capitalise(level.name)}</p>
+        </div>
+      );
+    });
   }
   addUser (e) {
     e.preventDefault();
@@ -160,7 +153,9 @@ function mapStateToProps(state) {
     nameText: state.user.nameText,
     userNameText: state.user.userNameText,
     selectedLanguage: state.user.selectedLanguage,
-    selectedLevel: state.user.selectedLevel
+    selectedLevel: state.user.selectedLevel, 
+    languages: state.languages.languages,
+    levels: state.levels.levels
   };
 }
 

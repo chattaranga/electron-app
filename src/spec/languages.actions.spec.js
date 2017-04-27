@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import * as types from '../actions/types';
-import * as languagesActions from '../actions/languages.actions.js';
+import * as languagesActions from '../actions/<l></l>anguages.actions.js';
 
 describe('Languages actions:', () => {
    describe('fetchLanguages()', () => {
