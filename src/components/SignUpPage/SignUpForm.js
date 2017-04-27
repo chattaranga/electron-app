@@ -78,7 +78,7 @@ class SignUpForm extends Component {
   getLanguageButtons (languages) {
      return languages.map((language, i) => {
       return (
-        <div key={i}>
+        <div key={i} className={''/* selected ? selected + i : 'unselected'*/}>
           <a><img 
               onClick={this.handleLanguageChange.bind(null, String(language._id))}
               src={`img/${language.name}.png`}/>
@@ -94,7 +94,7 @@ class SignUpForm extends Component {
         <div
             key={i}
             onClick={this.handleLevelChange.bind(null, String(level._id))} 
-            className='button-primary'>
+            className={'button-primary'/* selected ? selected + i + ' button-primary' : 'button-primary unselected'*/}>
           <p>{this.capitalise(level.name)}</p>
         </div>
       );

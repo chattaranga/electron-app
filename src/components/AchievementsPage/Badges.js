@@ -6,7 +6,7 @@ const Badges = props => {
             return (
                 <div key={i}>
                     <div className='badge round-icon'></div>
-                    <p>{'Badge' + i}</p>
+                    <p>{badge.description}</p>
                 </div>
               );
             })
