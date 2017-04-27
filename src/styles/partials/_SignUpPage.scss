@@ -80,7 +80,7 @@
 
 .signup-flag-buttons {
     width: 100%;
-    margin-top: 3vh;
+    margin-top: 2vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,5 +105,16 @@
             font-weight: bolder;
             font-size: 1em;
         }
+    }
+}
+
+.level-options {
+    display: flex;
+    width: 30%;
+    height: 2em;
+    margin-bottom: 2em;
+    justify-content: space-around;
+    .button-primary {
+        margin: 0 1em 0 1em;
     }
 }

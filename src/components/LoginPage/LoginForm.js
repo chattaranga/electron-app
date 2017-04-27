@@ -3,7 +3,7 @@ import {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
-import {fetchUser, formChange} from '../../actions/actions';
+import {fetchUser, formChange} from '../../actions/user.actions';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class LoginForm extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   render() {
-    const message = this.props.error ? (<p>Something went wrong!</p>) : (<p/>);
+    const message = this.props.error ? (<p className='error-message'>Something went wrong!</p>) : (<p/>);
     return (
       <div>
         <form onSubmit={this.handleLogin.bind(null, this.props.formText)}>
@@ -27,8 +27,8 @@ class LoginForm extends Component {
               type='submit' 
               value='Log in'
               />
-            {message}
         </form>
+        {message}
         <Link to='/signup'>Sign Up</Link>
         <Link to='/hub'>Go to Hub</Link>
         <Link to='/achievements'>Go to Achievements</Link>
@@ -37,7 +37,6 @@ class LoginForm extends Component {
     );
   }
   handleChange (e) {
-    console.log(e);
     this.props.formChange(e.target.value);
   }
   handleLogin (username, e) {
