@@ -76,22 +76,23 @@ class SignUpForm extends Component {
     return s;
   }
   getLanguageButtons (languages) {
-     return languages.map(language => {
+     return languages.map((language, i) => {
       return (
-          <div>
-              <a><img 
-                  onClick={this.handleLanguageChange.bind(null, String(language._id))}
-                  src={`img/${language.name}.png`}/>
-                <p>{this.capitalise(language.name)}</p>
-              </a>
-            </div>
+        <div key={i}>
+          <a><img 
+              onClick={this.handleLanguageChange.bind(null, String(language._id))}
+              src={`img/${language.name}.png`}/>
+            <p>{this.capitalise(language.name)}</p>
+          </a>
+        </div>
       );
     });
   }
   getLevelButtons (levels) {
-    return levels.map(level => {
+    return levels.map((level, i) => {
       return (
         <div
+            key={i}
             onClick={this.handleLevelChange.bind(null, String(level._id))} 
             className='button-primary'>
           <p>{this.capitalise(level.name)}</p>
