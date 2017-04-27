@@ -1,29 +1,29 @@
 import React from 'react';
 
-const Statistics = () => {
+const Statistics = props => {
   return (
     <div className='Statistics'>
      <div className='icondata'>
         <div className='icon round-icon'>
-            <p>134</p>
+            <p>{props.chats}</p>
         </div>
         <p>Chattas</p>
      </div>
      <div className='icondata'>
         <div className='icon round-icon'>
-            <p>5</p>
+            <p>{props.smileys}</p>
         </div>
         <p>Chatta-Smile</p>
      </div>
     <div className='icondata'>
         <div className='icon round-icon'>
-            <p>13</p>
+            <p>{props.teacherPoints}</p>
         </div>
         <p>Chatta-Coach</p>
      </div>
      <div className='icondata'>
         <div className='icon round-icon'>
-            <p>4</p>
+            <p>{props.talkTime}</p>
         </div>
         <p>Chatta-Time</p>
      </div>

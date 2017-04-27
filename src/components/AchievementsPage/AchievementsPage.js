@@ -19,9 +19,14 @@ class AchievementsPage extends Component {
     return (
       <div className='achievements'>
           <h1>Statistics</h1>
-          <Statistics/>
+          <Statistics
+              chats={this.getTotalPoints(this.props.user, 'numOfChats')}
+              smileys={this.props.user.smileys}
+              talkTime={this.getTotalPoints(this.props.user, 'talkTime')}
+              teacherPoints={this.getTotalPoints(this.props.user, 'teacherPoints')}
+          />
           <h1>Badges</h1>
-          <Badges/>
+          <Badges badges={this.props.badges}/>
       </div>
     );
   }
@@ -44,7 +49,8 @@ function mapStateToProps(state) {
   return {
     user: state.user.user, 
     error: state.user.error, 
-    loading: state.user.loading
+    loading: state.user.loading,
+    badges: state.badges.badges
   };
 }
 
