@@ -6,7 +6,7 @@ export function fetchUser (username) {
     return function (dispatch) {
         dispatch(fetchUserRequest());
         axios
-            .get(`${ROOT}/user/${username}`)
+            .get(`${ROOT}users/${username}`)
             .then(res => {
                 dispatch(fetchUserSuccess(res.data));
             })
@@ -47,7 +47,7 @@ export function addUser (username, language, level, name, email) {
     return function (dispatch) {
         dispatch(addUserRequest());
         axios
-            .post(`${ROOT}/user`, {
+            .post(`${ROOT}users`, {
                 username: username,
                 name: name,
                 email: email,

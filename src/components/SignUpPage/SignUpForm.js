@@ -1,6 +1,7 @@
 import React from 'react';
 import {Component} from 'react';
 // import {PropTypes} from 'prop-types';
+import Link from 'react-router';
 import {connect} from 'react-redux';
 import {addUser, handleEmailChange, handleNameChange, handleUsernameChange, handleLanguageChange, handleLevelChange} from '../../actions/user.actions';
 
@@ -15,12 +16,20 @@ class SignUpForm extends Component {
     this.addUser = this.addUser.bind(this);
   }
   render() {
+    if (this.props.user) {
+      return (
+        <div>
+          <h2>{`${this.props.user.name}, your Chattaranga journey begins here`}</h2>
+          <Link to='/hub'><h3 className='button-primary'>Enter</h3></Link>
+        </div>
+      );
+    } else
     return (
       <div className='signup-form'>
         <form onSubmit={this.addUser}>
           <div className='forms'>
             <input 
-                className='text-box long ' 
+                className='text-box long' 
                 type='text' 
                 placeholder='Email'
                 value={this.props.emailText}
