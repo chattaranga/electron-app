@@ -2,9 +2,16 @@ import React from 'react';
 
 const PromptsList = () => {
   return (
-    <div className='prompts-list'>
-      
-      <h3>prompts</h3>
+    <div className='prompts-list'> 
+        
+      <div className='prompts-header'>
+        <div className='prompts-header-item'>
+          <h3>Prompts</h3>
+        </div>
+        <div className='prompts-header-item'>
+          <button className='button-primary'>refresh</button>
+        </div>
+      </div>
       
       <div className='orange-msg-box'>
         <p>Here is a helpful prompt to get the conversation flowing.</p>

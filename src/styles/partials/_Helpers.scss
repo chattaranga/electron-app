@@ -35,9 +35,9 @@
 
 .orange-msg-box {
     padding: 1em;
-    border: 0;
-    background-color: $primary-light;
-    border-radius: 1.5em;
+    border: 0.2em solid $primary-light;
+    background-color: $white;
+    border-radius: 1em;
     margin: 0.5em 0 0.5em 0;
     p {
         margin: 0;
