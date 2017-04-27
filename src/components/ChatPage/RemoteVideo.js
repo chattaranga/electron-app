@@ -6,22 +6,29 @@ class RemoteVideo extends Component {
 
     this.state = {};
     this.getLocalMedia = this.getLocalMedia.bind(this);
+    // this.handleConnection = this.handleConnection.bind(this);
   }
 
   componentDidMount () {
     this.getLocalMedia();
+    // this.handleConnection();
   }
 
   getLocalMedia () {
     navigator.getUserMedia({
-      audio: false,
+      audio: false,   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       video: true
     }, stream => {
       this.setState({
         localVideo: URL.createObjectURL(stream)
       });
+      window.localStream = stream;
     }, () => {});
   }
+
+  // handleConnection () {
+  //   this.props.chat.connect('USERNAME');  // !!!!!!!!!!!!!!!!!!!!!!!
+  // }
 
   render () {
     return (
@@ -38,7 +45,9 @@ class RemoteVideo extends Component {
 
         <div className='ab-bottom'>
           <div className='chat-buttons'>
-            <p>BUTTON</p>
+            <div className='end-call'>
+              <img src='img/icons/red-phone.svg' alt='end-call'/>
+            </div>
           </div>
           <div className='local-video-container'>
             <video 
@@ -49,6 +58,8 @@ class RemoteVideo extends Component {
                 muted='true'>
               Something Went Wrong :(
             </video>
+          </div>
+          <div className='right-padding'>
           </div>
         </div>
 

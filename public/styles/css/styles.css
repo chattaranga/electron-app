@@ -100,6 +100,11 @@
       color: #b85e04;
       text-decoration: none; }
 
+.error-message {
+  color: red;
+  font-weight: bolder;
+  text-align: center; }
+
 .sign-up-page {
   width: 100vw;
   height: 100vh;
@@ -172,7 +177,7 @@
 
 .signup-flag-buttons {
   width: 100%;
-  margin-top: 3vh;
+  margin-top: 2vh;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -194,6 +199,15 @@
       align-self: center;
       font-weight: bolder;
       font-size: 1em; }
+
+.level-options {
+  display: flex;
+  width: 30%;
+  height: 2em;
+  margin-bottom: 2em;
+  justify-content: space-around; }
+  .level-options .button-primary {
+    margin: 0 1em 0 1em; }
 
 .HubPage {
   display: flex;
@@ -320,34 +334,64 @@
 
 .remote-video-container {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative; }
   .remote-video-container .ab-bottom {
     position: absolute;
-    bottom: 1em;
-    left: 1em;
-    right: 1em;
+    bottom: 0;
     height: 20%;
-    width: 66.66667%;
-    margin-bottom: 1em;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2em;
     display: flex;
     flex-direction: row;
     align-content: stretch; }
 
 .local-video-container {
-  width: 100%;
   height: 100%;
   align-self: flex-end;
-  border: 0.2em solid #fa9128;
-  border-radius: 1em; }
+  flex: 1 0 0;
+  margin-left: 1em;
+  margin-right: 1em; }
 
 .chat-buttons {
-  width: 100%;
   height: 100%;
-  align-self: flex-start; }
+  align-self: flex-start;
+  flex: 2 0 0;
+  margin-left: 1em;
+  margin-right: 1em;
+  display: flex;
+  align-items: center; }
+  .chat-buttons .end-call {
+    height: 5em;
+    width: 5em;
+    border-radius: 100%; }
+    .chat-buttons .end-call img {
+      height: 5em;
+      width: 5em; }
+    .chat-buttons .end-call:hover {
+      cursor: pointer;
+      -moz-box-shadow: 0 0 10px 5px white;
+      -webkit-box-shadow: 0 0 10px 5px white;
+      box-shadow: 0 0 10px 5px white; }
 
 .vid {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+.prompts-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 0.2em solid #ff8002; }
+  .prompts-header .prompts-header-ltem {
+    flex: 1 0 0; }
 
 .achievements {
   display: flex;
