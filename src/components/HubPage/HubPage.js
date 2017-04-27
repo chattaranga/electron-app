@@ -39,7 +39,7 @@ class HubPage extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps() {
   return {
   };
 }

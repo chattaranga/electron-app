@@ -6,7 +6,7 @@ export function fetchLanguages () {
     return function (dispatch) {
         dispatch(fetchLanguagesRequest());
         axios
-            .get(`${ROOT}Languages`)
+            .get(`${ROOT}languages`)
             .then(res => {
                 dispatch(fetchLanguagesSuccess(res.data));
             })
@@ -23,7 +23,6 @@ export function fetchLanguagesRequest () {
 }
 
 export function fetchLanguagesSuccess (languages) {
-    console.log(languages);
     return {
         type: types.FETCH_LANGUAGES_SUCCESS,
         data: languages

@@ -68,11 +68,11 @@ function mapDispatchToProps (dispatch) {
     formChange: e => {
       dispatch(formChange(e));
     },
-    fetchLanguages: e => {
-      dispatch(fetchLanguages(e));
+    fetchLanguages: () => {
+      dispatch(fetchLanguages());
     },
-    fetchLevels: e => {
-      dispatch(fetchLevels(e));
+    fetchLevels: () => {
+      dispatch(fetchLevels());
     }
   };
 }
