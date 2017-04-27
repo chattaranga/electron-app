@@ -43,6 +43,7 @@
     align-items: stretch;
 
     textarea {
+      padding: 1em;
       height: 50%;
       border-radius: 1em;
       border: 3px solid $white;
@@ -56,11 +57,27 @@
 .remote-video-container {
   width: 100%;
   height: 100%;
-  display: flex;
+  
+  .ab-bottom {
+    position: absolute;
+    bottom: 0;
+    height: 20%;
+    width: 100% * 2 / 3;
+
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+  }
 }
 
 .local-video-container {
-  width: 20%;
-  height: 20%;
-  
+  width: 100%;
+  height: 100%;
+  align-self: flex-end;
+}
+
+.chat-buttons {
+  width: 100%;
+  height: 100%;
+  align-self: flex-start;
 }

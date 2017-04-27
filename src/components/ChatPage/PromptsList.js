@@ -4,7 +4,11 @@ const PromptsList = () => {
   return (
     <div className='prompts-list'>
       
-      <h3>prompts</h3>
+      <p>prompts 
+        <span>
+          <button className='button-primary'>refresh</button>
+        </span>
+      </p>
       
       <div className='orange-msg-box'>
         <p>Here is a helpful prompt to get the conversation flowing.</p>

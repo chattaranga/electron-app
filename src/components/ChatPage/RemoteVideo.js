@@ -8,10 +8,15 @@ const RemoteVideo = () => {
         Something Went Wrong :(
       </video>
 
-      <div className='local-video-container'>
-        <video classID='local-video'>
-          Something Went Wrong :(
-        </video>
+      <div className='ab-bottom'>
+        <div className='chat-buttons'>
+          <p>BUTTON</p>
+        </div>
+        <div className='local-video-container'>
+          <video classID='local-video'>
+            Something Went Wrong :(
+          </video>
+        </div>
       </div>
 
     </div>
