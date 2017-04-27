@@ -116,3 +116,9 @@ export function handleLevelChange (level) {
     data: level
   };
 }
+
+export function logOut () {
+  return {
+    type: types.LOG_OUT
+  };
+}

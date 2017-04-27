@@ -3,6 +3,7 @@ import {Component} from 'react';
 // import {PropTypes} from 'prop-types';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
+import {logOut} from '../../actions/user.actions';
 import LanguageButtons from './LanguageButtons';
 import Icons from './Icons';
 
@@ -28,7 +29,7 @@ class HubPage extends Component {
         <h5>Which language are you training in today?</h5>
         <LanguageButtons 
             userLanguages={user.userLanguages}/>
-        <Link to='/'>Log out</Link>
+        <Link to='/' onClick={this.logOut}>Log out</Link>
       </div>
     );
   }
@@ -39,8 +40,11 @@ class HubPage extends Component {
   }
 }
 
-function mapDispatchToProps() {
+function mapDispatchToProps(dispatch) {
   return {
+    logOut: () => {
+      dispatch(logOut());
+    }
   };
 }
 
