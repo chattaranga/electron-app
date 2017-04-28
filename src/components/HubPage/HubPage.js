@@ -27,9 +27,8 @@ class HubPage extends Component {
         </div>
         <h2>{`¡Buenos días, ${user.name}!`}</h2>
         <h5>Which language are you training in today?</h5>
-        <LanguageButtons 
-            userLanguages={user.userLanguages}/>
-        <span className='button-primary' onClick={this.props.logOut}><Link to='/' >Log out</Link></span>
+        <LanguageButtons userLanguages={user.userLanguages}/>
+        <p className='button-linking' onClick={this.props.logOut}><Link to='/' >Log out</Link></p>
       </div>
     );
   }

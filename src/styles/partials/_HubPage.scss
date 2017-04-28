@@ -26,6 +26,25 @@
             font-size: 200px;
         }
     }
+    a {
+        text-align: center;
+        padding: 1.3em;
+        color: $primary;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bolder;
+        &:visited {
+            color: $primary;
+            text-decoration: none;
+        }
+        &:hover {
+            color: darken($primary, 20%);
+            text-decoration: none;
+        }
+    }
+    .button-linking {
+        width: 120px;
+    }
 }
 
 .Icons {

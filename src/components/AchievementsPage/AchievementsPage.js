@@ -27,7 +27,7 @@ class AchievementsPage extends Component {
           />
           <h1>Badges</h1>
           <Badges badges={this.props.badges}/>
-          <Link to='/hub'><h3 className='button-primary'>Back</h3></Link>
+          <Link to='/hub'><h3 className='button-linking'>Back</h3></Link>
       </div>
     );
   }
