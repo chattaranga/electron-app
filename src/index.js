@@ -13,7 +13,7 @@ import HubPage from './components/HubPage/HubPage';
 import SignUpPage from './components/SignUpPage/SignUpPage';
 import ChatPage from './components/ChatPage/ChatPage';
 
-import '../public/styles/css/styles.css';
+import '../src/styles/styles.scss';
 import reducer from './reducer/index.reducer';
 
 const logger = createLogger();

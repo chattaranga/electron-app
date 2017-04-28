@@ -29,7 +29,7 @@ class HubPage extends Component {
         <h5>Which language are you training in today?</h5>
         <LanguageButtons 
             userLanguages={user.userLanguages}/>
-        <Link to='/' onClick={this.logOut}>Log out</Link>
+        <span className='button-primary' onClick={this.props.logOut}><Link to='/' >Log out</Link></span>
       </div>
     );
   }
