@@ -14,9 +14,14 @@
         flex-direction: column;
         h1 {
             font-size: 72pt;
+            margin: 0 0 17px 0;
         }
         h2 {
-            margin-top: 5vh;
+            margin-top: 3vh;
+            span {
+                color: red;
+                font-size: 130%;
+            }
         }
     }
 }
@@ -112,7 +117,8 @@
     display: flex;
     width: 30%;
     height: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 3vh;
+    margin-top: 2vh;
     justify-content: space-around;
     .button-primary {
         margin: 0 1em 0 1em;

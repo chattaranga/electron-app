@@ -18,6 +18,14 @@ class SignUpForm extends Component {
     this.capitalise = this.capitalise.bind(this);
   }
   render() {
+    // if (this.props.languages.error.message === 'Network Error') {
+    //   return (
+    //     <div>
+    //       <h2>There's no connection right now</h2>
+    //       <h3>Please check your connection and try again!</h3>
+    //     </div>
+    //   );
+    // }
     if (this.props.user) {
       return (
         <div>
@@ -95,7 +103,7 @@ class SignUpForm extends Component {
             key={i}
             onClick={this.handleLevelChange.bind(null, String(level._id))} 
             className={'button-primary'/* selected ? selected + i + ' button-primary' : 'button-primary unselected'*/}>
-          <p>{this.capitalise(level.name)}</p>
+          {this.capitalise(level.name)}
         </div>
       );
     });

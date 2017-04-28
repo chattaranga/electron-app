@@ -16,8 +16,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: winState.width,
     height: winState.height,
-    minWidth: 800,
-    minHeight: 600,
+    minWidth: 900,
+    minHeight: 900,
     x: winState.x,
     y: winState.y,
     show: false,

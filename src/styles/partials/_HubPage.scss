@@ -4,6 +4,10 @@
     color: $white;
     font-family: $main;
     padding: 3vh 6vh 3vh 6vh;
+    img { 
+        width: 11em;
+        height: 11em;
+    }
     h2 {
         align-self: center;
         margin: 0 0 10vh 0;
@@ -19,6 +23,7 @@
     .inline {
         display: flex;
         align-items: center;
+        margin-bottom: 4vh;
         justify-content: space-between;
         h1 {
             margin: 0 5% 0 0;
@@ -49,6 +54,10 @@
 
 .Icons {
     display: flex;
+    .icondata {
+        display: flex; 
+        align-items: center;
+    }
     .icon {
         margin: 0 0.8em 0 0.8em;
         width: 5em;
@@ -78,13 +87,14 @@
         }
     }
     .achievements {
-        padding-top: 1em;
+        display: flex;
+        align-items: center;
     }
 }
 
 .hub-page-buttons {
     display: flex;
-    margin-top: 10vh;
+    margin-top: 3vh;
     justify-content: center;
     align-items: center;
     a {

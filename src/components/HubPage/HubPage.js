@@ -19,7 +19,7 @@ class HubPage extends Component {
     return (
       <div className='HubPage'>
         <div className='inline'>
-          <h1>~</h1>
+          <img className='logo' src='img/logos/logo-box-transparent-grad.png'/>
           <Icons
               chats={this.getTotalPoints(user, 'numOfChats')}
               smileys={user.smileys}
