@@ -46,7 +46,7 @@ class RemoteVideo extends Component {
         <div className='ab-bottom'>
           <div className='chat-buttons'>
             <div className='end-call'>
-              <img src='img/icons/red-phone.svg' alt='end-call'/>
+              <img src='img/icons/red-phone.png' alt='end-call'/>
             </div>
           </div>
           <div className='local-video-container'>

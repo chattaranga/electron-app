@@ -9,7 +9,8 @@
   font-weight: bold;
   padding: 1.3em;
   font-size: 1em;
-  border-radius: 1em; }
+  border-radius: 1em;
+  outline: none; }
   .button-primary:hover {
     cursor: pointer;
     -moz-box-shadow: 0 0 10px 5px white;
@@ -371,11 +372,10 @@
     border-radius: 100%; }
     .chat-buttons .end-call img {
       height: 5em;
-      width: 5em; }
+      width: 5em;
+      transform: rotate(90deg); }
     .chat-buttons .end-call:hover {
       cursor: pointer;
-      -moz-box-shadow: 0 0 10px 5px white;
-      -webkit-box-shadow: 0 0 10px 5px white;
       box-shadow: 0 0 10px 5px white; }
 
 .vid {
@@ -388,10 +388,11 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5em;
-  padding-bottom: 0.5em;
   border-bottom: 0.2em solid #ff8002; }
-  .prompts-header .prompts-header-ltem {
-    flex: 1 0 0; }
+  .prompts-header h2 {
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase; }
 
 .achievements {
   display: flex;
@@ -440,8 +441,10 @@
 
 body {
   background-color: #fa9128;
+  font-family: "Muli";
   margin: 0;
   border: 0;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
 
 /*# sourceMappingURL=styles.css.map */

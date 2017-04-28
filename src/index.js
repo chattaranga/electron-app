@@ -16,6 +16,8 @@ import ChatPage from './components/ChatPage/ChatPage';
 import '../src/styles/styles.scss';
 import reducer from './reducer/index.reducer';
 
+import 'font-awesome/scss/font-awesome.scss';
+
 const logger = createLogger();
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 

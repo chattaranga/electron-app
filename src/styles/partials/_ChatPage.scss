@@ -105,11 +105,10 @@
     img {
       height: 5em;
       width: 5em;
+      transform: rotate(90deg);
     }
     &:hover {
       cursor: pointer;
-      -moz-box-shadow: 0 0 10px 5px lighten($primary, 50%);
-      -webkit-box-shadow: 0 0 10px 5px lighten($primary, 50%);
       box-shadow: 0 0 10px 5px lighten($primary, 50%);
     }
   }
@@ -126,11 +125,13 @@
   display: flex;
   justify-content: space-between;
 
-  margin-bottom: 0.5em;
-  padding-bottom: 0.5em;
-  border-bottom: 0.2em solid $primary-dark;
-
-  .prompts-header-ltem {
-    flex: 1 0 0;
+  h2 {
+    color: $white;
+    font-weight: 900;
+    text-transform: uppercase;
   }
+
+  margin-bottom: 0.5em;
+  // padding-bottom: 0.5em;
+  border-bottom: 0.2em solid $primary-dark;
 }
