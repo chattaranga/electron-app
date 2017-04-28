@@ -16,6 +16,8 @@ class SignUpForm extends Component {
     this.addUser = this.addUser.bind(this);
     this.getLanguageButtons = this.getLanguageButtons.bind(this);
     this.capitalise = this.capitalise.bind(this);
+    this.validate = this.validate.bind(this);
+    this.getError = this.getError.bind(this);
   }
   render() {
     // if (this.props.languages.error.message === 'Network Error') {
@@ -36,6 +38,10 @@ class SignUpForm extends Component {
     }
       const languageButtons = this.getLanguageButtons(this.props.languages);
       const levelButtons = this.getLevelButtons(this.props.levels);
+      let errors;
+      if (Array.isArray(this.props.error)) {
+        errors = this.props.error.map((error, i) => (<p className='error' key={i}>{this.getError(error)}</p>));
+      }
       return (
         <div className='signup-form'>
           <form onSubmit={this.addUser}>
@@ -69,8 +75,9 @@ class SignUpForm extends Component {
             <div className='level-options'>
               {levelButtons}
             </div>
+            {errors}
             <input 
-                className='button-primary' 
+                className='signin button-primary' 
                 type='submit' 
                 value='Sign Up'/>
           </form>
@@ -81,7 +88,7 @@ class SignUpForm extends Component {
   capitalise (s) {
     s = s.split('');
     s[0] = s[0].toUpperCase();
-    return s;
+    return s.join('');
   }
   getLanguageButtons (languages) {
      return languages.map((language, i) => {
@@ -110,7 +117,55 @@ class SignUpForm extends Component {
   }
   addUser (e) {
     e.preventDefault();
-    this.props.addUser(this.props.userNameText, this.props.selectedLanguage, this.props.selectedLevel, this.props.nameText, this.props.emailText);
+    const username = this.validate('username', this.props.userNameText);
+    const email = this.validate('email', this.props.emailText);
+    const name = this.validate('name', this.capitalise(this.props.nameText));
+    const language = this.validate('language', this.props.selectedLanguage);
+    const level = this.validate('level', this.props.selectedLevel);
+    const errors = [username, email, name, language, level].reduce((acc, data) => {
+      return Array.isArray(data) ? acc.concat(data) : acc;
+    }, []);
+    this.props.addUser(errors, [this.props.userNameText, this.props.selectedLanguage, this.props.selectedLevel, this.capitalise(this.props.nameText), this.props.emailText]);
+  }
+  validate (type, data) {
+    let errors = [];
+    switch (type) {
+      case 'username': 
+        if (data.length < 6) errors = errors.concat('username-short');
+        if (!/([A-Z-_])\w+/ig.test(data)) errors = errors.concat('username-invalid');
+        break;
+      case 'email': 
+        if (!/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/ig.test(data)) errors = errors.concat('email-invalid');
+        break;
+      case 'name': 
+        if (data.length < 2) errors = errors.concat('name-short');
+        if (!/[A-Z]\w+/ig.test(data)) errors = errors.concat('name-invalid');
+        break;
+      case 'language': 
+        if (!data) errors = errors.concat('language-invalid');
+        break;
+      case 'level': 
+        if (!data) errors = errors.concat('level-invalid');
+        break;
+      default: break;
+    }
+    return errors.length > 0 ? errors : data;
+  }
+  getError (error) {
+    switch (error) {
+      case 'username-short':
+        return 'Your username needs to be 6 characters or longer';
+      case 'username-invalid':
+        return 'Your username can only contain letters, underscores and dashes';
+      case 'email-invalid':
+        return 'Provide a valid email address';
+      case 'name-short':
+        return 'Your name needs to have at least 2 characters';
+      case 'language-invalid':
+        return 'Please tell us what language you want to learn';
+      case 'level-invalid':
+        return 'Please tell us what level you\'re at';
+    }
   }
   handleEmailChange (e) {
     this.props.handleEmailChange(e.target.value);
