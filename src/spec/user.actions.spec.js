@@ -94,6 +94,16 @@ describe('User actions:', () => {
            });
        });
    });
+   describe('logOut()', () => {
+       it('is a function', () => {
+           expect(userActions.logOut).to.be.a('function');
+       });
+       it('returns the expected action', () => {
+           expect(userActions.logOut()).to.eql({
+               type: types.LOG_OUT
+           });
+       });
+   });
    describe('handleEmailChange()', () => {
        it('is a function', () => {
            expect(userActions.handleEmailChange).to.be.a('function');

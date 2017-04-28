@@ -45,6 +45,15 @@ function userReducer (prevState = initialState, action) {
         newState.selectedLanguage = action.data; break;
       case types.HANDLE_LEVEL_CHANGE:
         newState.selectedLevel = action.data; break;
+      case types.LOG_OUT:
+        newState.user = null;
+        newState.formText = '';
+        newState.emailText = '';
+        newState.nameText = '';
+        newState.userNameText = '';
+        newState.selectedLanguage = null;
+        newState.selectedLevel = null;
+        break;
       default: break;
   }
   return newState;

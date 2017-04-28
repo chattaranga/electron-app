@@ -72,9 +72,6 @@ describe('userReducer(): add user actions', () => {
     loading: false,
     error: null
   };
-  it('is a function', () => {
-    expect(userReducer).to.be.a('function');
-  });
   describe('when type is ADD_USER_REQUEST', () => {
     it('does not mutate state', () => {
       const action = {
@@ -127,6 +124,42 @@ describe('userReducer(): add user actions', () => {
       expect(userReducer(initialState, action)).to.eql(exp);
     });
   });
+});
+
+describe('userReducer(): sign out actions', () => {
+  const initialState = {
+    user: 'user1',
+    formText: 'user1',
+    emailText: 'user1@nc.co.uk',
+    nameText: 'User',
+    userNameText: 'UserName',
+    selectedLanguage: 'Spanish',
+    selectedLevel: 'Beginner'
+  };
+  describe('when type is SIGN_OUT', () => {
+    it('does not mutate state', () => {
+      const action = {
+        type: types.SIGN_OUT
+      };
+      expect(userReducer(null, action)).to.not.equal(initialState);
+    });
+    it('replaces state accordingly', () => {
+      const exp = {
+        user: null,
+        formText: '',
+        emailText: '',
+        nameText: '',
+        userNameText: '',
+        selectedLanguage: null,
+        selectedLevel: null
+      };
+      const action = {
+        type: types.SIGN_OUT
+      };
+      expect(userReducer(initialState, action)).to.eql(exp);
+    });
+  });
+
 });
 
 describe('userReducer(): form changes', () => {
