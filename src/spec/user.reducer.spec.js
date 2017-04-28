@@ -126,7 +126,7 @@ describe('userReducer(): add user actions', () => {
   });
 });
 
-describe('userReducer(): sign out actions', () => {
+describe.only('userReducer(): sign out actions', () => {
   const initialState = {
     user: 'user1',
     formText: 'user1',
@@ -136,10 +136,10 @@ describe('userReducer(): sign out actions', () => {
     selectedLanguage: 'Spanish',
     selectedLevel: 'Beginner'
   };
-  describe('when type is SIGN_OUT', () => {
+  describe('when type is LOG_OUT', () => {
     it('does not mutate state', () => {
       const action = {
-        type: types.SIGN_OUT
+        type: types.LOG_OUT
       };
       expect(userReducer(null, action)).to.not.equal(initialState);
     });
@@ -154,7 +154,7 @@ describe('userReducer(): sign out actions', () => {
         selectedLevel: null
       };
       const action = {
-        type: types.SIGN_OUT
+        type: types.LOG_OUT
       };
       expect(userReducer(initialState, action)).to.eql(exp);
     });
