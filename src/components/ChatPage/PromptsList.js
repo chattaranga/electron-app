@@ -5,11 +5,10 @@ const PromptsList = () => {
     <div className='prompts-list'> 
         
       <div className='prompts-header'>
+        <h2>prompts</h2>
+        
         <div className='prompts-header-item'>
-          <h3>Prompts</h3>
-        </div>
-        <div className='prompts-header-item'>
-          <button className='button-primary'>refresh</button>
+          <button className='button-primary'><i className='fa fa-refresh'/></button>
         </div>
       </div>
       
