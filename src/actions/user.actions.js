@@ -51,7 +51,7 @@ export function addUser (username, language, level, name, email) {
                 username: username,
                 name: name,
                 email: email,
-                userLanguages: [{language: level}]
+                userLanguages: [{[language]: level}]
             })
             .then(res => {
                 dispatch(addUserSuccess(res.data));
