@@ -1,32 +1,31 @@
 import React from 'react';
+import {Link} from 'react-router';
 
-const Icons = () => {
+const Icons = props => {
   return (
     <div className='Icons'>
      <div className='icondata'>
         <div className='icon round-icon'>
-            <p>5</p>
+            <p>{props.chats}</p>
         </div>
      </div>
     <div className='icondata'>
         <div className='icon round-icon'>
-            <p>13</p>
+            <p>{props.smileys}</p>
         </div>
      </div>
      <div className='icondata'>
         <div className='icon round-icon'>
-            <p>134</p>
+            <p>{props.teacherPoints}</p>
         </div>
      </div>
      <div className='icondata'>
         <div className='icon round-icon'>
-            <p>4</p>
+            <p>{props.talkTime}</p>
         </div>
      </div>
      <div className='icondata achievements'>
-        <div className='view-achievements'>
-            <p>View Achievements</p>
-        </div>
+      <Link to='/achievements'><p className='button-primary'>View Badges</p></Link>
      </div>
     </div>
   );

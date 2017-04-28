@@ -1,30 +1,26 @@
 import React from 'react';
 
-const LanguageButtons = () => {
+const LanguageButtons = props => {
+  const LanguageButtons = props.userLanguages.map((language, i) => {
+    return (
+     <div key={i}>
+        <a><img src={`img/${language.language}.png`}/>
+          <p>{capitalise(language.language)}</p>
+        </a>
+      </div>
+    );
+  });
   return (
     <div className='hub-page-buttons'>
-      <div>
-        <a><img src={'img/uk.png'}/>
-          <p>English</p>
-        </a>
-      </div>
-      <div>
-        <a><img src={'img/spain.png'}/>
-          <p>Spanish</p>
-        </a>
-      </div>
-      <div>
-        <a><img src={'img/italy.png'}/>
-          <p>Italian</p>
-        </a>
-      </div>
-      <div>
-        <a><img src={'img/france.png'}/>
-          <p>French</p>
-        </a>
-      </div>
+      {LanguageButtons}
     </div>
   );
 };
+
+function capitalise (s) {
+  s = s.split('');
+  s[0] = s[0].toUpperCase();
+  return s;
+}
 
 export default LanguageButtons;

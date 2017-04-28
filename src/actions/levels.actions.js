@@ -2,11 +2,11 @@ import * as types from './types';
 import axios from 'axios';
 import {ROOT} from '../../config';
 
-export function fetchLevels (username) {
+export function fetchLevels () {
     return function (dispatch) {
         dispatch(fetchLevelsRequest());
         axios
-            .get(`${ROOT}/user/${username}`)
+            .get(`${ROOT}levels`)
             .then(res => {
                 dispatch(fetchLevelsSuccess(res.data));
             })

@@ -4,6 +4,8 @@ import {PropTypes} from 'prop-types';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {fetchUser, formChange} from '../../actions/user.actions';
+import {fetchLevels} from '../../actions/levels.actions';
+import {fetchLanguages} from '../../actions/languages.actions';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -11,8 +13,20 @@ class LoginForm extends Component {
     this.handleLogin = this.handleLogin.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
+  componentDidMount () {
+    this.props.fetchLanguages();
+    this.props.fetchLevels();
+  }
   render() {
     const message = this.props.error ? (<p className='error-message'>Something went wrong!</p>) : (<p/>);
+    if (this.props.user) {
+      return (
+        <div>
+          <h1>{`Welcome, ${this.props.user.name}!`}</h1>
+          <Link to='/hub'><h2 className='button-primary'>{'Enter'}</h2></Link>
+        </div>
+      );
+    } else
     return (
       <div>
         <form onSubmit={this.handleLogin.bind(null, this.props.formText)}>
@@ -54,6 +68,12 @@ function mapDispatchToProps (dispatch) {
     formChange: e => {
       dispatch(formChange(e));
     },
+    fetchLanguages: () => {
+      dispatch(fetchLanguages());
+    },
+    fetchLevels: () => {
+      dispatch(fetchLevels());
+    }
   };
 }
 
