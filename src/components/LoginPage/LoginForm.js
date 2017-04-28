@@ -14,8 +14,8 @@ class LoginForm extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   componentDidMount () {
-    this.props.fetchLanguages();
-    this.props.fetchLevels();
+    if (!this.props.languages) this.props.fetchLanguages();
+    if (!this.props.levels) this.props.fetchLevels();
   }
   render() {
     const message = this.props.error ? (<p className='error-message'>Something went wrong!</p>) : (<p/>);
@@ -79,7 +79,9 @@ function mapStateToProps (state) {
     formText: state.user.formText,
     user: state.user.user,
     error: state.user.error,
-    loading: state.user.loading
+    loading: state.user.loading,
+    languages: state.languages.languages,
+    levels: state.levels.levels
   };
 }
 
