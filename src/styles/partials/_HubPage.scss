@@ -3,10 +3,13 @@
     flex-direction: column;
     color: $white;
     font-family: $main;
-    padding: 3vh 6vh 3vh 6vh;
-    img { 
+    padding: 2vh 4vh 2vh 4vh;
+    img {
         width: 11em;
         height: 11em;
+    }
+    .logo {
+        margin-right: 2em;
     }
     h2 {
         align-self: center;
@@ -55,7 +58,7 @@
 .Icons {
     display: flex;
     .icondata {
-        display: flex; 
+        display: flex;
         align-items: center;
     }
     .icon {
@@ -89,6 +92,8 @@
     .achievements {
         display: flex;
         align-items: center;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 

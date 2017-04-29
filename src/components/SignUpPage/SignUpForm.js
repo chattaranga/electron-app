@@ -4,6 +4,7 @@ import {Component} from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {addUser, handleEmailChange, handleNameChange, handleUsernameChange, handleLanguageChange, handleLevelChange} from '../../actions/user.actions';
+import Loading from '../Loading';
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -19,15 +20,8 @@ class SignUpForm extends Component {
     this.validate = this.validate.bind(this);
     this.getError = this.getError.bind(this);
   }
-  render() {
-    // if (this.props.languages.error.message === 'Network Error') {
-    //   return (
-    //     <div>
-    //       <h2>There's no connection right now</h2>
-    //       <h3>Please check your connection and try again!</h3>
-    //     </div>
-    //   );
-    // }
+  render () {
+    if (this.props.loading) return <Loading/>;
     if (this.props.user) {
       return (
         <div>
@@ -219,7 +213,7 @@ function mapStateToProps(state) {
     selectedLanguage: state.user.selectedLanguage,
     selectedLevel: state.user.selectedLevel, 
     languages: state.languages.languages,
-    levels: state.levels.levels
+    levels: state.levels.levels,
   };
 }
 

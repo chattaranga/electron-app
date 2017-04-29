@@ -18,6 +18,14 @@ class LoginForm extends Component {
     if (!this.props.levels) this.props.fetchLevels();
   }
   render() {
+    if (this.props.languageError) {
+      return (
+        <div>
+          <h2>There's no connection right now</h2>
+          <h3>Please check your connection and try again!</h3>
+        </div>
+      );
+    }
     const message = this.props.error ? (<p className='error-message'>Something went wrong!</p>) : (<p/>);
     if (this.props.user) {
       return (
@@ -81,7 +89,9 @@ function mapStateToProps (state) {
     error: state.user.error,
     loading: state.user.loading,
     languages: state.languages.languages,
-    levels: state.levels.levels
+    levels: state.levels.levels,
+    languageError: state.languages.error,
+    levelsError: state.levels.error
   };
 }
 
