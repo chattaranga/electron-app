@@ -6,10 +6,10 @@ import SideBar from './SideBar';
 // import ChatEmitter from './chatEmitter.js';
 // const chat = new ChatEmitter();
 
-const ChatPage = () => {
+const ChatPage = (props) => {
   return (
     <div className='chat-page'>
-      <RemoteVideo />
+      <RemoteVideo videoChat={props.route.videoChat}/>
       <SideBar />
     </div>
   );
