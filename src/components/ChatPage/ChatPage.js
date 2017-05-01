@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {shuffle} from 'underscore';
 import {fetchPrompts} from '../../actions/prompts.actions';
 // import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
@@ -27,7 +28,7 @@ class ChatPage extends Component {
     return (
       <div className='chat-page'>
         <RemoteVideo />
-        <SideBar />
+        <SideBar prompts={shuffle(this.props.prompts).slice(0, 4)}/>
       </div>
     );
   }
