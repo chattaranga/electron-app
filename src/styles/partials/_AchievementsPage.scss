@@ -1,0 +1,68 @@
+.achievements {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: $white;
+    font-family: $main;
+    padding: 3vh 6vh 3vh 6vh;
+    h1 {
+        font-size: 3vw;
+        font-weight: bold;
+    }
+    h3 {
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bolder;
+        padding: 1.3em;
+        &:visited {
+            color: $primary;
+            text-decoration: none;
+        }
+        &:hover {
+            color: darken($primary, 20%);
+            text-decoration: none;
+        }
+    }
+}
+
+.Statistics {
+    display: flex;
+    justify-content: space-around;
+    .icondata {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .icon {
+            margin: 0 1.5em 0 1.5em;
+            width: 8em;
+            height: 8em;
+        }
+        p {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    }
+}
+
+.Badges {
+    width: 90%;
+    max-width: 70em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .badge {
+            margin: 0 1.5em 0 1.5em;
+            width: 6em;
+            height: 6em;
+        }
+        p {
+            font-size: 1em;
+            font-weight: bold;
+        }
+    }
+}
