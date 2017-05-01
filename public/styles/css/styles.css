@@ -347,6 +347,9 @@
   margin: 0;
   padding: 0; }
 
+.orange-msg-box p {
+  color: #b85e04; }
+
 .side-bar {
   -webkit-flex: 1 0 0;
   flex: 1 0 0;
