@@ -53,6 +53,7 @@ function mapStateToProps(state) {
 }
 
 ChatPage.PropTypes = {
+
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChatPage);
