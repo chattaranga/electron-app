@@ -126,7 +126,7 @@ describe('userReducer(): add user actions', () => {
   });
 });
 
-describe.only('userReducer(): sign out actions', () => {
+describe('userReducer(): sign out actions', () => {
   const initialState = {
     user: 'user1',
     formText: 'user1',
