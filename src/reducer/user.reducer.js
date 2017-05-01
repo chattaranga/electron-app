@@ -9,7 +9,8 @@ const initialState = {
   nameText: '',
   userNameText: '',
   selectedLanguage: null,
-  selectedLevel: null
+  selectedLevel: null,
+  trainingLanguage: null
 };
 
 function userReducer (prevState = initialState, action) {
@@ -45,6 +46,8 @@ function userReducer (prevState = initialState, action) {
         newState.selectedLanguage = action.data; break;
       case types.HANDLE_LEVEL_CHANGE:
         newState.selectedLevel = action.data; break;
+      case types.SELECT_LANGUAGE:
+        newState.trainingLanguage = action.data; break;
       case types.LOG_OUT:
         newState.user = null;
         newState.formText = '';

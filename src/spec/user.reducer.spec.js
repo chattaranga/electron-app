@@ -126,6 +126,32 @@ describe('userReducer(): add user actions', () => {
   });
 });
 
+describe('userReducer(): select language actions', () => {
+  const initialState = {
+    trainingLanguage: null
+  };
+  describe('when type is SELECT_LANGUAGE', () => {
+    it('does not mutate state', () => {
+      const action = {
+        type: types.SELECT_LANGUAGE,
+        data: 'spanish'
+      };
+      expect(userReducer(null, action)).to.not.equal(initialState);
+    });
+    it('replaces state accordingly', () => {
+      const exp = {
+        trainingLanguage: 'spanish'
+      };
+      const action = {
+        type: types.SELECT_LANGUAGE,
+        data: 'spanish'
+      };
+      expect(userReducer(initialState, action)).to.eql(exp);
+    });
+  });
+});
+
+
 describe('userReducer(): sign out actions', () => {
   const initialState = {
     user: 'user1',
@@ -159,7 +185,6 @@ describe('userReducer(): sign out actions', () => {
       expect(userReducer(initialState, action)).to.eql(exp);
     });
   });
-
 });
 
 describe('userReducer(): form changes', () => {

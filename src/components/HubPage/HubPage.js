@@ -4,7 +4,7 @@ import {Component} from 'react';
 import moment from 'moment';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
-import {logOut} from '../../actions/user.actions';
+import {logOut, selectLanguage} from '../../actions/user.actions';
 import LanguageButtons from './LanguageButtons';
 import Icons from './Icons';
 
@@ -29,7 +29,7 @@ class HubPage extends Component {
         </div>
         <h2>{this.getDisplayByLanguage(this.props.user)}</h2>
         <h5>Which language are you training in today?</h5>
-        <LanguageButtons userLanguages={user.userLanguages}/>
+        <LanguageButtons userLanguages={user.userLanguages} selectLanguage={this.props.selectLanguage}/>
         <p className='button-linking' onClick={this.props.logOut}><Link to='/'>Log out</Link></p>
       </div>
     );
@@ -92,6 +92,9 @@ function mapDispatchToProps(dispatch) {
   return {
     logOut: () => {
       dispatch(logOut());
+    },
+    selectLanguage: (language) => {
+      dispatch(selectLanguage(language));
     }
   };
 }

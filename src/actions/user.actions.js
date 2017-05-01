@@ -121,6 +121,13 @@ export function handleLevelChange (level) {
   };
 }
 
+export function selectLanguage (language) {
+  return {
+    type: types.SELECT_LANGUAGE,
+    data: language
+  };
+}
+
 export function logOut () {
   return {
     type: types.LOG_OUT
