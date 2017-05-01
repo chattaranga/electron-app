@@ -120,3 +120,9 @@
         margin: 0 1em 0 1em;
     }
 }
+
+.selected {
+    -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+    -webkit-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+    box-shadow: 0 0 30px 5px lighten($primary, 50%);
+}
