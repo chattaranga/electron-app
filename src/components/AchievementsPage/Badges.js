@@ -3,9 +3,12 @@ import React from 'react';
 const Badges = props => {
     const badges = props.badges
         ? props.badges.map((badge, i) => {
+            let src = 'img/badges/' + badge.name;
+            if (badge.name === 'fast-parrot-master' || badge.name === 'ultimate-fast-parrot-demigod') src += '.gif';
+            else src += '.png';
             return (
                 <div key={i}>
-                    <div className='badge round-icon'></div>
+                    <img className='badge round-icon' src={src}/>
                     <p>{badge.description}</p>
                 </div>
               );
