@@ -9,6 +9,20 @@
         font-size: 3vw;
         font-weight: bold;
     }
+    h3 {
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bolder;
+        padding: 1.3em;
+        &:visited {
+            color: $primary;
+            text-decoration: none;
+        }
+        &:hover {
+            color: darken($primary, 20%);
+            text-decoration: none;
+        }
+    }
 }
 
 .Statistics {

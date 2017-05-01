@@ -9,10 +9,28 @@
   font-weight: bold;
   padding: 1.3em;
   font-size: 1em;
-  border-radius: 1em;
-  outline: none; }
+  border-radius: 1em; }
   .button-primary:hover {
     cursor: pointer;
+    color: #b85e04;
+    -moz-box-shadow: 0 0 10px 5px white;
+    -webkit-box-shadow: 0 0 10px 5px white;
+    box-shadow: 0 0 10px 5px white; }
+
+.button-linking {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  border: 0;
+  color: #ff8002;
+  background-color: #ffd8b2;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 1em;
+  outline: none; }
+  .button-linking:hover {
+    cursor: pointer;
+    color: #b85e04;
     -moz-box-shadow: 0 0 10px 5px white;
     -webkit-box-shadow: 0 0 10px 5px white;
     box-shadow: 0 0 10px 5px white; }
@@ -61,7 +79,7 @@
     width: 60vw;
     min-width: 30em;
     max-width: 50em;
-    margin-bottom: 15vh; }
+    margin-bottom: 1vh; }
   .LoginPage form {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -73,9 +91,7 @@
       padding: 0.7em;
       border: 0; }
     .LoginPage form .text-box {
-      min-width: 25em;
-      max-width: 35em;
-      width: 30vw;
+      width: 30%;
       color: #ea7805;
       font-weight: bold;
       padding-left: 1.5em;
@@ -90,12 +106,13 @@
       margin-left: 0.3em; }
   .LoginPage a {
     text-align: center;
-    color: #fff;
+    padding: 1.3em;
+    color: #fa9128;
     text-decoration: none;
     font-size: 1.2em;
     font-weight: bolder; }
     .LoginPage a:visited {
-      color: #fff;
+      color: #fa9128;
       text-decoration: none; }
     .LoginPage a:hover {
       color: #b85e04;
@@ -121,9 +138,17 @@
     align-items: center;
     flex-direction: column; }
     .sign-up-page .container h1 {
-      font-size: 72pt; }
+      font-size: 72pt;
+      margin: 0 0 17px 0; }
     .sign-up-page .container h2 {
-      margin-top: 5vh; }
+      margin-top: 3vh; }
+      .sign-up-page .container h2 span {
+        color: red;
+        font-size: 130%; }
+  .sign-up-page .error {
+    margin: 0;
+    color: red;
+    font-weight: bolder; }
 
 .signup-form form {
   display: flex;
@@ -164,17 +189,8 @@
   .signup-form .inline left {
     margin-right: 9%; }
 
-.signup-form .submit-button {
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
-  padding: 1.3em;
-  border: 0;
-  color: #ff8002;
-  background-color: #ffd8b2;
-  font-weight: bold;
-  font-size: 1em;
-  border-radius: 1em; }
+.signup-form .signin {
+  margin-top: 1.5em; }
 
 .signup-flag-buttons {
   width: 100%;
@@ -205,7 +221,8 @@
   display: flex;
   width: 30%;
   height: 2em;
-  margin-bottom: 2em;
+  margin-bottom: 3vh;
+  margin-top: 2vh;
   justify-content: space-around; }
   .level-options .button-primary {
     margin: 0 1em 0 1em; }
@@ -215,7 +232,12 @@
   flex-direction: column;
   color: #fff;
   font-family: "Muli";
-  padding: 3vh 6vh 3vh 6vh; }
+  padding: 2vh 4vh 2vh 4vh; }
+  .HubPage img {
+    width: 11em;
+    height: 11em; }
+  .HubPage .logo {
+    margin-right: 2em; }
   .HubPage h2 {
     align-self: center;
     margin: 0 0 10vh 0;
@@ -229,14 +251,33 @@
   .HubPage .inline {
     display: flex;
     align-items: center;
+    margin-bottom: 4vh;
     justify-content: space-between; }
     .HubPage .inline h1 {
       margin: 0 5% 0 0;
       width: 170px;
       font-size: 200px; }
+  .HubPage a {
+    text-align: center;
+    padding: 1.3em;
+    color: #fa9128;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bolder; }
+    .HubPage a:visited {
+      color: #fa9128;
+      text-decoration: none; }
+    .HubPage a:hover {
+      color: #b85e04;
+      text-decoration: none; }
+  .HubPage .button-linking {
+    width: 120px; }
 
 .Icons {
   display: flex; }
+  .Icons .icondata {
+    display: flex;
+    align-items: center; }
   .Icons .icon {
     margin: 0 0.8em 0 0.8em;
     width: 5em;
@@ -262,11 +303,14 @@
       -webkit-box-shadow: 0 0 30px 5px white;
       box-shadow: 0 0 30px 5px white; }
   .Icons .achievements {
-    padding-top: 1em; }
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0; }
 
 .hub-page-buttons {
   display: flex;
-  margin-top: 10vh;
+  margin-top: 3vh;
   justify-content: center;
   align-items: center; }
   .hub-page-buttons a {
@@ -286,7 +330,8 @@
     .hub-page-buttons a p {
       align-self: center;
       font-weight: bolder;
-      font-size: 1em; }
+      font-size: 1em;
+      color: #fff; }
 
 .chat-page {
   display: flex;
@@ -404,6 +449,17 @@
   .achievements h1 {
     font-size: 3vw;
     font-weight: bold; }
+  .achievements h3 {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bolder;
+    padding: 1.3em; }
+    .achievements h3:visited {
+      color: #fa9128;
+      text-decoration: none; }
+    .achievements h3:hover {
+      color: #b85e04;
+      text-decoration: none; }
 
 .Statistics {
   display: flex;

@@ -14,10 +14,18 @@ class LoginForm extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   componentDidMount () {
-    this.props.fetchLanguages();
-    this.props.fetchLevels();
+    if (!this.props.languages) this.props.fetchLanguages();
+    if (!this.props.levels) this.props.fetchLevels();
   }
   render() {
+    if (this.props.languageError) {
+      return (
+        <div>
+          <h2>There's no connection right now</h2>
+          <h3>Please check your connection and try again!</h3>
+        </div>
+      );
+    }
     const message = this.props.error ? (<p className='error-message'>Something went wrong!</p>) : (<p/>);
     if (this.props.user) {
       return (
@@ -43,10 +51,7 @@ class LoginForm extends Component {
               />
         </form>
         {message}
-        <Link to='/signup'>Sign Up</Link>
-        <Link to='/hub'>Go to Hub</Link>
-        <Link to='/achievements'>Go to Achievements</Link>
-        <Link to='/chat'>GO TO CHAT</Link>
+        <span className='button-linking'><Link to='/signup'>Sign Up</Link></span>
       </div>
     );
   }
@@ -82,7 +87,11 @@ function mapStateToProps (state) {
     formText: state.user.formText,
     user: state.user.user,
     error: state.user.error,
-    loading: state.user.loading
+    loading: state.user.loading,
+    languages: state.languages.languages,
+    levels: state.levels.levels,
+    languageError: state.languages.error,
+    levelsError: state.levels.error
   };
 }
 

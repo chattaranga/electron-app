@@ -43,15 +43,19 @@ export function formChange (e) {
   };
 }
 
-export function addUser (username, language, level, name, email) {
+export function addUser (errors, data) {
     return function (dispatch) {
+        if (errors.length) {
+            dispatch(addUserError(errors));
+            return;
+        }
         dispatch(addUserRequest());
         axios
             .post(`${ROOT}users`, {
-                username: username,
-                name: name,
-                email: email,
-                userLanguages: [{language: level}]
+                username: data[0],
+                name: data[3],
+                email: data[3],
+                userLanguages: [{[data[1]]: data[2]}]
             })
             .then(res => {
                 dispatch(addUserSuccess(res.data));
@@ -114,6 +118,13 @@ export function handleLevelChange (level) {
   return {
     type: types.HANDLE_LEVEL_CHANGE,
     data: level
+  };
+}
+
+export function selectLanguage (language) {
+  return {
+    type: types.SELECT_LANGUAGE,
+    data: language
   };
 }
 

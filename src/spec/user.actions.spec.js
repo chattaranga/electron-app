@@ -94,6 +94,17 @@ describe('User actions:', () => {
            });
        });
    });
+   describe('selectLanguage()', () => {
+       it('is a function', () => {
+           expect(userActions.selectLanguage).to.be.a('function');
+       });
+       it('returns the expected action', () => {
+           expect(userActions.selectLanguage('spanish')).to.eql({
+               type: types.SELECT_LANGUAGE,
+               data: 'spanish'
+           });
+       });
+   }); 
    describe('logOut()', () => {
        it('is a function', () => {
            expect(userActions.logOut).to.be.a('function');

@@ -5,6 +5,7 @@ import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import Statistics from './Statistics';
 import Badges from './Badges';
+import Loading from '../Loading';
 import {fetchBadges} from '../../actions/badges.actions';
 
 class AchievementsPage extends Component {
@@ -16,6 +17,7 @@ class AchievementsPage extends Component {
     this.props.fetchBadges();
   }
   render() {
+    if (this.props.loading) return <Loading/>;
     return (
       <div className='achievements'>
           <h1>Statistics</h1>
@@ -27,7 +29,7 @@ class AchievementsPage extends Component {
           />
           <h1>Badges</h1>
           <Badges badges={this.props.badges}/>
-          <Link to='/hub'><h3 className='button-primary'>Back</h3></Link>
+          <Link to='/hub'><h3 className='button-linking'>Back</h3></Link>
       </div>
     );
   }
@@ -49,8 +51,8 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     user: state.user.user, 
-    error: state.user.error, 
-    loading: state.user.loading,
+    error: state.badges.error, 
+    loading: state.badges.loading,
     badges: state.badges.badges
   };
 }

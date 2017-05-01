@@ -1,12 +1,15 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 const LanguageButtons = props => {
   const LanguageButtons = props.userLanguages.map((language, i) => {
     return (
      <div key={i}>
-        <a><img src={`img/${language.language}.png`}/>
-          <p>{capitalise(language.language)}</p>
-        </a>
+        <span onClick={props.selectLanguage.bind(null, language.language)}>
+          <Link to='/chat'><img src={`img/${language.language}.png`}/>
+            <p>{capitalise(language.language)}</p>
+          </Link>
+        </span>
       </div>
     );
   });

@@ -3,7 +3,14 @@
     flex-direction: column;
     color: $white;
     font-family: $main;
-    padding: 3vh 6vh 3vh 6vh;
+    padding: 2vh 4vh 2vh 4vh;
+    img {
+        width: 11em;
+        height: 11em;
+    }
+    .logo {
+        margin-right: 2em;
+    }
     h2 {
         align-self: center;
         margin: 0 0 10vh 0;
@@ -19,6 +26,7 @@
     .inline {
         display: flex;
         align-items: center;
+        margin-bottom: 4vh;
         justify-content: space-between;
         h1 {
             margin: 0 5% 0 0;
@@ -26,10 +34,33 @@
             font-size: 200px;
         }
     }
+    a {
+        text-align: center;
+        padding: 1.3em;
+        color: $primary;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bolder;
+        &:visited {
+            color: $primary;
+            text-decoration: none;
+        }
+        &:hover {
+            color: darken($primary, 20%);
+            text-decoration: none;
+        }
+    }
+    .button-linking {
+        width: 120px;
+    }
 }
 
 .Icons {
     display: flex;
+    .icondata {
+        display: flex;
+        align-items: center;
+    }
     .icon {
         margin: 0 0.8em 0 0.8em;
         width: 5em;
@@ -59,13 +90,16 @@
         }
     }
     .achievements {
-        padding-top: 1em;
+        display: flex;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
 .hub-page-buttons {
     display: flex;
-    margin-top: 10vh;
+    margin-top: 3vh;
     justify-content: center;
     align-items: center;
     a {
@@ -88,6 +122,7 @@
             align-self: center;
             font-weight: bolder;
             font-size: 1em;
+            color: $white;
         }
     }
 }
