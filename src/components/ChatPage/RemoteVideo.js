@@ -1,51 +1,46 @@
 import React, {Component} from 'react';
+import videoChatHandler from '../../lib/videoChatHandler';
 
 class RemoteVideo extends Component {
   constructor (props) {
     super(props);
 
     this.state = {};
-    this.getLocalMedia = this.getLocalMedia.bind(this);
-    // this.handleConnection = this.handleConnection.bind(this);
-  }
 
+    this.endCallHandler = this.endCallHandler.bind(this);
+  }
   componentDidMount () {
-    this.getLocalMedia();
-    // this.handleConnection();
+    this.videoChatHandler = videoChatHandler.bind(this);
+    this.videoChat = this.props.videoChat;
+    this.videoChatHandler('getLocalMedia');
+    this.videoChatHandler('connect');
   }
-
-  getLocalMedia () {
-    navigator.getUserMedia({
-      audio: false,   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      video: true
-    }, stream => {
-      this.setState({
-        localVideo: URL.createObjectURL(stream)
-      });
-      window.localStream = stream;
-    }, () => {});
+  componentDidUpdate (prevProps, prevState) {
+    if (prevState.remoteVideo) {
+      this.videoChatHandler('disconnect');
+    }
   }
-
-  // handleConnection () {
-  //   this.props.chat.connect('USERNAME');  // !!!!!!!!!!!!!!!!!!!!!!!
-  // }
-
+  endCallHandler () {
+    this.videoChatHandler('hang');
+  }
+ 
   render () {
     return (
       <div className='remote-video-container'>
         
         <video 
-            src={this.state.localVideo}
+            src={this.state.remoteVideo}
             className='vid' 
             classID='remote-video' 
             autoPlay='true'
             muted='true'>
+            {/* Delete muted for production */}
           Something Went Wrong :(
         </video>
 
         <div className='ab-bottom'>
           <div className='chat-buttons'>
-            <div className='end-call'>
+            <div className='end-call' onClick={this.endCallHandler}>
               <img src='img/icons/red-phone.png' alt='end-call'/>
             </div>
           </div>
