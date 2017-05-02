@@ -16,7 +16,7 @@ class CountdownTimer extends Component {
   componentDidMount () {
     this.setState(() => {
       return {
-        timeRemaining: 15
+        timeRemaining: 4
       };
     });
     
