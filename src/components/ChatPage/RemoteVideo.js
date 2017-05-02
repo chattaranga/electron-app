@@ -22,9 +22,10 @@ class RemoteVideo extends Component {
       this.videoChatHandler('disconnect');
     }
   }
-  endCallHandler (timeRemaining) {
-    console.log(timeRemaining)
+  endCallHandler () {
     this.videoChatHandler('hang');
+    this.props.endCall(this.state.peer);
+    console.log(this.state);
   }
  
   render () {
@@ -38,7 +39,7 @@ class RemoteVideo extends Component {
             autoPlay='true'
             muted='true'>
             {/* Delete muted for production */}
-          Something Went Wrong :(
+          Something went wrong :(
         </video>
 
         <div className='ab-bottom'>
@@ -64,7 +65,8 @@ class RemoteVideo extends Component {
 }
 
 RemoteVideo.propTypes = {
-  videoChat: PropTypes.object.isRequired
+  videoChat: PropTypes.object.isRequired,
+  endCall: PropTypes.func.isRequired
 };
 
 export default RemoteVideo;

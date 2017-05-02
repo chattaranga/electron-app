@@ -138,6 +138,16 @@
   }
 
   margin-bottom: 0.5em;
-  // padding-bottom: 0.5em;
   border-bottom: 0.2em solid $primary-dark;
+}
+
+.feedback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  -webkit-flex: 2 0 0;
+  flex: 2 0 0;
+  margin: 0;
+  padding: 0;
 }

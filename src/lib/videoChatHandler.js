@@ -16,12 +16,10 @@ const videoChatHandler = function(action) {
           });
         })
         .catch(() => { 
-          alert('Wops, something went wrong requesting your local video/audio. Please refresh'); 
+          alert('Whoops, something went wrong requesting your local video/audio. Please refresh'); 
         });
     },
     connect: () => {
-      // Add profile as an parameter in connect when redux is sorted 
-        // and pass it as a first argument to connect
       this.videoChat.connect({username: Math.floor(Math.random() * 100).toString(), room: 'test'}, handlers['answer'], handlers['call']);
     },
     call: (stream, peer) => {
@@ -54,7 +52,7 @@ const videoChatHandler = function(action) {
       }, 1000);
     },
     default: () => {
-      alert('Wops, something went wrong :( Please refresh');
+      alert('Whoops, something went wrong :( Please refresh');
     }
   };
   
