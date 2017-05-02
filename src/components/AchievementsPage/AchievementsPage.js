@@ -97,13 +97,14 @@ class AchievementsPage extends Component {
       } 
     });
 
-    if (_.findWhere(earnedBadges, {name: 'first-conv-sp'}) &&
+    if (
+        _.findWhere(earnedBadges, {name: 'first-conv-sp'}) &&
         _.findWhere(earnedBadges, {name: 'first-conv-fr'}) &&
         _.findWhere(earnedBadges, {name: 'first-conv-it'})) {
       earnedBadges.push(_.findWhere(this.props.badges, {name: 'fast-parrot-master'}));
     }
 
-    if (earnedBadges.length === this.props.badges.length - 1 || this.props.user.username === 'harrietty') {
+    if (earnedBadges.length === this.props.badges.length - 1) {
       earnedBadges.push(_.findWhere(this.props.badges, {name: 'ulitmate-fast-parrot-demigod'}));
     }
 
