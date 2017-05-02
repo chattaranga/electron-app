@@ -16,7 +16,7 @@ class AchievementsPage extends Component {
     this.getBadges = this.getBadges.bind(this);
   }
   componentDidMount () {
-    this.props.fetchBadges();
+    if (!this.props.badges) this.props.fetchBadges();
   }
   render() {
     if (this.props.loading) return <Loading/>;
@@ -132,7 +132,7 @@ function mapStateToProps(state) {
 AchievementsPage.propTypes = {
   user: PropTypes.any.isRequired,
   badges: PropTypes.any.isRequired,
-  loading: PropTypes.any.isRequired,
+  loading: PropTypes.bool.isRequired,
   fetchBadges: PropTypes.func.isRequired
 };
 
