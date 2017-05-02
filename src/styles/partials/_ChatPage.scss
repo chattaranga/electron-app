@@ -144,10 +144,31 @@
 .feedback {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   background-color: white;
+  color: darken($primary, 20%);
   -webkit-flex: 2 0 0;
   flex: 2 0 0;
   margin: 0;
   padding: 0;
+    div {
+      display: flex;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    h2 {
+      font-size: 1.3em;
+    }
+    img {
+      width: 120px;
+      height: 120px;
+      margin: 3em 1em 3em 1em;
+    }
+    .selected {
+      -moz-box-shadow: 0 0 30px 15px darken($primary, 10%);
+      -webkit-box-shadow: 0 0 30px 15px darken($primary, 10%);
+      box-shadow: 0 0 30px 15px darken($primary, 10%);
+    }
 }

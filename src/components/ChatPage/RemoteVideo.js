@@ -25,7 +25,6 @@ class RemoteVideo extends Component {
   endCallHandler () {
     this.videoChatHandler('hang');
     this.props.endCall(this.state.peer);
-    console.log(this.state);
   }
  
   render () {
