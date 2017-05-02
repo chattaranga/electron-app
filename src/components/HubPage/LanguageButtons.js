@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import PropTypes from 'prop-types';
 
 const LanguageButtons = props => {
   const LanguageButtons = props.userLanguages.map((language, i) => {
@@ -25,5 +26,10 @@ function capitalise (s) {
   s[0] = s[0].toUpperCase();
   return s;
 }
+
+LanguageButtons.propTypes = {
+  userLanguages: PropTypes.arrayOf(PropTypes.object).isRequired,
+  selectLanguage: PropTypes.func.isRequired
+};
 
 export default LanguageButtons;

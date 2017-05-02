@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Statistics = props => {
   return (
@@ -21,6 +22,13 @@ const Statistics = props => {
 			</div>
     </div>
   );
+};
+
+Statistics.propTypes = {
+  chats: PropTypes.number.isRequired,
+  smileys: PropTypes.number.isRequired,
+  teacherPoints: PropTypes.number.isRequired,
+	talkTime: PropTypes.number.isRequired
 };
 
 export default Statistics;

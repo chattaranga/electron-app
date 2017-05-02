@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PromptList from './PromptsList';
 import TranslationBoxes from './TranslationBoxes';
 
@@ -9,6 +10,10 @@ const SideBar = props => {
       <TranslationBoxes />
     </div>
   );
+};
+
+SideBar.propTypes = {
+  prompts: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default SideBar;

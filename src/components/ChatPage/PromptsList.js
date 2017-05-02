@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const PromptsList = props => {
   const prompts = props.prompts.map((prompt, i) => {
@@ -19,6 +20,10 @@ const PromptsList = props => {
       {prompts}
     </div>
   );
+};
+
+PromptsList.propTypes = {
+  prompts: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default PromptsList;

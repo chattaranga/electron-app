@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
-// import {PropTypes} from 'prop-types';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import Statistics from './Statistics';
@@ -57,7 +57,11 @@ function mapStateToProps(state) {
   };
 }
 
-AchievementsPage.PropTypes = {
+AchievementsPage.propTypes = {
+  user: PropTypes.any.isRequired,
+  badges: PropTypes.any.isRequired,
+  loading: PropTypes.any.isRequired,
+  fetchBadges: PropTypes.func.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AchievementsPage);
