@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import PropTypes from 'prop-types';
 
 const Icons = props => {
   return (
@@ -26,5 +27,13 @@ const Icons = props => {
     </div>
   );
 };
+
+Icons.propTypes = {
+  chats: PropTypes.number.isRequired,
+  smileys: PropTypes.number.isRequired,
+  teacherPoints: PropTypes.number.isRequired,
+	talkTime: PropTypes.number.isRequired
+};	
+
 
 export default Icons;

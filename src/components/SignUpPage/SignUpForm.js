@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
-// import {PropTypes} from 'prop-types';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {addUser, handleEmailChange, handleNameChange, handleUsernameChange, handleLanguageChange, handleLevelChange} from '../../actions/user.actions';
@@ -224,7 +224,24 @@ function mapStateToProps(state) {
   };
 }
 
-SignUpForm.PropTypes = {
+SignUpForm.propTypes = {
+  handleEmailChange: PropTypes.func.isRequired,
+  handleNameChange: PropTypes.func.isRequired,
+  handleUsernameChange: PropTypes.func.isRequired,
+  handleLanguageChange: PropTypes.func.isRequired,
+  handleLevelChange: PropTypes.func.isRequired,
+  addUser: PropTypes.func.isRequired,
+  formText: PropTypes.string.isRequired,
+  user: PropTypes.any.isRequired,
+  error: PropTypes.any.isRequired,
+  loading: PropTypes.bool.isRequired,
+  emailText: PropTypes.string.isRequired,
+  nameText: PropTypes.string.isRequired,
+  userNameText: PropTypes.string.isRequired,
+  selectedLanguage: PropTypes.string.isRequired,
+  selectedLevel: PropTypes.string.isRequired,
+  languages: PropTypes.any.isRequired,
+  levels: PropTypes.any.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);

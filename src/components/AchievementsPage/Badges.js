@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Badges = props => {
     const badges = props.badges
@@ -19,6 +20,10 @@ const Badges = props => {
             {badges}
         </div>
     );
+};
+
+Badges.propTypes = {
+  badges: PropTypes.any.isRequired
 };
 
 export default Badges;

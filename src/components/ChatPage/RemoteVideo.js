@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import videoChatHandler from '../../lib/videoChatHandler';
 
 class RemoteVideo extends Component {
@@ -12,7 +13,6 @@ class RemoteVideo extends Component {
   componentDidMount () {
     this.videoChatHandler = videoChatHandler.bind(this);
     this.videoChat = this.props.videoChat;
-    console.log(this);
     this.videoChatHandler('getLocalMedia');
     this.videoChatHandler('connect');
   }
@@ -52,7 +52,7 @@ class RemoteVideo extends Component {
                 classID='local-video' 
                 autoPlay='true'
                 muted='true'>
-              Something Went Wrong :(
+              Something went wrong :(
             </video>
           </div>
           <div className='right-padding'>
@@ -63,5 +63,9 @@ class RemoteVideo extends Component {
     );
   }
 }
+
+RemoteVideo.propTypes = {
+  videoChat: PropTypes.object.isRequired
+};
 
 export default RemoteVideo;

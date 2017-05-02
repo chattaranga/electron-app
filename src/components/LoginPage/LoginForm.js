@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
-import {PropTypes} from 'prop-types';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {fetchUser, formChange} from '../../actions/user.actions';
@@ -95,12 +95,23 @@ function mapStateToProps (state) {
   };
 }
 
-LoginForm.PropTypes = {
-  getUser: PropTypes.func,
-  formChange: PropTypes.func,
-  handleLogin: PropTypes.func,
-  formText: PropTypes.string,
-  error: PropTypes.error
+LoginForm.propTypes = {
+  getUser: PropTypes.func.isRequired,
+  formChange: PropTypes.func.isRequired,
+  fetchLanguages: PropTypes.func.isRequired,
+  fetchLevels: PropTypes.func.isRequired,
+  formText: PropTypes.string.isRequired,
+  error: PropTypes.func,
+  user: PropTypes.object,
+  loading: PropTypes.bool.isRequired,
+  emailText: PropTypes.string,
+  nameText: PropTypes.string,
+  userNameText: PropTypes.string,
+  selectedLanguage: PropTypes.string,
+  selectedLevel: PropTypes.string,
+  languageError: PropTypes.func,
+  languages: PropTypes.array,
+  levels: PropTypes.array
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

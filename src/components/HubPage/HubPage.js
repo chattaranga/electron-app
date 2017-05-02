@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
-// import {PropTypes} from 'prop-types';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
@@ -101,13 +101,14 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    user: state.user.user, 
-    error: state.user.error, 
-    loading: state.user.loading
+    user: state.user.user
   };
 }
 
-HubPage.PropTypes = {
+HubPage.propTypes = {
+  user: PropTypes.any.isRequired,
+  selectLanguage: PropTypes.func.isRequired,
+  logOut: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HubPage);
