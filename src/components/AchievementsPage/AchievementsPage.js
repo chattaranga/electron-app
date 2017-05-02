@@ -130,8 +130,8 @@ function mapStateToProps(state) {
 }
 
 AchievementsPage.propTypes = {
-  user: PropTypes.any.isRequired,
-  badges: PropTypes.any.isRequired,
+  user: PropTypes.object,
+  badges: PropTypes.arrayOf(PropTypes.object),
   loading: PropTypes.bool.isRequired,
   fetchBadges: PropTypes.func.isRequired
 };
