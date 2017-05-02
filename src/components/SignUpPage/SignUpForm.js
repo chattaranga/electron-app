@@ -85,12 +85,16 @@ class SignUpForm extends Component {
     return s.join('');
   }
   getLanguageButtons (languages) {
+    const languageName = this.props.languages.reduce((acc, language) => {
+      return language._id === this.props.selectedLanguage ? language.name : acc;
+    }, '');
      return languages.map((language, i) => {
       return (
-        <div key={i} className={''/* selected ? selected + i : 'unselected'*/}>
+        <div key={i}>
           <a><img 
               onClick={this.handleLanguageChange.bind(null, String(language._id))}
-              src={`img/${language.name}.png`}/>
+              src={`img/${language.name}.png`}
+              className={languageName === language.name  ? 'selected' : 'unselected'}/>
             <p>{this.capitalise(language.name)}</p>
           </a>
         </div>
@@ -98,12 +102,15 @@ class SignUpForm extends Component {
     });
   }
   getLevelButtons (levels) {
+    const levelName = this.props.levels.reduce((acc, level) => {
+      return level._id === this.props.selectedLevel ? level.name : acc;
+    }, '');
     return levels.map((level, i) => {
       return (
         <div
             key={i}
             onClick={this.handleLevelChange.bind(null, String(level._id))} 
-            className={'button-primary'/* selected ? selected + i + ' button-primary' : 'button-primary unselected'*/}>
+            className={levelName === level.name ? 'button-primary selected' : 'button-primary'}>
           {this.capitalise(level.name)}
         </div>
       );
