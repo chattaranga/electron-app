@@ -27,6 +27,7 @@ const videoChatHandler = function(action) {
     call: (stream, peer) => {
       this.setState(() => {
         return {
+          onCall: true,
           remoteVideo: stream,
           peer: peer
         };
@@ -35,6 +36,7 @@ const videoChatHandler = function(action) {
     answer: (stream, peer) => {
       this.setState(() => {
         return {
+          onCall: true,
           remoteVideo: stream,
           peer: peer
         };
