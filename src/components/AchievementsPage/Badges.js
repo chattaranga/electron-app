@@ -23,7 +23,7 @@ const Badges = props => {
 };
 
 Badges.propTypes = {
-  badges: PropTypes.any.isRequired
+  badges: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default Badges;
