@@ -6,7 +6,7 @@ export function fetchPrompts (language, level) {
     return function (dispatch) {
         dispatch(fetchPromptsRequest());
         axios
-            .get(`${ROOT}${language}/${level}/prompts`)
+            .get(`${ROOT}prompts/${language}/${level}`)
             .then(res => {
                 dispatch(fetchPromptsSuccess(res.data));
             })

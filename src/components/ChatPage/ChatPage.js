@@ -13,16 +13,10 @@ class ChatPage extends Component {
     super(props);
   }
   componentDidMount () {
-    const languageID = this.props.languages.reduce((acc, languageName) => {
-      return languageName.name === this.props.trainingLanguage ? languageName._id : acc;
-    }, '');
     const level = this.props.user.userLanguages.reduce((acc, userLanguage) => {
       return userLanguage.language === this.props.trainingLanguage ? userLanguage.level : acc;
     }, '');
-    const levelID = this.props.levels.reduce((acc, levelName) => {
-      return levelName.name === level ? levelName._id : acc;
-    }, '');
-    this.props.fetchPrompts(languageID, levelID);
+    this.props.fetchPrompts(this.props.trainingLanguage, level);
   }
   render() {
     return (

@@ -227,6 +227,11 @@
   .level-options .button-primary {
     margin: 0 1em 0 1em; }
 
+.selected {
+  -moz-box-shadow: 0 0 30px 5px white;
+  -webkit-box-shadow: 0 0 30px 5px white;
+  box-shadow: 0 0 30px 5px white; }
+
 .HubPage {
   display: flex;
   flex-direction: column;
