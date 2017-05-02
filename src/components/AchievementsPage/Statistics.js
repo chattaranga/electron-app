@@ -4,29 +4,21 @@ const Statistics = props => {
   return (
     <div className='Statistics'>
      <div className='icondata'>
-        <div className='icon round-icon'>
-            <p>{props.chats}</p>
-        </div>
-        <p>Chattas</p>
-     </div>
-     <div className='icondata'>
-        <div className='icon round-icon'>
-            <p>{props.smileys}</p>
-        </div>
-        <p>Chatta-Smile</p>
-     </div>
-    <div className='icondata'>
-        <div className='icon round-icon'>
-            <p>{props.teacherPoints}</p>
-        </div>
-        <p>Chatta-Coach</p>
-     </div>
-     <div className='icondata'>
-        <div className='icon round-icon'>
-            <p>{props.talkTime}</p>
-        </div>
-        <p>Chatta-Time</p>
-     </div>
+				<img src='img/chatta-icons/chatta-chat.png' className='icon round-icon'/>
+				<p>{props.chats}</p>
+			</div>
+			<div className='icondata'>
+				<img src='img/chatta-icons/chatta-smile.png' className='icon round-icon'/>
+				<p>{props.smileys}</p>
+			</div>
+			<div className='icondata'>
+				<img src='img/chatta-icons/chatta-coach.png' className='icon round-icon'/>
+				<p>{props.teacherPoints}</p>
+			</div>
+			<div className='icondata'>
+				<img src='img/chatta-icons/chatta-time.png' className='icon round-icon'/>
+				<p>{props.talkTime}</p>
+			</div>
     </div>
   );
 };
