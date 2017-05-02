@@ -1,40 +1,39 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import videoChatHandler from '../../lib/videoChatHandler';
 import CountdownTimer from './CountdownTimer';
 
 class RemoteVideo extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.state = {};
 
     this.endCallHandler = this.endCallHandler.bind(this);
   }
-  componentDidMount () {
+  componentDidMount() {
     this.videoChatHandler = videoChatHandler.bind(this);
     this.videoChat = this.props.videoChat;
     this.videoChatHandler('getLocalMedia');
     this.videoChatHandler('connect');
   }
-  componentDidUpdate (prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (prevState.remoteVideo) {
       this.videoChatHandler('disconnect');
     }
   }
-  endCallHandler () {
+  endCallHandler() {
     this.videoChatHandler('hang');
     this.props.endCall(this.state.peer);
   }
- 
-  render () {
+  render() {
     return (
       <div className='remote-video-container'>
-        
-        <video 
+
+        <video
             src={this.state.remoteVideo}
-            className='vid' 
-            classID='remote-video' 
+            className='vid'
+            classID='remote-video'
             autoPlay='true'
             muted='true'>
             {/* Delete muted for production */}
@@ -43,22 +42,20 @@ class RemoteVideo extends Component {
 
         <div className='ab-bottom'>
           <div className='chat-buttons'>
-              {this.state.onCall ? <CountdownTimer endCallHandler={this.endCallHandler}/> : null}
-            </div>
+            {this.state.onCall ? <CountdownTimer endCallHandler={this.endCallHandler} /> : null}
           </div>
           <div className='local-video-container'>
-            <video 
+            <video
                 src={this.state.localVideo}
-                className='vid' 
-                classID='local-video' 
+                className='vid'
+                classID='local-video'
                 autoPlay='true'
                 muted='true'>
               Something went wrong :(
-            </video>
-          </div>
-          <div className='right-padding'>
+              </video>
           </div>
         </div>
+      </div>
     );
   }
 }

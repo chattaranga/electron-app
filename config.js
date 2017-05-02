@@ -1,4 +1,4 @@
 module.exports = {
-  ROOT: 'http://localhost:8080/api/',
+  ROOT: 'https://chattaranga.herokuapp.com/api/',
   USERNAME: 'ruthymng'
 };
