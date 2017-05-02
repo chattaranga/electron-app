@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import videoChatHandler from '../../lib/videoChatHandler';
+import CountdownTimer from './CountdownTimer';
 
 class RemoteVideo extends Component {
   constructor (props) {
@@ -21,7 +22,8 @@ class RemoteVideo extends Component {
       this.videoChatHandler('disconnect');
     }
   }
-  endCallHandler () {
+  endCallHandler (timeRemaining) {
+    console.log(timeRemaining)
     this.videoChatHandler('hang');
   }
  
@@ -41,8 +43,7 @@ class RemoteVideo extends Component {
 
         <div className='ab-bottom'>
           <div className='chat-buttons'>
-            <div className='end-call' onClick={this.endCallHandler}>
-              <img src='img/icons/red-phone.png' alt='end-call'/>
+              {this.state.onCall ? <CountdownTimer endCallHandler={this.endCallHandler}/> : null}
             </div>
           </div>
           <div className='local-video-container'>
@@ -58,8 +59,6 @@ class RemoteVideo extends Component {
           <div className='right-padding'>
           </div>
         </div>
-
-      </div>
     );
   }
 }
