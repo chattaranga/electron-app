@@ -446,12 +446,14 @@
     text-transform: uppercase; }
 
 .achievements {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
   color: #fff;
   font-family: "Muli";
-  padding: 3vh 6vh 3vh 6vh; }
+  padding: 3vh 6vh; }
   .achievements h1 {
     font-size: 3vw;
     font-weight: bold; }
@@ -468,6 +470,7 @@
       text-decoration: none; }
 
 .Statistics {
+  margin: 1em 0;
   display: flex;
   justify-content: space-around; }
   .Statistics .icondata {
@@ -476,27 +479,26 @@
     align-items: center;
     flex-direction: column; }
     .Statistics .icondata .icon {
-      margin: 0 1.5em 0 1.5em;
-      width: 8em;
-      height: 8em; }
+      margin: 0 1.5em;
+      width: 8em; }
     .Statistics .icondata p {
       font-size: 1.2em;
       font-weight: bold; }
 
 .Badges {
-  width: 90%;
-  max-width: 70em;
+  margin: 1em 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap; }
   .Badges div {
+    margin-bottom: 1em;
     display: flex;
     align-items: center;
-    flex-direction: column; }
+    flex-direction: column;
+    text-align: center;
+    width: 15em; }
     .Badges div .badge {
-      margin: 0 1.5em 0 1.5em;
-      width: 6em;
-      height: 6em; }
+      width: 6em; }
     .Badges div p {
       font-size: 1em;
       font-weight: bold; }

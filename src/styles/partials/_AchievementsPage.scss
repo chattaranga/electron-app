@@ -1,10 +1,12 @@
 .achievements {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     flex-direction: column;
     color: $white;
     font-family: $main;
-    padding: 3vh 6vh 3vh 6vh;
+    padding: 3vh 6vh;
     h1 {
         font-size: 3vw;
         font-weight: bold;
@@ -26,6 +28,7 @@
 }
 
 .Statistics {
+    margin: 1em 0;
     display: flex;
     justify-content: space-around;
     .icondata {
@@ -34,9 +37,8 @@
         align-items: center;
         flex-direction: column;
         .icon {
-            margin: 0 1.5em 0 1.5em;
+            margin: 0 1.5em;
             width: 8em;
-            height: 8em;
         }
         p {
             font-size: 1.2em;
@@ -46,19 +48,19 @@
 }
 
 .Badges {
-    width: 90%;
-    max-width: 70em;
+    margin: 1em 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     div {
+        margin-bottom: 1em;
         display: flex;
         align-items: center;
         flex-direction: column;
+        text-align: center;
+        width: 15em;
         .badge {
-            margin: 0 1.5em 0 1.5em;
             width: 6em;
-            height: 6em;
         }
         p {
             font-size: 1em;
