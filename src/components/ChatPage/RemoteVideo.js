@@ -12,6 +12,7 @@ class RemoteVideo extends Component {
   componentDidMount () {
     this.videoChatHandler = videoChatHandler.bind(this);
     this.videoChat = this.props.videoChat;
+    console.log(this);
     this.videoChatHandler('getLocalMedia');
     this.videoChatHandler('connect');
   }

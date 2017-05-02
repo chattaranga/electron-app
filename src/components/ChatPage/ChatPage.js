@@ -27,7 +27,7 @@ class ChatPage extends Component {
   render() {
     return (
       <div className='chat-page'>
-        <RemoteVideo />
+        <RemoteVideo videoChat={this.props.route.videoChat}/>
         <SideBar prompts={shuffle(this.props.prompts).slice(0, 4)}/>
       </div>
     );
