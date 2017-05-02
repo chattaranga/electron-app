@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import PropTypes from 'prop-types';
 
 const Feedback = props => {
@@ -25,7 +26,7 @@ const Feedback = props => {
                 src='img/chatta-icons/chatta-coach.png' 
                 alt='chatta-coach'/>
         </div>
-        <div className='button-primary' onClick={props.sendFeedback}>Continue</div>
+        <div className='button-primary' onClick={props.sendFeedback}><Link to='/achievements'>Continue</Link></div>
     </div>
   );
 };

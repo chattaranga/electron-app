@@ -156,19 +156,22 @@
       display: flex;
     }
     h1 {
-      font-size: 2em;
+      font-size: 3em;
     }
     h2 {
-      font-size: 1.3em;
+      font-size: 2em;
     }
     img {
-      width: 120px;
+ .button-primary p {
+      text-decoration: none;
+      color: darken($primary, 20%);
+    }      width: 120px;
       height: 120px;
       margin: 3em 1em 3em 1em;
     }
     .selected {
-      -moz-box-shadow: 0 0 30px 15px darken($primary, 10%);
-      -webkit-box-shadow: 0 0 30px 15px darken($primary, 10%);
-      box-shadow: 0 0 30px 15px darken($primary, 10%);
+      -moz-box-shadow: 0 0 50px 22px $primary;
+      -webkit-box-shadow: 0 0 50px 22px $primary;
+      box-shadow: 0 0 50px 22px $primary;
     }
 }
