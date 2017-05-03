@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import PropTypes from 'prop-types';
+import Animation from 'react-addons-css-transition-group';
 
 const Feedback = props => {
   let message;
@@ -11,23 +12,27 @@ const Feedback = props => {
       default: 'Great job!'; break;
   }
   return (
-    <div className='feedback'> 
-        <h1>{message}</h1>
-        <h2>{`Do you want to award ${props.remoteUser} any badges`}?</h2>
-        <div>
-            <img 
-                onClick={props.setFeedback.bind(null, 'smiley')}
-                className={props.giveSmiley ? 'round-icon selected' : 'round-icon'} 
-                src='img/chatta-icons/chatta-smile.png' 
-                alt='chatta-smile'/>
-            <img 
-                onClick={props.setFeedback.bind(null, 'teacherPoint')}
-                className={props.giveTeacherPoint ? 'round-icon selected' : 'round-icon'}  
-                src='img/chatta-icons/chatta-coach.png' 
-                alt='chatta-coach'/>
+    <Animation transitionName="fb-anim" component="div" className="feedback"
+          transitionAppearTimeout={500}  transitionEnterTimeout={500} 
+          transitionAppear={true}>
+        <div className="feedback">
+            <h1>{message}</h1>
+            <h2>{`Do you want to award ${props.remoteUser} any badges`}?</h2>
+            <div>
+                <img 
+                    onClick={props.setFeedback.bind(null, 'smiley')}
+                    className={props.giveSmiley ? 'round-icon selected' : 'round-icon'} 
+                    src='img/chatta-icons/chatta-smile.png' 
+                    alt='chatta-smile'/>
+                <img 
+                    onClick={props.setFeedback.bind(null, 'teacherPoint')}
+                    className={props.giveTeacherPoint ? 'round-icon selected' : 'round-icon'}  
+                    src='img/chatta-icons/chatta-coach.png' 
+                    alt='chatta-coach'/>
+            </div>
+            <div className='button-primary' onClick={props.sendFeedback}><Link to='/achievements'>Continue</Link></div>
         </div>
-        <div className='button-primary' onClick={props.sendFeedback}><Link to='/achievements'>Continue</Link></div>
-    </div>
+    </Animation>
   );
 };
 

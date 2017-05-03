@@ -4,11 +4,11 @@
   margin: 0;
   padding: 0;
   height: 100vh;
+  overflow: hidden;
 }
 
 .remote-video-container {
   background-color: black;
-  -webkit-flex: 2 0 0;
   flex: 2 0 0;
   margin: 0;
   padding: 0;
@@ -21,7 +21,6 @@
 }
 
 .side-bar {
-  -webkit-flex: 1 0 0;
   flex: 1 0 0;
   margin: 0;
   padding: 0;
@@ -32,14 +31,11 @@
 }
 
 .prompts-list {
-  -webkit-flex: 1 0 0;
   flex: 1 0 0;
-  padding: 1em 1em 0.5em 1em;
-  // overflow: scroll;
+  padding: 1em 1em 0.5em;
 }
 
 .translation-boxes {
-  -webkit-flex: 1 0 0;
   flex: 1 0 0;
   padding: 0.5em 1em 1em 1em;
 
@@ -67,49 +63,42 @@
   margin: 0;
   padding: 0;
   position: relative;
-
+  display: flex;
   .ab-bottom {
     position: absolute;
     bottom: 0;
 
+    height: 100%;
     width: 100%;
     padding: 0;
-    margin: 0;
-    margin-bottom: 2em;
+    margin: 1em 0;
 
     display: flex;
-    flex-direction: row;
-    align-content: stretch;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
 }
 
 .local-video-container {
-  height: 100%;
-  align-self: flex-end;
-  flex: 1 0 0;
+  width: 30%;
 
   margin-left: 1em;
   margin-right: 1em;
 }
 
 .chat-buttons {
-  height: 100%;
-  align-self: flex-start;
-  flex: 2 0 0;
-
-  margin-left: 1em;
-  margin-right: 1em;
-
+  width: 70%;
   display: flex;
-  align-items: center;
-
+  align-items: flex-end;
+  justify-content: space-around;
   .end-call {
     height: 5em;
     width: 5em;
-    border-radius: 100%;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
     img {
-      height: 5em;
-      width: 5em;
+      width: 100%;
       transform: rotate(90deg);
     }
     &:hover {
@@ -119,10 +108,24 @@
   }
 }
 
+.progress-bar {
+  height: 2em;
+  width: 70%;
+  position: relative;
+  border-radius: 5em;
+  background-color: #8b6316;
+  .dynamic-bar {
+    border-radius: 5em;
+    height: 100%;
+    background-color: $primary;
+  }
+}
+
 .vid {
   width: 100%;
   margin: 0;
   padding: 0;
+  border-radius: 1em;
 }
 
 .prompts-header {
@@ -172,4 +175,48 @@
       -webkit-box-shadow: 0 0 50px 22px $primary;
       box-shadow: 0 0 50px 22px $primary;
     }
+}
+
+// Animation for remote video
+
+.rv-anim-appear {
+  animation: fadein 1000ms ease;
+}
+
+@keyframes fadein {
+  from {opacity: 0.01;}
+  to {opacity: 1;}
+}
+
+.rv-anim-leave {
+   animation: tobottom 800ms ease-in-out;
+}
+
+@keyframes tobottom {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0.01;
+  }
+}
+
+// Animation for feedback
+
+.fb-anim-appear {
+  opacity: 0.01;
+  animation: fromtop 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes fromtop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0.01;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;  
+  }
 }
