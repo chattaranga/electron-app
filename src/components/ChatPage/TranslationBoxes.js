@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import axios from 'axios';
-import {ROOT} from '../../../config';
-
+import {translateText} from '../../actions/translation.actions';
+ 
 class TranslationBoxes extends Component {
   constructor (props) {
     super(props);
@@ -20,19 +19,6 @@ class TranslationBoxes extends Component {
     this.setState({
       inputText: event.target.value
     });
-  }
-
-  getTranslation () {
-    axios
-      .get(`localhost:8080/api/translate?text=${this.state.inputText}&sourceLanguage=en&targetLanguage=${this.props.targetLanguage}`)
-      .then(res => {
-        this.setState({
-          translatedText: res.body.translation
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
   }
 
   render () {
@@ -61,8 +47,17 @@ function mapStateToProps (state) {
   };
 }
 
-TranslationBoxes.propTypes = {
-  targetLanguage: PropTypes.string
+function mapDispatchToProps (dispatch) {
+  return {
+    translateText: (text, sourceLanguage, targetLanguage) => {
+      dispatch(translateText(text, sourceLanguage, targetLanguage));
+    }
+  }
 }
 
-export default connect(mapStateToProps, null)(TranslationBoxes);
+TranslationBoxes.propTypes = {
+  targetLanguage: PropTypes.string,
+  translateText: PropTypes.func
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TranslationBoxes);
