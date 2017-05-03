@@ -25,12 +25,12 @@ class HubPage extends Component {
               smileys={user.smileys}
               talkTime={this.getTotalPoints(user, 'talkTime')}
               teacherPoints={this.getTotalPoints(user, 'teacherPoints')}
+              logOut={this.props.logOut}
           />
         </div>
         <h2>{this.getDisplayByLanguage(this.props.user)}</h2>
         <h5>Which language are you training in today?</h5>
         <LanguageButtons userLanguages={user.userLanguages} selectLanguage={this.props.selectLanguage}/>
-        <p className='button-linking' onClick={this.props.logOut}><Link to='/'>Log out</Link></p>
       </div>
     );
   }
@@ -108,7 +108,7 @@ function mapStateToProps(state) {
 HubPage.propTypes = {
   user: PropTypes.any.isRequired,
   selectLanguage: PropTypes.func.isRequired,
-  logOut: PropTypes.func.isRequired,
+  logOut: PropTypes.func.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HubPage);

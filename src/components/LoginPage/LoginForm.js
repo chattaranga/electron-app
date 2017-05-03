@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {fetchUser, formChange} from '../../actions/user.actions';
 import {fetchLevels} from '../../actions/levels.actions';
 import {fetchLanguages} from '../../actions/languages.actions';
+import Loading from '../Loading';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class LoginForm extends Component {
       );
     }
     const message = this.props.error ? (<p className='error-message'>Something went wrong!</p>) : (<p/>);
+    if (this.props.loading) return (<div><div className='space'/><Loading/></div>);
     if (this.props.user) {
       return (
         <div>

@@ -60,6 +60,8 @@
     .icondata {
         display: flex;
         align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
     .icon {
         margin: 0 0.8em 0 0.8em;
@@ -67,7 +69,7 @@
         height: 5em;
     }
     .view-achievements {
-        display: flex;
+        display: flex; 
         justify-content: center;
         flex-direction: column;
         align-items: center;
