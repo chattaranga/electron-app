@@ -16,7 +16,8 @@ class CountdownTimer extends Component {
   componentDidMount () {
     this.setState(() => {
       return {
-        timeRemaining: 4
+        timeStart: 300,
+        timeRemaining: 300
       };
     });
     
@@ -34,17 +35,16 @@ class CountdownTimer extends Component {
       this.props.endCallHandler();
     }
   }
-  generateClock (secsLeft) {
-    let time = secsLeft / 60;
-    let minutes = Math.floor(time);
-    let seconds = Math.floor((time % 1) * 60);
+  generateClock () {
+    let secsLeft = this.state.timeRemaining;
+    let secsStarted = this.state.timeStart;
 
-    if (seconds < 10) {
-      seconds = `0${seconds.toString()}`;
-    }
+    let percentageLeft = (secsLeft * 100) / secsStarted;
 
     return (
-      <div>{`0${minutes}:${seconds}`}</div>
+      <div className="progress-bar">
+        <div style={{width: `${percentageLeft}%`}} className="dynamic-bar"></div>
+      </div>
     );
   }
   clickHandler () {
@@ -53,12 +53,12 @@ class CountdownTimer extends Component {
   }
   render () {
     return (
-      <span style={{color: 'white'}}>
-        {this.generateClock(this.state.timeRemaining)}
-        <div className='end-call' onClick={this.clickHandler}>
-          <img src='img/icons/red-phone.png' alt='end-call'/>
+      <div className="chat-buttons">
+        <div className="end-call" onClick={this.clickHandler}>
+          <img src="img/icons/red-phone.png" alt="end-call"/>
         </div>
-      </span>
+        {this.generateClock()}
+      </div>
     );
   }
 }

@@ -41,7 +41,7 @@
   flex-direction: column;
   align-items: center;
   border: 0.2em solid #ffd8b2;
-  background-color: #a7a7a7;
+  background-color: #fff;
   border-radius: 100%; }
   .round-icon:hover {
     cursor: pointer;
@@ -444,6 +444,59 @@
     color: #fff;
     font-weight: 900;
     text-transform: uppercase; }
+
+.feedback {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  color: #b85e04;
+  -webkit-flex: 2 0 0;
+  flex: 2 0 0;
+  margin: 0;
+  padding: 0; }
+  .feedback div {
+    display: flex; }
+  .feedback h1 {
+    font-size: 3em; }
+  .feedback h2 {
+    font-size: 2em; }
+  .feedback img {
+    width: 120px;
+    height: 120px;
+    margin: 3em 1em 3em 1em; }
+    .feedback img .button-primary p {
+      text-decoration: none;
+      color: #b85e04; }
+  .feedback .selected {
+    -moz-box-shadow: 0 0 50px 22px #fa9128;
+    -webkit-box-shadow: 0 0 50px 22px #fa9128;
+    box-shadow: 0 0 50px 22px #fa9128; }
+
+.roll-appear {
+  opacity: 0.01;
+  transform: translateY(-50%); }
+
+.roll-appear.roll-appear-active {
+  opacity: 1;
+  transition: all 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+.roll-enter {
+  opacity: 0.01;
+  transform: translateY(-50%); }
+
+.roll-enter.roll-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in; }
+
+.roll-leave {
+  opacity: 1;
+  transform: translateY(50%); }
+
+.roll-leave.roll-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in; }
 
 .achievements {
   max-width: 1200px;

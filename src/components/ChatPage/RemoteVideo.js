@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Animation from 'react-addons-css-transition-group';
 import videoChatHandler from '../../lib/videoChatHandler';
 import CountdownTimer from './CountdownTimer';
 
@@ -28,7 +29,9 @@ class RemoteVideo extends Component {
   }
   render() {
     return (
-      <div className='remote-video-container'>
+      <Animation transitionName="rv-anim" component="div" className="remote-video-container"
+          transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={500}
+          transitionAppear={true} transitionLeave={true}>
 
         <video
             src={this.state.remoteVideo}
@@ -40,10 +43,11 @@ class RemoteVideo extends Component {
           Something went wrong :(
         </video>
 
-        <div className='ab-bottom'>
-          <div className='chat-buttons'>
-            {this.state.onCall ? <CountdownTimer endCallHandler={this.endCallHandler} /> : null}
-          </div>
+        <div className="ab-bottom">
+          {this.state.onCall ? 
+            <CountdownTimer endCallHandler={this.endCallHandler} /> 
+            :
+            null}
           <div className='local-video-container'>
             <video
                 src={this.state.localVideo}
@@ -55,7 +59,7 @@ class RemoteVideo extends Component {
               </video>
           </div>
         </div>
-      </div>
+      </Animation>
     );
   }
 }

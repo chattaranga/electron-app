@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {shuffle} from 'underscore';
 import axios from 'axios';
+import Animation from 'react-addons-css-transition-group';
 import {fetchPrompts} from '../../actions/prompts.actions';
 import {endCall} from '../../actions/call.actions';
 import {ROOT} from '../../../config';
@@ -38,7 +39,7 @@ class ChatPage extends Component {
           giveTeacherPoint={this.state.giveTeacherPoint}/> 
       : <RemoteVideo endCall={this.props.endCall} videoChat={new VideoChat()}/>;
     return (
-      <div className='chat-page'>
+      <div className="chat-page">
         {content}
         <SideBar prompts={shuffle(this.props.prompts).slice(0, 5)}/>
       </div>
