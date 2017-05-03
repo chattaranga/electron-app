@@ -19,10 +19,13 @@ const Icons = props => {
 			</div>
 			<div className='icondata'>
 				<img src='img/chatta-icons/chatta-time.png' className='icon round-icon'/>
-				<p>{props.talkTime}</p>
+				<p>{Math.floor((props.talkTime / 1000) * 60)}</p>
 			</div>
 			<div className='icondata achievements'>
 				<Link to='/achievements'><p className='button-primary'>View Badges</p></Link>
+			</div>
+			<div className='icondata'>
+				<p className='button-linking' onClick={props.logOut}><Link to='/'>Log out</Link></p>
 			</div>
     </div>
   );
@@ -32,7 +35,8 @@ Icons.propTypes = {
   chats: PropTypes.number.isRequired,
   smileys: PropTypes.number.isRequired,
   teacherPoints: PropTypes.number.isRequired,
-	talkTime: PropTypes.number.isRequired
+	talkTime: PropTypes.number.isRequired,
+	logOut: PropTypes.func.isRequired
 };	
 
 
