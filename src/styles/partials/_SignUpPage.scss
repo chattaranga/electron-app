@@ -1,0 +1,128 @@
+.sign-up-page {
+    width: 100vw;
+    height: 100vh;
+    color: $white;
+    font-family: $main;
+    .container {
+        display: flex;
+        height: 100%;
+        margin: 0 20% 0 20%;
+        padding: 0;
+        border: 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h1 {
+            font-size: 72pt;
+            margin: 0 0 17px 0;
+        }
+        h2 {
+            margin-top: 3vh;
+            span {
+                color: red;
+                font-size: 130%;
+            }
+        }
+    }
+    .error {
+        margin: 0;
+        color: red;
+        font-weight: bolder;
+    }
+}
+
+.signup-form {
+    form {
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .forms {
+        width: 45%;
+        max-width: 40em;
+        min-width: 25em;
+    }
+    .text-box {
+        padding: 1em;
+        margin: 1em;
+        font-size: 1em;
+        border: 0;
+        border-radius: 1em;
+        border: 3px solid $white;
+        color: darken($primary, 10%);
+        font-weight: bold;
+        &:focus {
+            border: 3px solid $contrast;
+        }
+    }
+    .long {
+        width: 90%;
+    }
+    .inline {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        input {
+            width: 42%;
+        }
+        left {
+            margin-right: 9%;
+        }
+    }
+    .signin {
+        margin-top: 1.5em;
+    }
+}
+
+.signup-flag-buttons {
+    width: 100%;
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+        display: flex;
+        flex-direction: column;
+        margin: 0 1vw 0 1vw;
+        img {
+            border-radius: 100%;
+            max-height: 7em;
+            max-width: 7em;
+            border: 0.2em solid $primary-light;
+            &:hover {
+                cursor: pointer;
+                -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+                -webkit-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+                box-shadow: 0 0 30px 5px lighten($primary, 50%);
+            }
+        }
+        p {
+            align-self: center;
+            font-weight: bolder;
+            font-size: 1em;
+        }
+    }
+}
+
+.level-options {
+    display: flex;
+    width: 30%;
+    height: 2em;
+    margin-bottom: 3vh;
+    margin-top: 2vh;
+    justify-content: space-around;
+    .button-primary {
+        margin: 0 1em 0 1em;
+    }
+}
+
+.selected {
+    -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+    -webkit-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+    box-shadow: 0 0 30px 5px lighten($primary, 50%);
+}

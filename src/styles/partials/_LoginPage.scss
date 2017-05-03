@@ -1,0 +1,74 @@
+.LoginPage {
+    display: flex;
+    height: 100vh;
+    color: $white;
+    font-family: $main;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    flex-direction: column;
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        flex-direction: column;
+    }
+    .logo {
+        width: 60vw;
+        min-width: 30em;
+        max-width: 50em;
+        margin-bottom: 1vh;
+    }
+    form {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        input {
+            font-size: 1.6em;
+            padding: 0.7em;
+            border: 0;
+        }
+        .text-box {
+            width: 30%;
+            color: darken($primary, 10%);
+            font-weight: bold;
+            padding-left: 1.5em;
+            border-top-left-radius: 1em;
+            border-bottom-left-radius: 1em;
+            border: 3px solid $white;
+            &:focus {
+                border: 3px solid $contrast;
+            }
+        }
+        .submit {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            margin-left: 0.3em;
+        }
+    }
+    a {
+        text-align: center;
+        padding: 1.3em;
+        color: $primary;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bolder;
+        &:visited {
+            color: $primary;
+            text-decoration: none;
+        }
+        &:hover {
+            color: darken($primary, 20%);
+            text-decoration: none;
+        }
+    }
+}
+
+.error-message {
+    color: red;
+    font-weight: bolder;
+    text-align: center;
+}

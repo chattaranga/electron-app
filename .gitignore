@@ -10,3 +10,5 @@ node_modules
 **/.idea/*
 **/bundle.js
 **/bundle.js.map
+**/*.map.*
+**/public/styles/*

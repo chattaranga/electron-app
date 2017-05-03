@@ -1,0 +1,18 @@
+@import 'modules/_colours';
+@import 'modules/_fonts';
+
+@import 'partials/_Helpers.scss';
+@import 'partials/_LoginPage.scss';
+@import 'partials/_SignUpPage.scss';
+@import 'partials/_HubPage.scss';
+@import 'partials/_ChatPage.scss';
+@import 'partials/_AchievementsPage.scss';
+
+body {
+  background-color: $primary;
+  font-family: $main;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  // overflow: hidden;
+}

@@ -1,0 +1,128 @@
+.HubPage {
+    display: flex;
+    flex-direction: column;
+    color: $white;
+    font-family: $main;
+    padding: 2vh 4vh 2vh 4vh;
+    img {
+        width: 11em;
+        height: 11em;
+    }
+    .logo {
+        margin-right: 2em;
+    }
+    h2 {
+        align-self: center;
+        margin: 0 0 10vh 0;
+        font-size: 4em;
+        min-width: 300px;
+    }
+    h5 {
+        align-self: center;
+        color: lighten($primary, 30%);
+        font-size: 2em;
+        margin: 0;
+    }
+    .inline {
+        display: flex;
+        align-items: center;
+        margin-bottom: 4vh;
+        justify-content: space-between;
+        h1 {
+            margin: 0 5% 0 0;
+            width: 170px;
+            font-size: 200px;
+        }
+    }
+    a {
+        text-align: center;
+        padding: 1.3em;
+        color: $primary;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bolder;
+        &:visited {
+            color: $primary;
+            text-decoration: none;
+        }
+        &:hover {
+            color: darken($primary, 20%);
+            text-decoration: none;
+        }
+    }
+    .button-linking {
+        width: 120px;
+    }
+}
+
+.Icons {
+    display: flex;
+    .icondata {
+        display: flex;
+        align-items: center;
+    }
+    .icon {
+        margin: 0 0.8em 0 0.8em;
+        width: 5em;
+        height: 5em;
+    }
+    .view-achievements {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border: 0.2em solid $primary-light;
+        background-color: lighten($primary, 20%);
+        border-radius: 1em;
+        margin: 0 0.8em 0 0.8em;
+        width: 8em;
+        height: 3em;
+        p {
+            align-self: center;
+            text-align: center;
+            font-weight: bolder;
+        }
+        &:hover {
+            cursor: pointer;
+            -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+            -webkit-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+            box-shadow: 0 0 30px 5px lighten($primary, 50%);
+        }
+    }
+    .achievements {
+        display: flex;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.hub-page-buttons {
+    display: flex;
+    margin-top: 3vh;
+    justify-content: center;
+    align-items: center;
+    a {
+        display: flex;
+        flex-direction: column;
+        margin: 0 1vw 0 1vw;
+        img {
+            border-radius: 100%;
+            max-height: 7em;
+            max-width: 7em;
+            border: 0.2em solid $primary-light;
+            &:hover {
+                cursor: pointer;
+                -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+                -webkit-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+                box-shadow: 0 0 30px 5px lighten($primary, 50%);
+            }
+        }
+        p {
+            align-self: center;
+            font-weight: bolder;
+            font-size: 1em;
+            color: $white;
+        }
+    }
+}
