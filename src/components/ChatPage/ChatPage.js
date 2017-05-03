@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import {shuffle} from 'underscore';
 import axios from 'axios';
 import {fetchPrompts} from '../../actions/prompts.actions';
-import {endCall} from '../../actions/call.actions';
+import {endCall, startCall} from '../../actions/call.actions';
 import {ROOT} from '../../../config';
 import RemoteVideo from './RemoteVideo';
 import SideBar from './SideBar';
 import Feedback from './Feedback';
+import ChatLoading from './ChatLoading';
 import VideoChat from '../../lib/VideoChat';
 
 class ChatPage extends Component {
@@ -28,15 +29,23 @@ class ChatPage extends Component {
     this.props.fetchPrompts(this.props.trainingLanguage, level);
   }
   render() {
-    const content = this.props.callEnded 
-      ? <Feedback 
+    let content;
+    if (this.props.callEnded) {
+      content = <Feedback 
           remoteUser={this.props.remoteUser} 
           trainingLanguage={this.props.trainingLanguage}
           setFeedback={this.setFeedback}
           sendFeedback={this.sendFeedback}
           giveSmiley={this.state.giveSmiley}
-          giveTeacherPoint={this.state.giveTeacherPoint}/> 
-      : <RemoteVideo endCall={this.props.endCall} videoChat={new VideoChat()}/>;
+          giveTeacherPoint={this.state.giveTeacherPoint}/>; 
+    } else if (!this.props.callStarted) {
+      content = <ChatLoading/>;
+    } else {
+      content = <RemoteVideo 
+          endCall={this.props.endCall} 
+          startCall={this.props.startCall} 
+          videoChat={new VideoChat()}/>;
+    }
     return (
       <div className='chat-page'>
         {content}
@@ -81,6 +90,9 @@ function mapDispatchToProps(dispatch) {
     },
     endCall: (username) => {
       dispatch(endCall(username));
+    },
+    startCall: () => {
+      dispatch(startCall());
     }
   };
 }
@@ -92,6 +104,7 @@ function mapStateToProps(state) {
     languages: state.languages.languages,
     trainingLanguage: state.user.trainingLanguage,
     prompts: state.prompts.prompts,
+    callStarted: state.call.callStarted,
     callEnded: state.call.callEnded,
     remoteUser: state.call.remoteUser
   };
@@ -103,6 +116,7 @@ ChatPage.propTypes = {
   prompts: PropTypes.array,
   callEnded: PropTypes.bool.isRequired,
   fetchPrompts: PropTypes.func.isRequired,
+  startCall: PropTypes.func.isRequired, 
   endCall: PropTypes.func.isRequired,
   remoteUser: PropTypes.string
 };

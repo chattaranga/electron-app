@@ -173,3 +173,17 @@
       box-shadow: 0 0 50px 22px $primary;
     }
 }
+
+.chat-loading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  color: darken($primary, 15%);
+  -webkit-flex: 2 0 0;
+  flex: 2 0 0;
+  margin: 0;
+  padding: 0;
+  background-color: lighten($primary, 10%);
+}

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import videoChatHandler from '../../lib/videoChatHandler';
 import CountdownTimer from './CountdownTimer';
@@ -12,10 +12,11 @@ class RemoteVideo extends Component {
     this.endCallHandler = this.endCallHandler.bind(this);
   }
   componentDidMount() {
+    console.log(this.state.peer);
     this.videoChatHandler = videoChatHandler.bind(this);
     this.videoChat = this.props.videoChat;
     this.videoChatHandler('getLocalMedia');
-    this.videoChatHandler('connect');
+    this.videoChatHandler('connect', this.props.startCall);
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.remoteVideo) {

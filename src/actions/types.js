@@ -36,3 +36,5 @@ export const HANDLE_LANGUAGE_CHANGE = 'HANDLE_LANGUAGE_CHANGE';
 export const HANDLE_LEVEL_CHANGE = 'HANDLE_LEVEL_CHANGE';
 
 export const END_CALL = 'END_CALL';
+export const START_CALL = 'START_CALL';
+export const RESET_CALL = 'RESET_CALL';
