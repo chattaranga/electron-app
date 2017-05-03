@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {shuffle} from 'underscore';
 import axios from 'axios';
 import {fetchPrompts} from '../../actions/prompts.actions';
-import {endCall, startCall} from '../../actions/call.actions';
+import {endCall, startCall, resetCall} from '../../actions/call.actions';
 import {ROOT} from '../../../config';
 import RemoteVideo from './RemoteVideo';
 import SideBar from './SideBar';
@@ -93,6 +93,9 @@ function mapDispatchToProps(dispatch) {
     },
     startCall: () => {
       dispatch(startCall());
+    },
+    resetCall: () => {
+      dispatch(resetCall());
     }
   };
 }
@@ -117,6 +120,7 @@ ChatPage.propTypes = {
   callEnded: PropTypes.bool.isRequired,
   fetchPrompts: PropTypes.func.isRequired,
   startCall: PropTypes.func.isRequired, 
+  callStarted: PropTypes.func.isRequired,
   endCall: PropTypes.func.isRequired,
   remoteUser: PropTypes.string
 };
