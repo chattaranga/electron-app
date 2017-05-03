@@ -5,6 +5,7 @@ import languagesReducer from './languages.reducer.js';
 import promptsReducer from './prompts.reducer.js';
 import badgesReducer from './badges.reducer.js';
 import callReducer from './call.reducer.js';
+import translateReducer from './translation.reducer';
 
 export default combineReducers({
     user: userReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
     levels: levelsReducer,
     prompts: promptsReducer,
     badges: badgesReducer,
-    call: callReducer
+    call: callReducer,
+    translate: translateReducer
 });
