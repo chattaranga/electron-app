@@ -13,8 +13,7 @@ const SideBar = props => {
 };
 
 SideBar.propTypes = {
-  prompts: PropTypes.arrayOf(PropTypes.object).isRequired,
-  targetLanguage: PropTypes.string.isRequired
+  prompts: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default SideBar;

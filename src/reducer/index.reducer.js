@@ -14,5 +14,5 @@ export default combineReducers({
     prompts: promptsReducer,
     badges: badgesReducer,
     call: callReducer,
-    translate: translateReducer
+    translation: translateReducer
 });

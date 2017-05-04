@@ -16,22 +16,22 @@ class TranslationBoxes extends Component {
 
   updateInputText (event) {
     this.setState({
-      inputText: event.target.value
+      inputText: event.target.value,
     });
   }
 
   render () {
+    this.props.translateText(this.state.inputText, 'en', 'es');
     return (
       <div className='translation-boxes'>
         <form>
           <textarea 
               value={this.state.inputText}
-              onClick={this.getTranslation}
               onChange={this.updateInputText}
               placeholder='Type to translate...' />
           <br/>
           <textarea
-              value={this.state.translatedText}
+              value={this.props.translatedText}
               placeholder='Translation...'
               readOnly='true' />
         </form>
@@ -42,7 +42,8 @@ class TranslationBoxes extends Component {
 
 function mapStateToProps (state) {
   return {
-    targetLanguage: state.user.trainingLanguage
+    targetLanguage: state.user.trainingLanguage,
+    translatedText: state.translation.translatedText
   };
 }
 
@@ -51,11 +52,12 @@ function mapDispatchToProps (dispatch) {
     translateText: (text, sourceLanguage, targetLanguage) => {
       dispatch(translateText(text, sourceLanguage, targetLanguage));
     }
-  }
+  };
 }
 
 TranslationBoxes.propTypes = {
   targetLanguage: PropTypes.string,
+  translatedText: PropTypes.string,
   translateText: PropTypes.func
 };
 
