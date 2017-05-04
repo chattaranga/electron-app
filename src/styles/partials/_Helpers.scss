@@ -45,7 +45,6 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border-radius: 100%;
     &:hover {
         cursor: pointer;
         -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
@@ -59,7 +58,6 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border-radius: 100%;
 }
 
 .orange-msg-box {
