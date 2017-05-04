@@ -18,7 +18,7 @@ const Statistics = props => {
 			</div>
 			<div className='icondata'>
 				<img src='img/chatta-icons/chatta-time.png' className='icon round-icon'/>
-				<p>{props.talkTime}</p>
+				<p>{Math.floor(props.talkTime / 60000) + ' mins'}</p>
 			</div>
     </div>
   );

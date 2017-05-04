@@ -19,9 +19,16 @@ class AchievementsPage extends Component {
     if (!this.props.badges) this.props.fetchBadges();
   }
   render() {
-    if (this.props.loading) return <Loading/>;
+    if (this.props.loading) return (
+      <div className='loading-div'>
+        <Loading/>
+      </div>
+    );
     return (
       <div className='achievements'>
+          <div className='top'>
+              <Link className='link' to='/hub'><h3 className='button-linking'>Back</h3></Link>
+          </div>
           <h1>Statistics</h1>
           <Statistics
               chats={this.getTotalPoints(this.props.user, 'numOfChats')}
@@ -31,7 +38,6 @@ class AchievementsPage extends Component {
           />
           <h1>Badges</h1>
           <Badges badges={this.getBadges()}/>
-          <Link to='/hub'><h3 className='button-linking'>Back</h3></Link>
       </div>
     );
   }

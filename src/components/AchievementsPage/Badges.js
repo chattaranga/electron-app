@@ -9,7 +9,7 @@ const Badges = props => {
             else src += '.png';
             return (
                 <div key={i}>
-                    <img className='badge round-icon' src={src}/>
+                    <img className='badge round-icon-static' src={src}/>
                     <p>{badge.description}</p>
                 </div>
               );

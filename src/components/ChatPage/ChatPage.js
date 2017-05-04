@@ -52,7 +52,7 @@ class ChatPage extends Component {
     return (
       <div className="chat-page">
         {content}
-        <SideBar prompts={shuffle(this.props.prompts).slice(0, 5)}/>
+        <SideBar prompts={this.props.callEnded ? [] : shuffle(this.props.prompts).slice(0, 5)}/>
       </div>
     );
   }

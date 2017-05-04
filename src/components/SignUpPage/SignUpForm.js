@@ -89,7 +89,9 @@ class SignUpForm extends Component {
       return language._id === this.props.selectedLanguage ? language.name : acc;
     }, '');
      return languages.map((language, i) => {
-      return (
+       return language.name === 'english'
+        ? <p/>
+        : (
         <div key={i}>
           <a><img 
               onClick={this.handleLanguageChange.bind(null, String(language._id))}
