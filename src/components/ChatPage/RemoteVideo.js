@@ -17,7 +17,7 @@ class RemoteVideo extends Component {
     this.videoChatHandler = videoChatHandler.bind(this);
     this.videoChat = this.props.videoChat;
     this.videoChatHandler('getLocalMedia');
-    this.videoChatHandler('connect', this.props.startCall, this.props.endCallSetter);
+    this.videoChatHandler('connect', this.props.startCall, this.props.endCallSetter, this.props.trainingLanguage);
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.remoteVideo) {
@@ -75,7 +75,8 @@ RemoteVideo.propTypes = {
   endCall: PropTypes.func.isRequired,
   startCall: PropTypes.func.isRequired,
   callStarted: PropTypes.bool.isRequired,
-  endCallSetter: PropTypes.func.isRequired
+  endCallSetter: PropTypes.func.isRequired,
+  trainingLanguage: PropTypes.string.isRequired
 };
 
 export default RemoteVideo;
