@@ -2,7 +2,6 @@ import React from 'react';
 import {Component} from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {logOut, selectLanguage} from '../../actions/user.actions';
 import LanguageButtons from './LanguageButtons';
@@ -25,12 +24,12 @@ class HubPage extends Component {
               smileys={user.smileys}
               talkTime={this.getTotalPoints(user, 'talkTime')}
               teacherPoints={this.getTotalPoints(user, 'teacherPoints')}
+              logOut={this.props.logOut}
           />
         </div>
         <h2>{this.getDisplayByLanguage(this.props.user)}</h2>
         <h5>Which language are you training in today?</h5>
         <LanguageButtons userLanguages={user.userLanguages} selectLanguage={this.props.selectLanguage}/>
-        <p className='button-linking' onClick={this.props.logOut}><Link to='/'>Log out</Link></p>
       </div>
     );
   }
@@ -108,7 +107,7 @@ function mapStateToProps(state) {
 HubPage.propTypes = {
   user: PropTypes.any.isRequired,
   selectLanguage: PropTypes.func.isRequired,
-  logOut: PropTypes.func.isRequired,
+  logOut: PropTypes.func.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HubPage);

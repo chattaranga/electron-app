@@ -121,6 +121,9 @@
     .LoginPage a:hover {
       color: #b85e04;
       text-decoration: none; }
+  .LoginPage .space {
+    width: 50px;
+    height: 125px; }
 
 .error-message {
   color: red;
@@ -286,7 +289,9 @@
   display: flex; }
   .Icons .icondata {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
   .Icons .icon {
     margin: 0 0.8em 0 0.8em;
     width: 5em;
@@ -515,6 +520,19 @@
   to {
     transform: translateY(0);
     opacity: 1; } }
+
+.chat-loading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  color: #cc6805;
+  -webkit-flex: 2 0 0;
+  flex: 2 0 0;
+  margin: 0;
+  padding: 0;
+  background-color: #fbab5a; }
 
 .achievements {
   max-width: 1200px;
