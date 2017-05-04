@@ -5,19 +5,19 @@ const Statistics = props => {
   return (
     <div className='Statistics'>
      <div className='icondata'>
-				<img src='img/chatta-icons/chatta-chat.png' className='icon round-icon'/>
+				<img src='img/chatta-icons/chatta-chat.png' className='icon round-icon-static'/>
 				<p>{props.chats}</p>
 			</div>
 			<div className='icondata'>
-				<img src='img/chatta-icons/chatta-smile.png' className='icon round-icon'/>
+				<img src='img/chatta-icons/chatta-smile.png' className='icon round-icon-static'/>
 				<p>{props.smileys}</p>
 			</div>
 			<div className='icondata'>
-				<img src='img/chatta-icons/chatta-coach.png' className='icon round-icon'/>
+				<img src='img/chatta-icons/chatta-coach.png' className='icon round-icon-static'/>
 				<p>{props.teacherPoints}</p>
 			</div>
 			<div className='icondata'>
-				<img src='img/chatta-icons/chatta-time.png' className='icon round-icon'/>
+				<img src='img/chatta-icons/chatta-time.png' className='icon round-icon-static'/>
 				<p>{Math.floor(props.talkTime / 60000) + ' mins'}</p>
 			</div>
     </div>

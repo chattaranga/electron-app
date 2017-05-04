@@ -498,9 +498,10 @@
   .feedback h2 {
     font-size: 2em; }
   .feedback img {
+    border-radius: 100%;
     width: 120px;
     height: 120px;
-    margin: 3em 1em 3em 1em; }
+    margin: 3em; }
     .feedback img .button-primary p {
       text-decoration: none;
       color: #b85e04; }
@@ -511,38 +512,6 @@
   .feedback .button-primary a {
     text-decoration: none;
     color: #ff8002; }
-
-.rv-anim-appear {
-  animation: fadein 1000ms ease; }
-
-@keyframes fadein {
-  from {
-    opacity: 0.01; }
-  to {
-    opacity: 1; } }
-
-.rv-anim-leave {
-  animation: tobottom 800ms ease-in-out; }
-
-@keyframes tobottom {
-  from {
-    transform: translateY(0);
-    opacity: 1; }
-  to {
-    transform: translateY(-100%);
-    opacity: 0.01; } }
-
-.fb-anim-appear {
-  opacity: 0.01;
-  animation: fromtop 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-
-@keyframes fromtop {
-  from {
-    transform: translateY(-100%);
-    opacity: 0.01; }
-  to {
-    transform: translateY(0);
-    opacity: 1; } }
 
 .chat-loading {
   display: flex;
@@ -629,6 +598,50 @@
   justify-content: center;
   align-items: center;
   color: #fff; }
+
+.rv-anim-appear {
+  animation: fadein 500ms ease; }
+
+@keyframes fadein {
+  from {
+    opacity: 0.01; }
+  to {
+    opacity: 1; } }
+
+.rv-anim-leave {
+  animation: tobottom 500ms ease-in-out; }
+
+@keyframes tobottom {
+  from {
+    transform: translateY(0);
+    opacity: 1; }
+  to {
+    transform: translateY(-100%);
+    opacity: 0.01; } }
+
+.fb-anim-appear {
+  opacity: 0.01;
+  animation: fromtop 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+@keyframes fromtop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0.01; }
+  to {
+    transform: translateY(0);
+    opacity: 1; } }
+
+.page-appear {
+  animation: fadein 500ms ease; }
+
+.page-leave {
+  animation: fadeout 500ms ease-in-out; }
+
+@keyframes fadeout {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0.01; } }
 
 body {
   background-color: #fa9128;
