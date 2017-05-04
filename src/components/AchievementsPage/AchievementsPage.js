@@ -19,7 +19,11 @@ class AchievementsPage extends Component {
     if (!this.props.badges) this.props.fetchBadges();
   }
   render() {
-    if (this.props.loading) return <Loading/>;
+    if (this.props.loading) return (
+      <div className='loading-div'>
+        <Loading/>
+      </div>
+    );
     return (
       <div className='achievements'>
           <h1>Statistics</h1>
