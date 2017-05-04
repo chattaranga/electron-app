@@ -17,6 +17,8 @@
 .orange-msg-box {
     p {
         color: darken($primary, 20%);
+        text-align: center;
+        font-size: 1.2em;
     }
 }
 
@@ -30,7 +32,7 @@
 }
 
 .prompts-list {
-    flex: 1 0 0;
+    flex: 2 0 0;
     padding: 1em 1em 0.5em;
 }
 
@@ -43,10 +45,14 @@
         flex-direction: column;
         align-items: stretch;
         textarea {
-            padding: 1em;
+            color: darken($primary, 20%);
+            font-size: 1.2em;
+            padding: 1.5em;
             height: 50%;
             border-radius: 1em;
             border: 3px solid $white;
+        }
+        .i-text {
             &:focus {
                 border: 3px solid $contrast;
             }
