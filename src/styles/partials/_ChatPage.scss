@@ -168,6 +168,11 @@
         -webkit-box-shadow: 0 0 50px 22px $primary;
         box-shadow: 0 0 50px 22px $primary;
     }
+
+    .button-primary a {
+    text-decoration: none;
+    color: $primary-dark;
+    }
 }
 
 // Animation for remote video
