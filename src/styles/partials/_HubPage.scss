@@ -67,6 +67,7 @@
         margin: 0 0.8em 0 0.8em;
         width: 5em;
         height: 5em;
+        pointer-events: none;
     }
     .view-achievements {
         display: flex; 
@@ -84,12 +85,12 @@
             text-align: center;
             font-weight: bolder;
         }
-        &:hover {
-            cursor: pointer;
-            -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
-            -webkit-box-shadow: 0 0 30px 5px lighten($primary, 50%);
-            box-shadow: 0 0 30px 5px lighten($primary, 50%);
-        }
+        // &:hover {
+        //     cursor: pointer;
+        //     -moz-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+        //     -webkit-box-shadow: 0 0 30px 5px lighten($primary, 50%);
+        //     box-shadow: 0 0 30px 5px lighten($primary, 50%);
+        // }
     }
     .achievements {
         display: flex;
