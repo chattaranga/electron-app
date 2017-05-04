@@ -34,15 +34,17 @@ class AchievementsPage extends Component {
           <div className='top'>
               <Link className='link' to='/hub'><h3 className='button-linking'>Back</h3></Link>
           </div>
-          <h1>Statistics</h1>
-          <Statistics
-              chats={this.getTotalPoints(this.props.user, 'numOfChats')}
-              smileys={this.props.user.smileys}
-              talkTime={this.getTotalPoints(this.props.user, 'talkTime')}
-              teacherPoints={this.getTotalPoints(this.props.user, 'teacherPoints')}
-          />
-          <h1>Badges</h1>
-          <Badges badges={this.getBadges()}/>
+          <div className="achievements-wrapper">
+            <h1>Statistics</h1>
+            <Statistics
+                chats={this.getTotalPoints(this.props.user, 'numOfChats')}
+                smileys={this.props.user.smileys}
+                talkTime={this.getTotalPoints(this.props.user, 'talkTime')}
+                teacherPoints={this.getTotalPoints(this.props.user, 'teacherPoints')}
+            />
+            <h1>Badges</h1>
+            <Badges badges={this.getBadges()}/>
+          </div>
       </Animation>
     );
   }
