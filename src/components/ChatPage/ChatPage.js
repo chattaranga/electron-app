@@ -41,10 +41,9 @@ class ChatPage extends Component {
           sendFeedback={this.sendFeedback}
           giveSmiley={this.state.giveSmiley}
           giveTeacherPoint={this.state.giveTeacherPoint}/>; 
-    // } else if (!this.props.callStarted) {
-    //   content = <ChatLoading/>;
     } else {
       content = <RemoteVideo 
+          callStarted={this.props.callStarted}
           endCallSetter={this.endCallSetter}
           endCall={this.props.endCall}
           startCall={this.props.startCall} 

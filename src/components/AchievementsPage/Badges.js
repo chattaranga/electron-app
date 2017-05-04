@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Badges = props => {
     let badges;
-    if (!props.badges.length) badges = (<h2>You don't have any badges yet...</h2>)
+    if (!props.badges.length) badges = (<h2>You don't have any badges yet...</h2>);
     else badges = props.badges
         ? props.badges.map((badge, i) => {
             let src = 'img/badges/' + badge.name;
