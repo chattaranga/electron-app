@@ -11,18 +11,27 @@
         font-size: 3vw;
         font-weight: bold;
     }
-    h3 {
-        text-decoration: none;
-        font-size: 1.2em;
-        font-weight: bolder;
-        padding: 1.3em;
-        &:visited {
-            color: $primary;
+    .top {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        .link {
             text-decoration: none;
-        }
-        &:hover {
-            color: darken($primary, 20%);
-            text-decoration: none;
+            &:visited {
+                color: $primary;
+                text-decoration: none;
+            }
+            &:hover {
+                color: darken($primary, 20%);
+                text-decoration: none;
+            }
+            h3 {
+                text-decoration: none;
+                text-align: right;
+                font-size: 1.2em;
+                font-weight: bolder;
+                padding: 1.3em;
+                }
         }
     }
 }
@@ -38,7 +47,7 @@
         flex-direction: column;
         .icon {
             margin: 0 1.5em;
-            width: 8em;
+            width: 6em;
         }
         p {
             font-size: 1.2em;
