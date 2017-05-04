@@ -22,12 +22,12 @@ const Feedback = props => {
                 <img 
                     onClick={props.setFeedback.bind(null, 'smiley')}
                     className={props.giveSmiley ? 'round-icon selected' : 'round-icon'} 
-                    src='img/chatta-icons/chatta-smile.png' 
+                    src='img/chatta-icons/chatta-smile-black.png' 
                     alt='chatta-smile'/>
                 <img 
                     onClick={props.setFeedback.bind(null, 'teacherPoint')}
                     className={props.giveTeacherPoint ? 'round-icon selected' : 'round-icon'}  
-                    src='img/chatta-icons/chatta-coach.png' 
+                    src='img/chatta-icons/chatta-coach-black.png' 
                     alt='chatta-coach'/>
             </div>
             <div className='button-primary' onClick={props.sendFeedback}><Link to='/achievements'>Continue</Link></div>
