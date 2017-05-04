@@ -8,8 +8,7 @@ class TranslationBoxes extends Component {
     super(props);
     
     this.state = {
-      inputText: '',
-      translatedText: ''
+      inputText: ''
     };
 
     this.updateInputText = this.updateInputText.bind(this);
