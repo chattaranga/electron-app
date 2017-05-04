@@ -32,11 +32,13 @@ class TranslationBoxes extends Component {
       <div className='translation-boxes'>
         <form>
           <textarea 
+              className='i-text'
               value={this.state.inputText}
               onChange={this.updateInputText}
               placeholder='Type to translate...' />
           <br/>
           <textarea
+              className='o-text'
               value={this.props.translatedText}
               placeholder='Translation...'
               readOnly='true' />
