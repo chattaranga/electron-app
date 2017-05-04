@@ -21,7 +21,7 @@ class TranslationBoxes extends Component {
   }
 
   render () {
-    this.props.translateText(this.state.inputText, 'en', 'es');
+    this.props.translateText(this.state.inputText, 'en', this.props.targetLanguage);
     return (
       <div className='translation-boxes'>
         <form>
@@ -40,9 +40,18 @@ class TranslationBoxes extends Component {
   }
 }
 
+function formatLanguage (language) {
+  switch (language) {
+    case 'spanish': return 'es';
+    case 'french': return 'fr';
+    case 'english': return 'en';
+    case 'italian': return 'it';
+  }
+}
+
 function mapStateToProps (state) {
   return {
-    targetLanguage: state.user.trainingLanguage,
+    targetLanguage: formatLanguage(state.user.trainingLanguage),
     translatedText: state.translation.translatedText
   };
 }
