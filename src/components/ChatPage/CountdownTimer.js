@@ -11,7 +11,6 @@ class CountdownTimer extends Component {
 
     this.tick = this.tick.bind(this);
     this.generateClock = this.generateClock.bind(this);
-    this.clickHandler = this.clickHandler.bind(this);
   }
   componentDidMount () {
     this.setState(() => {
@@ -22,6 +21,10 @@ class CountdownTimer extends Component {
     });
     
     this.interval = setInterval(this.tick, 1000);
+  }
+  componentWillUnmount () {
+    this.props.endCallHandler(this.state.timeRemaining * 60);
+    clearInterval(this.interval);
   }
   tick () {
     this.setState(() => {
@@ -47,14 +50,10 @@ class CountdownTimer extends Component {
       </div>
     );
   }
-  clickHandler () {
-    let millisecondsLeft = this.state.timeRemaining * 60;
-    this.props.endCallHandler(millisecondsLeft);
-  }
   render () {
     return (
       <div className="chat-buttons">
-        <div className="end-call" onClick={this.clickHandler}>
+        <div className="end-call" onClick={this.props.endCallSetter}>
           <img src="img/icons/red-phone.png" alt="end-call"/>
         </div>
         {this.generateClock()}
@@ -64,7 +63,8 @@ class CountdownTimer extends Component {
 }
 
 CountdownTimer.propTypes = {
-  endCallHandler: PropTypes.func.isRequired
+  endCallHandler: PropTypes.func.isRequired,
+  endCallSetter: PropTypes.func.isRequired
 };
 
 export default CountdownTimer;
