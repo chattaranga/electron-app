@@ -1,10 +1,10 @@
 import * as types from './types';
 import axios from 'axios';
-import ROOT from '../../config';
+import {ROOT} from '../../config';
 
-export function endCall (username, time, language) {
+export function endCall (peer, user, time, language) {
     axios
-        .put(`${ROOT}${username}/${language}?Talktime=${time}`)
+        .put(`${ROOT}users/${user}/${language}?Talktime=${time}`)
         .then(res => {
         console.log(res);
         })
@@ -13,7 +13,7 @@ export function endCall (username, time, language) {
         });
     return {
         type: types.END_CALL,
-        data: username
+        data: peer
     };
 }
 

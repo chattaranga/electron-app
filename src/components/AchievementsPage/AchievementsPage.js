@@ -20,7 +20,6 @@ class AchievementsPage extends Component {
   componentDidMount () {
     if (!this.props.badges) this.props.fetchBadges();
     this.props.fetchUser(this.props.user.username);
-    console.log('running cdm');
   }
   render() {
     if (this.props.loading) return (
@@ -130,7 +129,6 @@ function mapDispatchToProps(dispatch) {
       dispatch(fetchBadges());
     },
     fetchUser: (username) => {
-      console.log(username);
       dispatch(fetchUser(username));
     }
   };

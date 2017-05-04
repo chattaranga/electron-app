@@ -101,8 +101,9 @@ function mapDispatchToProps(dispatch) {
     fetchPrompts: (language, level) => {
       dispatch(fetchPrompts(language, level));
     },
-    endCall: (username, time, language) => {
-      dispatch(endCall(username, time, language));
+    endCall: (peer, user, time, language) => {
+      console.log(language);
+      dispatch(endCall(peer, user, time, language));
     },
     startCall: () => {
       dispatch(startCall());
