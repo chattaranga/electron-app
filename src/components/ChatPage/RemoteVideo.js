@@ -13,20 +13,19 @@ class RemoteVideo extends Component {
     this.endCallHandler = this.endCallHandler.bind(this);
   }
   componentDidMount() {
-    console.log(this.state.peer);
     this.videoChatHandler = videoChatHandler.bind(this);
     this.videoChat = this.props.videoChat;
     this.videoChatHandler('getLocalMedia');
-    this.videoChatHandler('connect', this.props.startCall);
+    this.videoChatHandler('connect', this.props.startCall, this.props.endCallSetter);
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.remoteVideo) {
       this.videoChatHandler('disconnect');
     }
   }
-  endCallHandler() {
+  endCallHandler(time) {
     this.videoChatHandler('hang');
-    this.props.endCall(this.state.peer);
+    this.props.endCall(this.state.peer, time);
   }
   render() {
     return (
@@ -46,7 +45,7 @@ class RemoteVideo extends Component {
 
         <div className="ab-bottom">
           {this.state.onCall ? 
-            <CountdownTimer endCallHandler={this.endCallHandler} /> 
+            <CountdownTimer endCallHandler={this.endCallHandler} endCallSetter={this.props.endCallSetter}/> 
             :
             null}
           <div className='local-video-container'>
@@ -67,7 +66,9 @@ class RemoteVideo extends Component {
 
 RemoteVideo.propTypes = {
   videoChat: PropTypes.object.isRequired,
-  endCall: PropTypes.func.isRequired
+  endCall: PropTypes.func.isRequired,
+  startCall: PropTypes.func.isRequired,
+  endCallSetter: PropTypes.func.isRequired
 };
 
 export default RemoteVideo;

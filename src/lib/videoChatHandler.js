@@ -1,4 +1,4 @@
-const videoChatHandler = function(action, cb) {
+const videoChatHandler = function(action, startCall, endCallSetter) {
   const handlers = {
     getLocalMedia: () => {
       const constraints = { 
@@ -20,9 +20,14 @@ const videoChatHandler = function(action, cb) {
         });
     },
     connect: () => {
-      this.videoChat.connect({username: this.props.user.username, room: this.props.room}, handlers['answer'].bind(null, cb), handlers['call'].bind(null, cb));
+      const profile = {
+        username: this.props.user.username,
+        room: this.props.room
+      };
+
+      this.videoChat.connect(profile, handlers['answer'], handlers['call'], endCallSetter);
     },
-    call: (startCall, stream, peer) => {
+    call: (stream, peer) => {
       startCall();
       this.setState(() => {
         return {
@@ -32,7 +37,7 @@ const videoChatHandler = function(action, cb) {
         };
       });
     },
-    answer: (startCall, stream, peer) => {
+    answer: (stream, peer) => {
       startCall();
       this.setState(() => {
         return {
@@ -61,7 +66,7 @@ const videoChatHandler = function(action, cb) {
     }
   };
   
-  return handlers[action](cb) || handlers['default'];
+  return handlers[action]() || handlers['default'];
 };
 
 export default videoChatHandler;

@@ -18,10 +18,12 @@ class ChatPage extends Component {
     super(props);
     this.state = {
       giveSmiley: false,
-      giveTeacherPoint: false
+      giveTeacherPoint: false,
+      callEnd: false
     };
     this.setFeedback = this.setFeedback.bind(this);
     this.sendFeedback = this.sendFeedback.bind(this);
+    this.endCallSetter = this.endCallSetter.bind(this);
   }
   componentDidMount () {
     this.level = this.props.user.userLanguages.reduce((acc, userLanguage) => {
@@ -31,7 +33,7 @@ class ChatPage extends Component {
   }
   render() {
     let content;
-    if (this.props.callEnded) {
+    if (this.state.callEnded) {
       content = <Feedback 
           remoteUser={this.props.remoteUser} 
           trainingLanguage={this.props.trainingLanguage}
@@ -43,7 +45,8 @@ class ChatPage extends Component {
     //   content = <ChatLoading/>;
     } else {
       content = <RemoteVideo 
-          endCall={this.props.endCall} 
+          endCallSetter={this.endCallSetter}
+          endCall={this.props.endCall}
           startCall={this.props.startCall} 
           user={this.props.user}
           room={this.props.trainingLanguage + this.level}
@@ -55,6 +58,13 @@ class ChatPage extends Component {
         <SideBar prompts={this.props.callEnded ? [] : shuffle(this.props.prompts).slice(0, 5)}/>
       </div>
     );
+  }
+  endCallSetter () {
+    this.setState(() => {
+      return {
+        callEnded: true
+      };
+    });
   }
   setFeedback (type) {
     this.setState(type === 'smiley'
