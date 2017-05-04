@@ -20,7 +20,7 @@ const videoChatHandler = function(action) {
         });
     },
     connect: () => {
-      this.videoChat.connect({username: Math.floor(Math.random() * 100).toString(), room: 'test'}, handlers['answer'], handlers['call']);
+      this.videoChat.connect({username: this.props.user.username, room: this.props.room}, handlers['answer'], handlers['call']);
     },
     call: (stream, peer) => {
       this.setState(() => {

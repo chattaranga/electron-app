@@ -23,10 +23,10 @@ class ChatPage extends Component {
     this.sendFeedback = this.sendFeedback.bind(this);
   }
   componentDidMount () {
-    const level = this.props.user.userLanguages.reduce((acc, userLanguage) => {
+    this.level = this.props.user.userLanguages.reduce((acc, userLanguage) => {
       return userLanguage.language === this.props.trainingLanguage ? userLanguage.level : acc;
     }, '');
-    this.props.fetchPrompts(this.props.trainingLanguage, level);
+    this.props.fetchPrompts(this.props.trainingLanguage, this.level);
   }
   render() {
     const content = this.props.callEnded 
@@ -37,7 +37,7 @@ class ChatPage extends Component {
           sendFeedback={this.sendFeedback}
           giveSmiley={this.state.giveSmiley}
           giveTeacherPoint={this.state.giveTeacherPoint}/> 
-      : <RemoteVideo endCall={this.props.endCall} videoChat={new VideoChat()}/>;
+      : <RemoteVideo endCall={this.props.endCall} videoChat={new VideoChat()} user={this.props.user} room={this.props.trainingLanguage + this.level} />;
     return (
       <div className="chat-page">
         {content}

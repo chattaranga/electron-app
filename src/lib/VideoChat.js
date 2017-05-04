@@ -18,13 +18,13 @@ VideoChat.prototype.setPeer = function (peer) {
 
 VideoChat.prototype.connect = function (profile, answerHandler, callHandler) {
   this.peer = new Peer(profile.username, {
-    host: '127.0.0.1', port: '9000', path: '/api'
+    host: 'chattaranga-signalling-server.herokuapp.com', port: '', secure: true, path: '/api'
   });
 
   this.peer.on('open', (username) => {
     this.setUsername(username);
     
-    this.socket = io('http://127.0.0.1:9000');
+    this.socket = io('https://chattaranga-signalling-server.herokuapp.com');
 
     this.socket.emit('connect_to_room', profile);
     
