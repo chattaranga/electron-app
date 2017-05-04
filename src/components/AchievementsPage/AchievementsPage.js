@@ -3,6 +3,7 @@ import {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
+import Animation from 'react-addons-css-transition-group';
 import Statistics from './Statistics';
 import Badges from './Badges';
 import Loading from '../Loading';
@@ -25,7 +26,9 @@ class AchievementsPage extends Component {
       </div>
     );
     return (
-      <div className='achievements'>
+      <Animation transitionName="page" component="div" className="achievements"
+          transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={500}
+          transitionAppear={true} transitionLeave={true}>
           <div className='top'>
               <Link className='link' to='/hub'><h3 className='button-linking'>Back</h3></Link>
           </div>
@@ -38,7 +41,7 @@ class AchievementsPage extends Component {
           />
           <h1>Badges</h1>
           <Badges badges={this.getBadges()}/>
-      </div>
+      </Animation>
     );
   }
   getTotalPoints (user, target) {
