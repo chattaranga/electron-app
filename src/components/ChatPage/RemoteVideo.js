@@ -74,9 +74,9 @@ RemoteVideo.propTypes = {
   videoChat: PropTypes.object.isRequired,
   endCall: PropTypes.func.isRequired,
   startCall: PropTypes.func.isRequired,
-  callStarted: PropTypes.bool.isRequired,
+  callStarted: PropTypes.any.isRequired,
   endCallSetter: PropTypes.func.isRequired,
-  user: PropTypes.string.isRequired,
+  user: PropTypes.any.isRequired,
   trainingLanguage: PropTypes.string.isRequired
 };
 

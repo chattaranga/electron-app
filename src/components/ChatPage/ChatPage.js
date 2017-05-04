@@ -6,6 +6,7 @@ import axios from 'axios';
 import {fetchPrompts} from '../../actions/prompts.actions';
 import {endCall, startCall, resetCall} from '../../actions/call.actions';
 import {ROOT} from '../../../config';
+import Animation from 'react-addons-css-transition-group';
 import RemoteVideo from './RemoteVideo';
 import SideBar from './SideBar';
 import Feedback from './Feedback';
@@ -51,9 +52,15 @@ class ChatPage extends Component {
           videoChat={new VideoChat()}/>;
     }
     return (
-      <Animation transitionName="page" component="div" className="chat-page"
-          transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={500}
-          transitionAppear={true} transitionLeave={true}>
+      <Animation 
+          transitionName="page" 
+          component="div" 
+          className="chat-page"
+          transitionAppearTimeout={500} 
+          transitionEnterTimeout={500} 
+          transitionLeaveTimeout={500}
+          transitionAppear={true} 
+          transitionLeave={true}>
         {content}
         <SideBar prompts={this.props.callEnded ? [] : shuffle(this.props.prompts).slice(0, 4)}/>
       </Animation>
@@ -128,13 +135,13 @@ function mapStateToProps(state) {
 }
 
 ChatPage.propTypes = {
-  user: PropTypes.object, 
+  user: PropTypes.any, 
   trainingLanguage: PropTypes.string,
   prompts: PropTypes.array,
   callEnded: PropTypes.bool.isRequired,
   fetchPrompts: PropTypes.func.isRequired,
   startCall: PropTypes.func.isRequired, 
-  callStarted: PropTypes.func.isRequired,
+  callStarted: PropTypes.bool.isRequired,
   endCall: PropTypes.func.isRequired,
   remoteUser: PropTypes.string
 };

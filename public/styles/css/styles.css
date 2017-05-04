@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Muli");
-.button-primary {
+.button-primary, .button-linking {
   display: flex;
   align-items: center;
   vertical-align: middle;
@@ -9,10 +9,11 @@
   font-weight: bold;
   padding: 1.3em;
   font-size: 1em;
-  border-radius: 0.6em; }
-  .button-primary a {
+  border-radius: 0.6em;
+  outline: none; }
+  .button-primary a, .button-linking a {
     text-decoration: none; }
-  .button-primary:hover {
+  .button-primary:hover, .button-linking:hover {
     cursor: pointer;
     color: #b85e04;
     -moz-box-shadow: 0 0 10px 5px white;
@@ -20,43 +21,19 @@
     box-shadow: 0 0 10px 5px white; }
 
 .button-linking {
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
-  border: 0;
-  color: #ff8002;
-  background-color: #ffd8b2;
-  font-weight: bold;
-  font-size: 1em;
-  border-radius: 0.6em;
-  outline: none; }
-  .button-linking p {
-    color: #b85e04; }
-  .button-linking a {
-    text-decoration: none; }
-  .button-linking:hover {
-    cursor: pointer;
-    color: #b85e04;
-    -moz-box-shadow: 0 0 10px 5px white;
-    -webkit-box-shadow: 0 0 10px 5px white;
-    box-shadow: 0 0 10px 5px white; }
+  padding: 0; }
 
-.round-icon {
+.round-icon-static, .round-icon {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center; }
-  .round-icon:hover {
-    cursor: pointer;
-    -moz-box-shadow: 0 0 30px 5px white;
-    -webkit-box-shadow: 0 0 30px 5px white;
-    box-shadow: 0 0 30px 5px white; }
 
-.round-icon-static {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center; }
+.round-icon:hover {
+  cursor: pointer;
+  -moz-box-shadow: 0 0 30px 5px white;
+  -webkit-box-shadow: 0 0 30px 5px white;
+  box-shadow: 0 0 30px 5px white; }
 
 .orange-msg-box {
   padding: 1em;
@@ -236,7 +213,7 @@
   margin-bottom: 3vh;
   margin-top: 2vh;
   justify-content: space-around; }
-  .level-options .button-primary {
+  .level-options .button-primary, .level-options .button-linking {
     margin: 0 1em 0 1em; }
 
 .selected {
@@ -502,14 +479,14 @@
     width: 120px;
     height: 120px;
     margin: 3em; }
-    .feedback img .button-primary p {
+    .feedback img .button-primary p, .feedback img .button-linking p {
       text-decoration: none;
       color: #b85e04; }
   .feedback .selected {
     -moz-box-shadow: 0 0 50px 22px #fa9128;
     -webkit-box-shadow: 0 0 50px 22px #fa9128;
     box-shadow: 0 0 50px 22px #fa9128; }
-  .feedback .button-primary a {
+  .feedback .button-primary a, .feedback .button-linking a {
     text-decoration: none;
     color: #ff8002; }
 
@@ -520,6 +497,7 @@
   justify-content: center;
   background-color: white;
   color: #cc6805;
+  height: 100%;
   -webkit-flex: 2 0 0;
   flex: 2 0 0;
   margin: 0;
@@ -527,7 +505,6 @@
   background-color: #fbab5a; }
 
 .achievements {
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -556,6 +533,16 @@
         font-size: 1.2em;
         font-weight: bolder;
         padding: 1.3em; }
+
+.achievements-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  font-family: "Muli";
+  padding: 3vh 6vh; }
 
 .Statistics {
   margin: 1em 0;
