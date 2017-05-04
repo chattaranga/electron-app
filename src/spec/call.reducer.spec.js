@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+import {expect} from 'chai';
 import callReducer from '../reducer/call.reducer.js';
 import * as types from '../actions/types';
 

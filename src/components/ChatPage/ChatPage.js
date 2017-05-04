@@ -38,13 +38,15 @@ class ChatPage extends Component {
           setFeedback={this.setFeedback}
           sendFeedback={this.sendFeedback}
           giveSmiley={this.state.giveSmiley}
-          giveTeacherPoint={this.state.giveTeacherPoint}/> 
+          giveTeacherPoint={this.state.giveTeacherPoint}/>; 
     // } else if (!this.props.callStarted) {
     //   content = <ChatLoading/>;
     } else {
       content = <RemoteVideo 
           endCall={this.props.endCall} 
           startCall={this.props.startCall} 
+          user={this.props.user}
+          room={this.props.trainingLanguage + this.level}
           videoChat={new VideoChat()}/>;
     }
     return (
