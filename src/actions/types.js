@@ -36,7 +36,12 @@ export const HANDLE_LANGUAGE_CHANGE = 'HANDLE_LANGUAGE_CHANGE';
 export const HANDLE_LEVEL_CHANGE = 'HANDLE_LEVEL_CHANGE';
 
 export const END_CALL = 'END_CALL';
+<<<<<<< HEAD
 
 export const TRANSLATE_TEXT_REQUEST = 'TRANSLATE_TEXT_REQUEST';
 export const TRANSLATE_TEXT_SUCCESS = 'TRANSLATE_TEXT_SUCCESS';
 export const TRANSLATE_TEXT_ERROR = 'TRANSLATE_TEXT_ERROR';
+=======
+export const START_CALL = 'START_CALL';
+export const RESET_CALL = 'RESET_CALL';
+>>>>>>> e7bbb01... Adds tested Redux actions and reducer for starting calls

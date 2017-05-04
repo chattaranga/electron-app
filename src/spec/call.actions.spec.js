@@ -14,4 +14,24 @@ describe('Call actions:', () => {
            });
        });
    });
+   describe('startCall()', () => {
+       it('is a function', () => {
+           expect(callActions.startCall).to.be.a('function');
+       });
+       it('returns the expected action', () => {
+           expect(callActions.startCall()).to.eql({
+               type: types.START_CALL
+           });
+       });
+   });
+    describe('resetCall()', () => {
+       it('is a function', () => {
+           expect(callActions.resetCall).to.be.a('function');
+       });
+       it('returns the expected action', () => {
+           expect(callActions.resetCall()).to.eql({
+               type: types.RESET_CALL
+           });
+       });
+   });
 });

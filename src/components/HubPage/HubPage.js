@@ -2,7 +2,6 @@ import React from 'react';
 import {Component} from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {logOut, selectLanguage} from '../../actions/user.actions';
 import LanguageButtons from './LanguageButtons';
