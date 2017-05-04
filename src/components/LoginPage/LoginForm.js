@@ -62,6 +62,7 @@ class LoginForm extends Component {
   }
   handleLogin (username, e) {
     e.preventDefault();
+    if (!this.props.formText.length) return;
     this.props.getUser(username);
     this.props.formChange('');
   }
@@ -103,7 +104,7 @@ LoginForm.propTypes = {
   fetchLanguages: PropTypes.func.isRequired,
   fetchLevels: PropTypes.func.isRequired,
   formText: PropTypes.string.isRequired,
-  error: PropTypes.func,
+  error: PropTypes.any,
   user: PropTypes.object,
   loading: PropTypes.bool.isRequired,
   emailText: PropTypes.string,
@@ -111,7 +112,7 @@ LoginForm.propTypes = {
   userNameText: PropTypes.string,
   selectedLanguage: PropTypes.string,
   selectedLevel: PropTypes.string,
-  languageError: PropTypes.func,
+  languageError: PropTypes.any,
   languages: PropTypes.array,
   levels: PropTypes.array
 };

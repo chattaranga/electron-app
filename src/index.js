@@ -13,8 +13,8 @@ import HubPage from './components/HubPage/HubPage';
 import SignUpPage from './components/SignUpPage/SignUpPage';
 import ChatPage from './components/ChatPage/ChatPage';
 
-import '../src/styles/styles.scss';
 import 'font-awesome/scss/font-awesome.scss';
+import '../src/styles/styles.scss';
 import reducer from './reducer/index.reducer';
 
 

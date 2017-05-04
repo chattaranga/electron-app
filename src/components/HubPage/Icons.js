@@ -19,7 +19,7 @@ const Icons = props => {
 			</div>
 			<div className='icondata'>
 				<img src='img/chatta-icons/chatta-time.png' className='icon round-icon'/>
-				<h4>{Math.floor((props.talkTime / 1000) * 60)}</h4>
+				<h4>{Math.floor(props.talkTime / 60000) + ' mins'}</h4>
 			</div>
 			<div className='icondata achievements'>
 				<Link to='/achievements'><p className='button-primary'>View Badges</p></Link>
