@@ -53,10 +53,12 @@ class ChatPage extends Component {
           videoChat={new VideoChat()}/>;
     }
     return (
-      <div className="chat-page">
+      <Animation transitionName="page" component="div" className="chat-page"
+          transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={500}
+          transitionAppear={true} transitionLeave={true}>
         {content}
         <SideBar prompts={this.props.callEnded ? [] : shuffle(this.props.prompts).slice(0, 4)}/>
-      </div>
+      </Animation>
     );
   }
   endCallSetter () {

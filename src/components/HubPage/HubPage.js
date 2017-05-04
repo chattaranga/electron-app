@@ -3,6 +3,7 @@ import {Component} from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import {connect} from 'react-redux';
+import Animation from 'react-addons-css-transition-group';
 import {logOut, selectLanguage} from '../../actions/user.actions';
 import LanguageButtons from './LanguageButtons';
 import Icons from './Icons';
@@ -16,7 +17,9 @@ class HubPage extends Component {
   render() {
     const user = this.props.user;
     return (
-      <div className='HubPage'>
+      <Animation transitionName="page" component="div" className="HubPage"
+          transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={500}
+          transitionAppear={true} transitionLeave={true}>
         <div className='inline'>
           <img className='logo' src='img/logos/logo-box-transparent-grad.png'/>
           <Icons
@@ -30,7 +33,7 @@ class HubPage extends Component {
         <h2>{this.getDisplayByLanguage(this.props.user)}</h2>
         <h5>Which language are you training in today?</h5>
         <LanguageButtons userLanguages={user.userLanguages} selectLanguage={this.props.selectLanguage}/>
-      </div>
+      </Animation>
     );
   }
   getDisplayByLanguage (user) {

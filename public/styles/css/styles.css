@@ -4,7 +4,7 @@
   align-items: center;
   vertical-align: middle;
   border: 0;
-  color: #ff8002;
+  color: #fa9128;
   background-color: #ffd8b2;
   font-weight: bold;
   padding: 1.3em;
@@ -30,6 +30,8 @@
   font-size: 1em;
   border-radius: 0.6em;
   outline: none; }
+  .button-linking p {
+    color: #b85e04; }
   .button-linking a {
     text-decoration: none; }
   .button-linking:hover {
@@ -43,15 +45,18 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
-  border: 0.2em solid #ffd8b2;
-  background-color: #fff;
-  border-radius: 100%; }
+  align-items: center; }
   .round-icon:hover {
     cursor: pointer;
     -moz-box-shadow: 0 0 30px 5px white;
     -webkit-box-shadow: 0 0 30px 5px white;
     box-shadow: 0 0 30px 5px white; }
+
+.round-icon-static {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
 
 .orange-msg-box {
   padding: 1em;
@@ -295,7 +300,8 @@
   .Icons .icon {
     margin: 0 0.8em 0 0.8em;
     width: 5em;
-    height: 5em; }
+    height: 5em;
+    pointer-events: none; }
   .Icons .view-achievements {
     display: flex;
     justify-content: center;
@@ -311,16 +317,13 @@
       align-self: center;
       text-align: center;
       font-weight: bolder; }
-    .Icons .view-achievements:hover {
-      cursor: pointer;
-      -moz-box-shadow: 0 0 30px 5px white;
-      -webkit-box-shadow: 0 0 30px 5px white;
-      box-shadow: 0 0 30px 5px white; }
   .Icons .achievements {
     display: flex;
     align-items: center;
     padding-left: 0;
     padding-right: 0; }
+  .Icons .button-linking {
+    color: #b85e04; }
 
 .hub-page-buttons {
   display: flex;
@@ -505,6 +508,9 @@
     -moz-box-shadow: 0 0 50px 22px #fa9128;
     -webkit-box-shadow: 0 0 50px 22px #fa9128;
     box-shadow: 0 0 50px 22px #fa9128; }
+  .feedback .button-primary a {
+    text-decoration: none;
+    color: #ff8002; }
 
 .rv-anim-appear {
   animation: fadein 1000ms ease; }
@@ -563,17 +569,24 @@
   .achievements h1 {
     font-size: 3vw;
     font-weight: bold; }
-  .achievements h3 {
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bolder;
-    padding: 1.3em; }
-    .achievements h3:visited {
-      color: #fa9128;
+  .achievements .top {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%; }
+    .achievements .top .link {
       text-decoration: none; }
-    .achievements h3:hover {
-      color: #b85e04;
-      text-decoration: none; }
+      .achievements .top .link:visited {
+        color: #fa9128;
+        text-decoration: none; }
+      .achievements .top .link:hover {
+        color: #b85e04;
+        text-decoration: none; }
+      .achievements .top .link h3 {
+        text-decoration: none;
+        text-align: right;
+        font-size: 1.2em;
+        font-weight: bolder;
+        padding: 1.3em; }
 
 .Statistics {
   margin: 1em 0;
@@ -586,7 +599,7 @@
     flex-direction: column; }
     .Statistics .icondata .icon {
       margin: 0 1.5em;
-      width: 8em; }
+      width: 6em; }
     .Statistics .icondata p {
       font-size: 1.2em;
       font-weight: bold; }
@@ -609,11 +622,26 @@
       font-size: 1em;
       font-weight: bold; }
 
+.loading-div {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff; }
+
 body {
   background-color: #fa9128;
   font-family: "Muli";
   margin: 0;
   border: 0;
-  padding: 0; }
+  padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+::selection {
+  background: #ffd8b2; }
 
 /*# sourceMappingURL=styles.css.map */
