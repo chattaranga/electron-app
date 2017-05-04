@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {translateText} from '../../actions/translation.actions';
+import _ from 'underscore';
  
 class TranslationBoxes extends Component {
   constructor (props) {
@@ -17,11 +18,16 @@ class TranslationBoxes extends Component {
   updateInputText (event) {
     this.setState({
       inputText: event.target.value,
+    }, () => {
+      this.throttledTranslate(this.state.inputText, 'en', this.props.targetLanguage);
     });
   }
 
+  componentDidMount () {
+    this.throttledTranslate = _.throttle(this.props.translateText, 1000);
+  }
+
   render () {
-    this.props.translateText(this.state.inputText, 'en', this.props.targetLanguage);
     return (
       <div className='translation-boxes'>
         <form>
@@ -58,7 +64,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    translateText: (text, sourceLanguage, targetLanguage) => {
+    translateText: (text, sourceLanguage, targetLanguage) => {console.log('***************');
       dispatch(translateText(text, sourceLanguage, targetLanguage));
     }
   };
