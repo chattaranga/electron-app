@@ -3,14 +3,12 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {shuffle} from 'underscore';
 import axios from 'axios';
-import Animation from 'react-addons-css-transition-group';
 import {fetchPrompts} from '../../actions/prompts.actions';
 import {endCall, startCall, resetCall} from '../../actions/call.actions';
 import {ROOT} from '../../../config';
 import RemoteVideo from './RemoteVideo';
 import SideBar from './SideBar';
 import Feedback from './Feedback';
-import ChatLoading from './ChatLoading';
 import VideoChat from '../../lib/VideoChat';
 
 class ChatPage extends Component {
@@ -41,11 +39,11 @@ class ChatPage extends Component {
           sendFeedback={this.sendFeedback}
           giveSmiley={this.state.giveSmiley}
           giveTeacherPoint={this.state.giveTeacherPoint}/>; 
-    // } else if (!this.props.callStarted) {
-    //   content = <ChatLoading/>;
     } else {
       content = <RemoteVideo 
+          callStarted={this.props.callStarted}
           endCallSetter={this.endCallSetter}
+          trainingLanguage={this.props.trainingLanguage}
           endCall={this.props.endCall}
           startCall={this.props.startCall} 
           user={this.props.user}
@@ -103,8 +101,9 @@ function mapDispatchToProps(dispatch) {
     fetchPrompts: (language, level) => {
       dispatch(fetchPrompts(language, level));
     },
-    endCall: (username) => {
-      dispatch(endCall(username));
+    endCall: (peer, user, time, language) => {
+      console.log(language);
+      dispatch(endCall(peer, user, time, language));
     },
     startCall: () => {
       dispatch(startCall());

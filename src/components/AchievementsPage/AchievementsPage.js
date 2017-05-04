@@ -8,6 +8,7 @@ import Statistics from './Statistics';
 import Badges from './Badges';
 import Loading from '../Loading';
 import {fetchBadges} from '../../actions/badges.actions';
+import {fetchUser} from '../../actions/user.actions';
 import _ from 'underscore';
 
 class AchievementsPage extends Component {
@@ -18,6 +19,7 @@ class AchievementsPage extends Component {
   }
   componentDidMount () {
     if (!this.props.badges) this.props.fetchBadges();
+    this.props.fetchUser(this.props.user.username);
   }
   render() {
     if (this.props.loading) return (
@@ -125,6 +127,9 @@ function mapDispatchToProps(dispatch) {
   return {
     fetchBadges: () => {
       dispatch(fetchBadges());
+    },
+    fetchUser: (username) => {
+      dispatch(fetchUser(username));
     }
   };
 }
@@ -142,7 +147,8 @@ AchievementsPage.propTypes = {
   user: PropTypes.object,
   badges: PropTypes.arrayOf(PropTypes.object),
   loading: PropTypes.bool.isRequired,
-  fetchBadges: PropTypes.func.isRequired
+  fetchBadges: PropTypes.func.isRequired,
+  fetchUser: PropTypes.func.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AchievementsPage);

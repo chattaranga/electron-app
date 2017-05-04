@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Badges = props => {
-    const badges = props.badges
+    let badges;
+    if (!props.badges.length) badges = (<h2>You don't have any badges yet...</h2>);
+    else badges = props.badges
         ? props.badges.map((badge, i) => {
             let src = 'img/badges/' + badge.name;
             if (badge.name === 'fast-parrot-master' || badge.name === 'ultimate-fast-parrot-demigod') src += '.gif';

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Animation from 'react-addons-css-transition-group';
 import videoChatHandler from '../../lib/videoChatHandler';
 import CountdownTimer from './CountdownTimer';
+import ChatLoading from './ChatLoading';
 
 class RemoteVideo extends Component {
   constructor(props) {
@@ -25,24 +26,29 @@ class RemoteVideo extends Component {
   }
   endCallHandler(time) {
     this.videoChatHandler('hang');
-    this.props.endCall(this.state.peer, time);
+    this.props.endCall(this.state.peer, this.props.user.username, time, this.props.trainingLanguage);
   }
   render() {
-    return (
-      <Animation transitionName="rv-anim" component="div" className="remote-video-container"
-          transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={500}
-          transitionAppear={true} transitionLeave={true}>
-
-        <video
-            src={this.state.remoteVideo}
-            className='vid'
-            classID='remote-video'
-            autoPlay='true'
-            muted='true'>
-            {/* Delete muted for production */}
+    const videoArea = this.props.callStarted 
+      ?  <video
+          src={this.state.remoteVideo}
+          className='vid'
+          classID='remote-video'
+          autoPlay='true'>
           Something went wrong :(
         </video>
-
+      : <ChatLoading/>;
+    return (
+      <Animation 
+          transitionName="rv-anim" 
+          component="div" 
+          className="remote-video-container"
+          transitionAppearTimeout={500} 
+          transitionEnterTimeout={500} 
+          transitionLeaveTimeout={500}
+          transitionAppear={true} 
+          transitionLeave={true}>
+          {videoArea}
         <div className="ab-bottom">
           {this.state.onCall ? 
             <CountdownTimer endCallHandler={this.endCallHandler} endCallSetter={this.props.endCallSetter}/> 
@@ -68,7 +74,10 @@ RemoteVideo.propTypes = {
   videoChat: PropTypes.object.isRequired,
   endCall: PropTypes.func.isRequired,
   startCall: PropTypes.func.isRequired,
-  endCallSetter: PropTypes.func.isRequired
+  callStarted: PropTypes.bool.isRequired,
+  endCallSetter: PropTypes.func.isRequired,
+  user: PropTypes.string.isRequired,
+  trainingLanguage: PropTypes.string.isRequired
 };
 
 export default RemoteVideo;
