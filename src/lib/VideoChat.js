@@ -16,7 +16,7 @@ VideoChat.prototype.setPeer = function (peer) {
   this._peer = peer;
 };
 
-VideoChat.prototype.connect = function (profile, answerHandler, callHandler) {
+VideoChat.prototype.connect = function (profile, answerHandler, callHandler, endCallSetter) {
   this.peer = new Peer(profile.username, {
     host: 'chattaranga-signalling-server.herokuapp.com', port: '', secure: true, path: '/api'
   });
@@ -36,7 +36,7 @@ VideoChat.prototype.connect = function (profile, answerHandler, callHandler) {
 
         this.socket.emit('disconnect_from_room', profile);
         this.setPeer(username);
-        this.connectTo(username, callHandler);
+        this.connectTo(username, callHandler, endCallSetter);
       });
     });  
   });
@@ -49,10 +49,12 @@ VideoChat.prototype.connect = function (profile, answerHandler, callHandler) {
       this.setPeer(call.peer);
       answerHandler(URL.createObjectURL(stream), call.peer);
     });
+
   });
+  
 };
 
-VideoChat.prototype.connectTo = function (username, callHandler) {
+VideoChat.prototype.connectTo = function (username, callHandler, endCallSetter) {
   const conn = this.peer.connect(username);
   
   conn.on('open', () => {
@@ -61,6 +63,10 @@ VideoChat.prototype.connectTo = function (username, callHandler) {
     call.on('stream', (stream) => {
       callHandler(URL.createObjectURL(stream), username);
     });
+  });
+
+  conn.on('close', () => {
+    endCallSetter();
   });
 };
 

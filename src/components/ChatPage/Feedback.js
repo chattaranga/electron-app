@@ -13,7 +13,7 @@ const Feedback = props => {
   }
   return (
     <Animation transitionName="fb-anim" component="div" className="feedback"
-          transitionAppearTimeout={500}  transitionEnterTimeout={500} 
+          transitionAppearTimeout={500}  transitionEnterTimeout={500} transitionLeaveTimeout={500}
           transitionAppear={true}>
         <div className="feedback">
             <h1>{message}</h1>

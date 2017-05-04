@@ -12,7 +12,7 @@ const PromptsList = props => {
   return (
     <div className='prompts-list'> 
       <div className='prompts-header'>
-        <h2>Prompts</h2>
+        <h2>Need a hand?</h2>
         <div className='prompts-header-item'>
           <button className='button-primary'><i className='fa fa-refresh'/></button>
         </div>
