@@ -9,7 +9,7 @@
   font-weight: bold;
   padding: 1.3em;
   font-size: 1em;
-  border-radius: 1em; }
+  border-radius: 0.6em; }
   .button-primary a {
     text-decoration: none; }
   .button-primary:hover {
@@ -28,7 +28,7 @@
   background-color: #ffd8b2;
   font-weight: bold;
   font-size: 1em;
-  border-radius: 1em;
+  border-radius: 0.6em;
   outline: none; }
   .button-linking a {
     text-decoration: none; }
@@ -57,7 +57,7 @@
   padding: 1em;
   border: 0.2em solid #ffd8b2;
   background-color: #fff;
-  border-radius: 1em;
+  border-radius: 0.6em;
   margin: 0.5em 0 0.5em 0; }
   .orange-msg-box p {
     margin: 0;
@@ -177,7 +177,7 @@
   margin: 1em;
   font-size: 1em;
   border: 0;
-  border-radius: 1em;
+  border-radius: 0.6em;
   border: 3px solid #fff;
   color: #ea7805;
   font-weight: bold; }
@@ -303,7 +303,7 @@
     align-items: center;
     border: 0.2em solid #ffd8b2;
     background-color: #fcc48c;
-    border-radius: 1em;
+    border-radius: 0.6em;
     margin: 0 0.8em 0 0.8em;
     width: 8em;
     height: 3em; }
@@ -373,10 +373,24 @@
   display: flex;
   flex-direction: column;
   align-items: stretch; }
+  .side-bar .side-bar-navigation {
+    margin: 1em;
+    padding-bottom: 1em;
+    border-bottom: 0.2em solid #ff8002;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .side-bar .side-bar-navigation div a {
+      text-decoration: none; }
+      .side-bar .side-bar-navigation div a h3 {
+        padding: 1.3em;
+        margin: 0; }
+    .side-bar .side-bar-navigation img {
+      width: 15em; }
 
 .prompts-list {
   flex: 2 0 0;
-  padding: 1em 1em 0.5em; }
+  padding: 0em 1em 0.5em; }
 
 .translation-boxes {
   flex: 1 0 0;
@@ -387,11 +401,12 @@
     flex-direction: column;
     align-items: stretch; }
     .translation-boxes form textarea {
+      font-family: "Muli";
       color: #b85e04;
       font-size: 1.2em;
       padding: 1.5em;
       height: 50%;
-      border-radius: 1em;
+      border-radius: 0.6em;
       border: 3px solid #fff; }
     .translation-boxes form .i-text:focus {
       border: 3px solid #7de6e6; }
@@ -457,12 +472,10 @@
 .prompts-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5em;
-  border-bottom: 0.2em solid #ff8002; }
+  margin-bottom: 0.5em; }
   .prompts-header h2 {
     color: #fff;
-    font-weight: 900;
-    text-transform: uppercase; }
+    font-weight: bold; }
 
 .feedback {
   display: flex;

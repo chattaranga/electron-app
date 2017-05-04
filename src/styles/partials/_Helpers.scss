@@ -8,7 +8,7 @@
     font-weight: bold;
     padding: 1.3em;
     font-size: 1em;
-    border-radius: 1em;
+    border-radius: 0.6em;
     a {text-decoration: none;}
     &:hover {
         cursor: pointer;
@@ -28,8 +28,8 @@
     background-color: $primary-light;
     font-weight: bold;
     font-size: 1em;
-    border-radius: 1em;
     p {color: darken($primary, 20%);}
+    border-radius: 0.6em;
     a {text-decoration: none;}
     &:hover {
         cursor: pointer;
@@ -65,7 +65,7 @@
     padding: 1em;
     border: 0.2em solid $primary-light;
     background-color: $white;
-    border-radius: 1em;
+    border-radius: 0.6em;
     margin: 0.5em 0 0.5em 0;
     p {
         margin: 0;
