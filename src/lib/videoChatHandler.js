@@ -20,11 +20,7 @@ const videoChatHandler = function(action, cb) {
         });
     },
     connect: () => {
-<<<<<<< HEAD
-      this.videoChat.connect({username: this.props.user.username, room: this.props.room}, handlers['answer'], handlers['call']);
-=======
-      this.videoChat.connect({username: Math.floor(Math.random() * 100).toString(), room: 'test'}, handlers['answer'].bind(null, cb), handlers['call'].bind(null, cb));
->>>>>>> e7bbb01... Adds tested Redux actions and reducer for starting calls
+      this.videoChat.connect({username: this.props.user.username, room: this.props.room}, handlers['answer'].bind(null, cb), handlers['call'].bind(null, cb));
     },
     call: (startCall, stream, peer) => {
       startCall();

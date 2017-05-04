@@ -38,20 +38,15 @@ class ChatPage extends Component {
           setFeedback={this.setFeedback}
           sendFeedback={this.sendFeedback}
           giveSmiley={this.state.giveSmiley}
-<<<<<<< HEAD
           giveTeacherPoint={this.state.giveTeacherPoint}/> 
-      : <RemoteVideo endCall={this.props.endCall} videoChat={new VideoChat()} user={this.props.user} room={this.props.trainingLanguage + this.level} />;
-=======
-          giveTeacherPoint={this.state.giveTeacherPoint}/>; 
-    } else if (!this.props.callStarted) {
-      content = <ChatLoading/>;
+    // } else if (!this.props.callStarted) {
+    //   content = <ChatLoading/>;
     } else {
       content = <RemoteVideo 
           endCall={this.props.endCall} 
           startCall={this.props.startCall} 
           videoChat={new VideoChat()}/>;
     }
->>>>>>> e7bbb01... Adds tested Redux actions and reducer for starting calls
     return (
       <div className="chat-page">
         {content}
