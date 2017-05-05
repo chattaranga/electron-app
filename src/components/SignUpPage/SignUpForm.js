@@ -26,7 +26,7 @@ class SignUpForm extends Component {
       return (
         <div>
           <h2>{`${this.props.user.name}, your Chattaranga journey begins here`}</h2>
-          <Link to='/hub'><h3 className='button-primary'>Enter</h3></Link>
+          <Link to='/hub' className="button-primary enter-link">Enter</Link>
         </div>
       );
     }

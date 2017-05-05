@@ -10,8 +10,10 @@ const SignUpPage = () => {
         transitionEnterTimeout={500} 
         transitionLeaveTimeout={500}>
       <div className='container'>
-        <h1>Hello!</h1>
-        <SignUpForm/>
+        <div className="signup-wrapper">
+          <h1>Hello!</h1>
+          <SignUpForm/>
+        </div>
       </div>
     </Animation>
   );
