@@ -8,6 +8,12 @@ export function endCall (peer, user, time, language) {
         .then()
         .catch(err => {
         console.log(err);
+    });
+    axios
+        .put(`${ROOT}users/${user}/${language}?Numofchats=1`)
+        .then()
+        .catch(err => {
+        console.log(err);
         });
     return {
         type: types.END_CALL,
