@@ -58,7 +58,9 @@ class ChatPage extends Component {
           className="chat-page"
           transitionAppearTimeout={500} 
           transitionEnterTimeout={500} 
-          transitionLeaveTimeout={500}>
+          transitionLeaveTimeout={500}
+          transitionAppear
+          transitionLeave>
         {content}
         <SideBar prompts={this.props.callEnded ? [] : shuffle(this.props.prompts).slice(0, 4)}/>
       </Animation>

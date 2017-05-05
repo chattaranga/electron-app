@@ -16,7 +16,9 @@ const Feedback = props => {
         className="feedback"
         transitionAppearTimeout={500}  
         transitionEnterTimeout={500} 
-        transitionLeaveTimeout={500}>
+        transitionLeaveTimeout={500}
+        transitionAppear
+        transitionLeave>
         <div className="feedback">
             <h1>{message}</h1>
             <h2>{`Do you want to award ${props.remoteUser} any badges`}?</h2>

@@ -25,7 +25,9 @@ class HubPage extends Component {
           className="HubPage"
           transitionAppearTimeout={500} 
           transitionEnterTimeout={500} 
-          transitionLeaveTimeout={500}>
+          transitionLeaveTimeout={500}
+          transitionAppear
+          transitionLeave>
         <div className='inline'>
           <img className='logo' src='img/logos/logo-box-transparent-grad.png'/>
           <Icons

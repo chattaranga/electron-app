@@ -25,10 +25,9 @@ VideoChat.prototype.connect = function (profile, answerHandler, callHandler, end
     this.setUsername(username);
     
     this.socket = io('https://chattaranga-signalling-server.herokuapp.com');
-
-    this.socket.emit('connect_to_room', profile);
     
     this.socket.on('connect', () => {
+      this.socket.emit('connect_to_room', profile);
       this.socket.on('USER_CONNECTED', (username) => {
         if (username === profile.username || this._peer) {
           return;

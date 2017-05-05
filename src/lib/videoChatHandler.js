@@ -24,7 +24,7 @@ const videoChatHandler = function(action, startCall, endCallSetter) {
         username: this.props.user.username,
         room: this.props.room
       };
-
+      
       this.videoChat.connect(profile, handlers['answer'], handlers['call'], endCallSetter);
     },
     call: (stream, peer) => {

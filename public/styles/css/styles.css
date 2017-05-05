@@ -10,7 +10,8 @@
   padding: 1.3em;
   font-size: 1em;
   border-radius: 0.6em;
-  outline: none; }
+  outline: none;
+  text-decoration: none; }
   .button-primary a, .button-linking a {
     text-decoration: none; }
   .button-primary:hover, .button-linking:hover {
@@ -111,6 +112,12 @@
   color: red;
   font-weight: bolder;
   text-align: center; }
+
+.signup-wrapper {
+  text-align: center; }
+
+.enter-link {
+  display: inline-block; }
 
 .sign-up-page {
   width: 100vw;

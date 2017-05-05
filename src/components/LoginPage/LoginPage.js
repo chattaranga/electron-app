@@ -8,7 +8,9 @@ const LoginPage = () => {
         className="LoginPage"
         transitionAppearTimeout={500} 
         transitionEnterTimeout={500}
-        transitionLeaveTimeout={500}>
+        transitionLeaveTimeout={500}
+        transitionAppear
+        transitionLeave>
       <img className='logo' src='img/logos/logo-main-transparent-grad.png'/>
       <LoginForm/>
     </Animation>
