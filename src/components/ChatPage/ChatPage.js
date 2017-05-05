@@ -82,7 +82,7 @@ class ChatPage extends Component {
   sendFeedback () {
     if (this.state.giveSmiley) {
       axios
-          .put(`${ROOT}${this.props.remoteUser}/smileys`)
+          .put(`${ROOT}users/${this.props.remoteUser}/smileys`)
           .then(res => {
             console.log(res);
           })
@@ -92,7 +92,7 @@ class ChatPage extends Component {
     }
     if (this.state.giveTeacherPoint) {
       axios
-          .put(`${ROOT}${this.props.remoteUser}/${this.props.trainingLanguage}`)
+          .put(`${ROOT}users/${this.props.remoteUser}/${this.props.trainingLanguage}`)
           .then(res => {
             console.log(res);
           })
