@@ -90,7 +90,7 @@ class SignUpForm extends Component {
     }, '');
      return languages.map((language, i) => {
        return language.name === 'english'
-        ? <p/>
+        ? <p key={i}/>
         : (
         <div key={i}>
           <a><img 
