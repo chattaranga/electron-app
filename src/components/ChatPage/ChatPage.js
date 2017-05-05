@@ -18,7 +18,7 @@ class ChatPage extends Component {
     this.state = {
       giveSmiley: false,
       giveTeacherPoint: false,
-      callEnd: false
+      callEnded: false
     };
     this.setFeedback = this.setFeedback.bind(this);
     this.sendFeedback = this.sendFeedback.bind(this);
