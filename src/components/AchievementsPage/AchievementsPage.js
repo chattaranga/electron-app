@@ -22,7 +22,6 @@ class AchievementsPage extends Component {
     if (!this.props.badges) this.props.fetchBadges();
     this.props.fetchUser(this.props.user.username);
     this.props.resetCall();
-    console.log('achievement page reset');
   }
   render() {
     if (this.props.loading) return (

@@ -16,7 +16,6 @@ class HubPage extends Component {
     this.getDisplayByLanguage = this.getDisplayByLanguage.bind(this);
   }
   componentDidMount () {
-    console.log('HubPage resets');
     this.props.resetCall();
   }
   render() {
@@ -39,11 +38,12 @@ class HubPage extends Component {
         </div>
         <h2>{this.getDisplayByLanguage(this.props.user)}</h2>
         <h5>Which language are you training in today?</h5>
-        <LanguageButtons userLanguages={user.userLanguages} selectLanguage={this.props.selectLanguage}/>
+        <LanguageButtons userLanguages={user ? user.userLanguages : []} selectLanguage={this.props.selectLanguage}/>
       </Animation>
     );
   }
   getDisplayByLanguage (user) {
+    if (!user) return '';
     const languages = user.userLanguages.reduce((acc, language) => {
       return acc.concat(language.language);
     }, []);
@@ -91,6 +91,7 @@ class HubPage extends Component {
     return converted[random];
   }
   getTotalPoints (user, target) {
+    if (!user) return 0;
     return user.userLanguages.reduce((acc, el) => {
       return acc + el[target];
     }, 0);
@@ -118,7 +119,7 @@ function mapStateToProps(state) {
 }
 
 HubPage.propTypes = {
-  user: PropTypes.any.isRequired,
+  user: PropTypes.any,
   selectLanguage: PropTypes.func.isRequired,
   resetCall: PropTypes.func.isRequired,
   logOut: PropTypes.func.isRequired
