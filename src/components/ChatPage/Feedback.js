@@ -12,9 +12,11 @@ const Feedback = props => {
       default: 'Great job!'; break;
   }
   return (
-    <Animation transitionName="fb-anim" component="div" className="feedback"
-          transitionAppearTimeout={500}  transitionEnterTimeout={500} transitionLeaveTimeout={500}
-          transitionAppear={true}>
+    <Animation transitionName="fb-anim" component="div" 
+        className="feedback"
+        transitionAppearTimeout={500}  
+        transitionEnterTimeout={500} 
+        transitionLeaveTimeout={500}>
         <div className="feedback">
             <h1>{message}</h1>
             <h2>{`Do you want to award ${props.remoteUser} any badges`}?</h2>

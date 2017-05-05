@@ -4,9 +4,11 @@ import SignUpForm from './SignUpForm';
 
 const SignUpPage = () => {
   return (
-    <Animation transitionName="page" component="div" className="sign-up-page"
-          transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={500}
-          transitionAppear={true} transitionLeave={true}>
+    <Animation transitionName="page" component="div" 
+        className="sign-up-page"
+        transitionAppearTimeout={500} 
+        transitionEnterTimeout={500} 
+        transitionLeaveTimeout={500}>
       <div className='container'>
         <h1>Hello!</h1>
         <SignUpForm/>

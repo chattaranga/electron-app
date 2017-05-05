@@ -24,6 +24,11 @@ class RemoteVideo extends Component {
       this.videoChatHandler('disconnect');
     }
   }
+  componentWillUnmount () {
+    window.localStream.getTracks().forEach((track) => {
+        track.stop();
+      });
+  }
   endCallHandler(time) {
     this.videoChatHandler('hang');
     this.props.endCall(this.state.peer, this.props.user.username, time, this.props.trainingLanguage);
@@ -45,9 +50,7 @@ class RemoteVideo extends Component {
           className="remote-video-container"
           transitionAppearTimeout={500} 
           transitionEnterTimeout={500} 
-          transitionLeaveTimeout={500}
-          transitionAppear={true} 
-          transitionLeave={true}>
+          transitionLeaveTimeout={500}>
           {videoArea}
         <div className="ab-bottom">
           {this.state.onCall ? 

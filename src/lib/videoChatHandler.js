@@ -48,9 +48,6 @@ const videoChatHandler = function(action, startCall, endCallSetter) {
       });
     },
     hang: () => {
-      window.localStream.getTracks().forEach((track) => {
-        track.stop();
-      }); 
       this.videoChat.peer.destroy();
       this.videoChat.peer.disconnect();
       this.videoChat.socket.disconnect();

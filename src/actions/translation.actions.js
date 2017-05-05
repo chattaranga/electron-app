@@ -13,7 +13,7 @@ export function translateText (text, sourceLanguage, targetLanguage) {
       .catch(err => {
         dispatch(translateTextError(err));
       });
-  }
+  };
 }
 
 export function translateTextRequest () {

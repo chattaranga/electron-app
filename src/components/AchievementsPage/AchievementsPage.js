@@ -28,9 +28,11 @@ class AchievementsPage extends Component {
       </div>
     );
     return (
-      <Animation transitionName="page" component="div" className="achievements"
-          transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={500}
-          transitionAppear={true} transitionLeave={true}>
+      <Animation transitionName="page" component="div"
+          className="achievements"
+          transitionAppearTimeout={500} 
+          transitionEnterTimeout={500} 
+          transitionLeaveTimeout={500}>
           <div className='top'>
               <Link className='link' to='/hub'><h3 className='button-linking'>Back</h3></Link>
           </div>

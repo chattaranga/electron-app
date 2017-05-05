@@ -17,9 +17,11 @@ class HubPage extends Component {
   render() {
     const user = this.props.user;
     return (
-      <Animation transitionName="page" component="div" className="HubPage"
-          transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={500}
-          transitionAppear={true} transitionLeave={true}>
+      <Animation transitionName="page" component="div" 
+          className="HubPage"
+          transitionAppearTimeout={500} 
+          transitionEnterTimeout={500} 
+          transitionLeaveTimeout={500}>
         <div className='inline'>
           <img className='logo' src='img/logos/logo-box-transparent-grad.png'/>
           <Icons
