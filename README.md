@@ -6,6 +6,8 @@
 
 ## How to run a version that auto-compiles
 
+Ensure you have the latest version of node installed.
+
 ```
 $ npm install
 $ npm run bundle
@@ -19,13 +21,13 @@ $ npm start
 
 ## How to test reducers
 
-Ensure that you have chai installed
+Ensure that you have chai installed.
 
 ```
 $ npm install chai -g
 ```
 
-Then run test files
+Then run test files.
 
 ```
 $ npm test
