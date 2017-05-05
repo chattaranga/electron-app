@@ -24,7 +24,7 @@ class ChatPage extends Component {
     this.sendFeedback = this.sendFeedback.bind(this);
     this.endCallSetter = this.endCallSetter.bind(this);
   }
-  componentDidMount () {
+  componentWillMount () {
     this.level = this.props.user.userLanguages.reduce((acc, userLanguage) => {
       return userLanguage.language === this.props.trainingLanguage ? userLanguage.level : acc;
     }, '');
