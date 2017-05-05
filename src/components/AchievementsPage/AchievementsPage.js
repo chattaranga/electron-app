@@ -8,6 +8,7 @@ import Statistics from './Statistics';
 import Badges from './Badges';
 import Loading from '../Loading';
 import {fetchBadges} from '../../actions/badges.actions';
+import {resetCall} from '../../actions/call.actions';
 import {fetchUser} from '../../actions/user.actions';
 import _ from 'underscore';
 
@@ -20,6 +21,8 @@ class AchievementsPage extends Component {
   componentDidMount () {
     if (!this.props.badges) this.props.fetchBadges();
     this.props.fetchUser(this.props.user.username);
+    this.props.resetCall();
+    console.log('achievement page reset');
   }
   render() {
     if (this.props.loading) return (
@@ -134,6 +137,9 @@ function mapDispatchToProps(dispatch) {
     },
     fetchUser: (username) => {
       dispatch(fetchUser(username));
+    },
+    resetCall: () => {
+      dispatch(resetCall());
     }
   };
 }
@@ -149,6 +155,7 @@ function mapStateToProps(state) {
 
 AchievementsPage.propTypes = {
   user: PropTypes.object,
+  resetCall: PropTypes.func.isRequired,
   badges: PropTypes.arrayOf(PropTypes.object),
   loading: PropTypes.bool.isRequired,
   fetchBadges: PropTypes.func.isRequired,

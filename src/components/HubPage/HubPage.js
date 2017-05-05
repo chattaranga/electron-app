@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import {connect} from 'react-redux';
 import Animation from 'react-addons-css-transition-group';
+import {resetCall} from '../../actions/call.actions';
 import {logOut, selectLanguage} from '../../actions/user.actions';
 import LanguageButtons from './LanguageButtons';
 import Icons from './Icons';
@@ -13,6 +14,10 @@ class HubPage extends Component {
     super(props);
     this.getTotalPoints = this.getTotalPoints.bind(this);
     this.getDisplayByLanguage = this.getDisplayByLanguage.bind(this);
+  }
+  componentDidMount () {
+    console.log('HubPage resets');
+    this.props.resetCall();
   }
   render() {
     const user = this.props.user;
@@ -99,6 +104,9 @@ function mapDispatchToProps(dispatch) {
     },
     selectLanguage: (language) => {
       dispatch(selectLanguage(language));
+    },
+    resetCall: () => {
+      dispatch(resetCall());
     }
   };
 }
@@ -112,6 +120,7 @@ function mapStateToProps(state) {
 HubPage.propTypes = {
   user: PropTypes.any.isRequired,
   selectLanguage: PropTypes.func.isRequired,
+  resetCall: PropTypes.func.isRequired,
   logOut: PropTypes.func.isRequired
 };
 
