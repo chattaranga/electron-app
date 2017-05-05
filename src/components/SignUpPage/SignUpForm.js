@@ -21,7 +21,8 @@ class SignUpForm extends Component {
     this.getError = this.getError.bind(this);
   }
   render () {
-    if (this.props.loading) return <Loading/>;
+
+    if (this.props.loading || this.props.levels.loading || this.props.languages.loading) return <Loading/>;
     if (this.props.user) {
       return (
         <div>
@@ -90,7 +91,7 @@ class SignUpForm extends Component {
     }, '');
      return languages.map((language, i) => {
        return language.name === 'english'
-        ? <p/>
+        ? <p key={i}/>
         : (
         <div key={i}>
           <a><img 
@@ -107,7 +108,7 @@ class SignUpForm extends Component {
     const levelName = this.props.levels.reduce((acc, level) => {
       return level._id === this.props.selectedLevel ? level.name : acc;
     }, '');
-    return levels.map((level, i) => {
+    const mappedLevels = levels.map((level, i) => {
       return (
         <div
             key={i}
@@ -117,6 +118,8 @@ class SignUpForm extends Component {
         </div>
       );
     });
+    const levelsArray = [mappedLevels[2], mappedLevels[0], mappedLevels[1]];
+    return levelsArray;
   }
   addUser (e) {
     e.preventDefault();
